@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 1: CCST Networking — Syllabus, Labs &amp; Tools</title>
+  <meta name="description" content="Complete CCST Networking (100-150) study guide: full syllabus checklist, hands-on Packet Tracer labs, tools and real-world help desk scenarios.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="ccst">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CISCO<span>PATH</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Roadmap</a></li>
+      <li><a href="ccst.html" class="active">CCST</a></li>
+      <li><a href="ccna.html">CCNA</a></li>
+      <li><a href="ccnp.html">CCNP</a></li>
+      <li><a href="ccie.html">CCIE</a></li>
+      <li><a href="cca.html">CCAr</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">Level 1 · Absolute Beginner</span>
+    <h1>Cisco Certified Support Technician <span class="exam-code">(CCST Networking · 100-150)</span></h1>
+    <p>The entry point to the IT industry. No prerequisites, no experience required — this cert proves you understand how networks actually work and can support them on day one of a help desk or IT support job. It's also the perfect on-ramp to the CCNA.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card"><div class="num">$125</div><div class="lbl">Exam cost</div></div>
+      <div class="stat-card"><div class="num">50 min</div><div class="lbl">Exam length</div></div>
+      <div class="stat-card"><div class="num">None</div><div class="lbl">Prerequisites</div></div>
+      <div class="stat-card"><div class="num">Online</div><div class="lbl">Via Certiport, take anywhere</div></div>
+      <div class="stat-card"><div class="num">Lifetime</div><div class="lbl">Never expires</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Syllabus — Every Topic, Checkable</h2>
+    <p class="sub">The six official exam domains of CCST Networking (100-150). Tick topics as you master them — progress is saved in your browser.</p>
+
+    <div class="progress-wrap">
+      <div class="progress-label"><span>My CCST progress</span><span class="pct">0 / 0</span></div>
+      <div class="progress-bar"><div class="fill"></div></div>
+    </div>
+
+    <details class="domain" open>
+      <summary>1. Standards and Concepts <span class="weight">≈25%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccst-1-1"><label for="ccst-1-1">Identify types of networks: LAN, WAN, MAN, PAN, WLAN <span class="why"><strong>Real world:</strong> every ticket starts with "which network is the user on?"</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccst-1-2"><label for="ccst-1-2">The TCP/IP model and the OSI model — layers and what lives at each <span class="why"><strong>Real world:</strong> "is it layer 1 (cable) or layer 3 (routing)?" is how pros isolate faults fast.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccst-1-3"><label for="ccst-1-3">Difference between TCP and UDP; common port numbers (80, 443, 53, 22, 25, 3389)</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-1-4"><label for="ccst-1-4">Bandwidth vs throughput vs latency; units (Mbps, Gbps, ms)</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-1-5"><label for="ccst-1-5">How DNS works: name resolution, record types (A, AAAA, MX, CNAME)</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-1-6"><label for="ccst-1-6">How DHCP works: DORA process (Discover, Offer, Request, Acknowledge)</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-1-7"><label for="ccst-1-7">Cloud vs on-premises computing; virtualization basics (VMs, hypervisors)</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>2. Addressing and Subnet Formats <span class="weight">≈15%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccst-2-1"><label for="ccst-2-1">IPv4 address structure: octets, network vs host portion</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-2-2"><label for="ccst-2-2">Private vs public IPv4 ranges (RFC 1918: 10.x, 172.16–31.x, 192.168.x)</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-2-3"><label for="ccst-2-3">Subnet masks and CIDR notation (/24, /16); identify hosts on the same network <span class="why"><strong>Real world:</strong> "user can't reach the printer" is often just a wrong subnet mask.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccst-2-4"><label for="ccst-2-4">IPv6 basics: address format, why we need it, link-local (fe80::/10)</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-2-5"><label for="ccst-2-5">APIPA (169.254.x.x) — what it means when you see it <span class="why"><strong>Real world:</strong> the #1 sign a machine failed to reach DHCP — classic help desk catch.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccst-2-6"><label for="ccst-2-6">NAT: why private addresses can still reach the internet</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>3. Endpoints and Media Types <span class="weight">≈15%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccst-3-1"><label for="ccst-3-1">Cable types: copper (Cat5e/Cat6, UTP/STP), fiber (single/multi-mode), coax</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-3-2"><label for="ccst-3-2">Connector types: RJ-45, SFP, LC/SC fiber connectors</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-3-3"><label for="ccst-3-3">Wi-Fi standards: 802.11 a/b/g/n/ac/ax (Wi-Fi 6), 2.4 GHz vs 5 GHz trade-offs <span class="why"><strong>Real world:</strong> "Wi-Fi is slow" tickets are usually band/channel issues.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccst-3-4"><label for="ccst-3-4">Endpoint devices: PCs, phones, IoT, printers — how they get on the network</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-3-5"><label for="ccst-3-5">Check Windows/Linux/Mac network settings: ipconfig, ifconfig/ip, networksetup</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>4. Infrastructure <span class="weight">≈15%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccst-4-1"><label for="ccst-4-1">What a switch does (MAC tables, frames) vs what a router does (IP, routing)</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-4-2"><label for="ccst-4-2">Identify device status lights and ports on real hardware <span class="why"><strong>Real world:</strong> amber blinking vs solid green — first thing you check in the wiring closet.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccst-4-3"><label for="ccst-4-3">Access points and wireless controllers; SSIDs and bands</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-4-4"><label for="ccst-4-4">Firewalls: what they block and where they sit in the network</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-4-5"><label for="ccst-4-5">VLANs at a basic level — why one switch can host many networks</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-4-6"><label for="ccst-4-6">Power over Ethernet (PoE) — phones and APs powered by the switch</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>5. Diagnosing Problems <span class="weight">≈20%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccst-5-1"><label for="ccst-5-1">A structured troubleshooting methodology (identify → theorize → test → fix → document) <span class="why"><strong>Real world:</strong> this IS the help desk job. Master this domain hardest.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccst-5-2"><label for="ccst-5-2">ping and traceroute/tracert — read the output, know what each hop means</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-5-3"><label for="ccst-5-3">ipconfig /all, nslookup, netstat, arp -a — when to use which</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-5-4"><label for="ccst-5-4">Interpret a wireless analyzer / speed test; identify interference</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-5-5"><label for="ccst-5-5">Escalation: gather the right info before handing a ticket to level 2 <span class="why"><strong>Real world:</strong> a clean escalation note is how juniors get noticed for promotion.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccst-5-6"><label for="ccst-5-6">Basic packet captures — recognize a TCP handshake in Wireshark</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>6. Security <span class="weight">≈10%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccst-6-1"><label for="ccst-6-1">Confidentiality, Integrity, Availability (the CIA triad)</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-6-2"><label for="ccst-6-2">AAA: Authentication, Authorization, Accounting; MFA basics</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-6-3"><label for="ccst-6-3">Common threats: phishing, malware, social engineering <span class="why"><strong>Real world:</strong> help desk is the front line — you'll spot phishing reports daily.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccst-6-4"><label for="ccst-6-4">Wi-Fi security: WPA2 vs WPA3, why open networks are dangerous</label></div>
+        <div class="topic"><input type="checkbox" id="ccst-6-5"><label for="ccst-6-5">VPNs: what they do for remote workers</label></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Hands-On Labs</h2>
+    <p class="sub">Every lab is built in Packet Tracer and committed to this repo. Each one maps to a real ticket you'd handle in an actual IT support job.</p>
+
+    <div class="lab-grid">
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 01</span> — Build a Small Office Network</h3>
+        <p>1 router, 1 switch, 4 PCs, 1 printer. Cable everything, assign static IPs, verify connectivity with ping.</p>
+        <div class="realworld"><strong>Real-world case:</strong> A 5-person startup just moved into an office and you're the one setting up their network from boxes of gear.</div>
+        <div class="meta"><span class="tag tool">Packet Tracer</span><span class="tag scenario">SOHO setup</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 02</span> — DHCP vs Static: Fix the 169.254 Machine</h3>
+        <p>Configure DHCP on a router, then deliberately break it. Diagnose the APIPA (169.254.x.x) address on a client and restore service.</p>
+        <div class="realworld"><strong>Real-world case:</strong> "I can't get on the internet" — user's laptop shows 169.254.12.7. This exact ticket happens weekly in every company.</div>
+        <div class="meta"><span class="tag tool">Packet Tracer</span><span class="tag tool">ipconfig</span><span class="tag scenario">Help desk ticket</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 03</span> — DNS Troubleshooting</h3>
+        <p>Set up a DNS server, point clients at it, then break resolution. Use nslookup and ping-by-IP-vs-name to prove "the internet is down" is actually DNS.</p>
+        <div class="realworld"><strong>Real-world case:</strong> Websites won't load by name but ping 8.8.8.8 works — the classic "it's always DNS" diagnosis.</div>
+        <div class="meta"><span class="tag tool">Packet Tracer</span><span class="tag tool">nslookup</span><span class="tag scenario">Outage triage</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 04</span> — Wireless Home/Office Setup</h3>
+        <p>Configure a wireless router: SSID, WPA2/WPA3, channel selection, guest network. Connect laptops and phones; test 2.4 vs 5 GHz behavior.</p>
+        <div class="realworld"><strong>Real-world case:</strong> Office Wi-Fi crawls every afternoon — you discover the AP is on a congested 2.4 GHz channel overlapping the café next door.</div>
+        <div class="meta"><span class="tag tool">Packet Tracer</span><span class="tag scenario">Wi-Fi complaint</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 05</span> — The Troubleshooting Gauntlet</h3>
+        <p>A pre-broken topology with 5 planted faults: wrong subnet mask, bad cable, wrong default gateway, DNS misconfig, disabled port. Find and fix all five, documenting each like a ticket.</p>
+        <div class="realworld"><strong>Real-world case:</strong> Monday morning after an office move — multiple users down for different reasons. Triage order matters.</div>
+        <div class="meta"><span class="tag tool">Packet Tracer</span><span class="tag tool">ping / traceroute</span><span class="tag scenario">Multi-fault triage</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 06</span> — First Packet Capture</h3>
+        <p>On your real machine: capture your own traffic in Wireshark, identify a DNS query, a TCP three-way handshake, and an HTTPS session.</p>
+        <div class="realworld"><strong>Real-world case:</strong> Proving to a vendor that their app — not your network — is dropping the connection, with a capture as evidence.</div>
+        <div class="meta"><span class="tag tool">Wireshark</span><span class="tag scenario">Vendor dispute</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Tools &amp; Simulators for This Level</h2>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <h3>Cisco Packet Tracer</h3>
+        <p>Your main lab environment for CCST. Free via Cisco Networking Academy. The official "Networking Essentials" course on NetAcad pairs perfectly with this exam.</p>
+        <span class="cost free">Free</span>
+      </div>
+      <div class="tool-card">
+        <h3>Wireshark</h3>
+        <p>Start early — even seeing one TCP handshake makes the OSI model click.</p>
+        <span class="cost free">Free</span>
+      </div>
+      <div class="tool-card">
+        <h3>Your Own Home Network</h3>
+        <p>Log into your home router. Find the DHCP pool, the WAN IP, the Wi-Fi channel. The cheapest lab you own.</p>
+        <span class="cost free">Free</span>
+      </div>
+      <div class="tool-card">
+        <h3>Command Line (CMD/Terminal)</h3>
+        <p>Drill ping, tracert, ipconfig /all, nslookup, arp -a on your real machine until they're reflexes.</p>
+        <span class="cost free">Free</span>
+      </div>
+    </div>
+    <div class="callout tip"><strong>Study plan:</strong> 4–6 weeks at ~1 hour/day. Week 1–2: Standards &amp; Addressing. Week 3: Endpoints &amp; Infrastructure. Week 4: Diagnostics (do the labs!). Week 5: Security + practice exams. Week 6: review and sit the exam.</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Selling This Certificate</h2>
+    <div class="sell-grid">
+      <div class="sell-card">
+        <h3>Job Titles to Apply For</h3>
+        <ul>
+          <li><strong>IT Help Desk Technician</strong> (Tier 1)</li>
+          <li><strong>IT Support Specialist</strong></li>
+          <li><strong>NOC Technician (entry)</strong></li>
+          <li><strong>Field Service Technician</strong></li>
+        </ul>
+      </div>
+      <div class="sell-card">
+        <h3>Resume Bullets (adapt from the labs)</h3>
+        <ul>
+          <li>"Built and documented a small-office network (router, switch, Wi-Fi, DHCP, DNS) in Cisco Packet Tracer."</li>
+          <li>"Diagnosed and resolved simulated connectivity faults (APIPA, DNS, gateway misconfiguration) using ping, traceroute and nslookup."</li>
+          <li>"Analyzed live traffic with Wireshark, identifying DNS queries and TCP handshakes."</li>
+        </ul>
+      </div>
+      <div class="sell-card">
+        <h3>Interview Story Bank</h3>
+        <ul>
+          <li>Lab 02 = "walk me through troubleshooting no-internet" answer.</li>
+          <li>Lab 05 = "how do you prioritize multiple outages?" answer.</li>
+          <li>Lab 06 = shows you go deeper than the average applicant.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="pager">
+    <a href="index.html"><small>← Back</small>Roadmap Home</a>
+    <a class="next" href="ccna.html"><small>Next Level →</small>Level 2: CCNA</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container"><p>Level 1 of 5 &middot; CCST Networking (100-150) &middot; Part of my Cisco certification journey</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

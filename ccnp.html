@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 3: CCNP Enterprise — Syllabus, Labs &amp; Tools</title>
+  <meta name="description" content="Complete CCNP Enterprise study guide: ENCOR 350-401 domains, concentration exams including the Automation track, EVE-NG/CML labs and real-world scenarios.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="ccnp">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CISCO<span>PATH</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Roadmap</a></li>
+      <li><a href="ccst.html">CCST</a></li>
+      <li><a href="ccna.html">CCNA</a></li>
+      <li><a href="ccnp.html" class="active">CCNP</a></li>
+      <li><a href="ccie.html">CCIE</a></li>
+      <li><a href="cca.html">CCAr</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">Level 3 · Professional</span>
+    <h1>Cisco Certified Network Professional <span class="exam-code">(CCNP Enterprise)</span></h1>
+    <p>The level where you specialize. CCNP = <strong>two exams</strong>: the ENCOR 350-401 core plus one concentration exam of your choice. Cisco rebranded its DevNet track into <strong>Automation</strong> at this level — and choosing the automation path puts you in front of a <strong>25% jump in job listings</strong>.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Exams (core + concentration)</div></div>
+      <div class="stat-card"><div class="num">$400</div><div class="lbl">ENCOR core exam</div></div>
+      <div class="stat-card"><div class="num">$300</div><div class="lbl">Concentration exam</div></div>
+      <div class="stat-card"><div class="num">+25%</div><div class="lbl">Job listings (Automation track)</div></div>
+      <div class="stat-card"><div class="num">3 yrs</div><div class="lbl">Validity</div></div>
+    </div>
+
+    <div class="callout tip"><strong>Bonus:</strong> passing ENCOR alone also earns you a Specialist certification AND qualifies you to attempt the CCIE lab — it's the gateway exam for Level 4.</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Core Exam Syllabus — ENCOR 350-401</h2>
+    <p class="sub">The six official ENCOR domains. Infrastructure is the monster at 30% — budget your time accordingly.</p>
+
+    <div class="progress-wrap">
+      <div class="progress-label"><span>My CCNP progress</span><span class="pct">0 / 0</span></div>
+      <div class="progress-bar"><div class="fill"></div></div>
+    </div>
+
+    <details class="domain" open>
+      <summary>1. Architecture <span class="weight">15%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccnp-1-1"><label for="ccnp-1-1">Enterprise design principles: 2/3-tier, fabric, cloud/hybrid; high availability (redundancy, FHRP, SSO)</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-1-2"><label for="ccnp-1-2">Wireless design: WLC deployment models, AP density, roaming (L2/L3), location services</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-1-3"><label for="ccnp-1-3">Cisco SD-WAN: control vs data plane components (vManage, vSmart, vBond, cEdge) <span class="why"><strong>Real world:</strong> SD-WAN is the default way enterprises now connect branches — huge interview topic.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-1-4"><label for="ccnp-1-4">Cisco SD-Access: control/data plane, fabric, LISP, VXLAN, traditional campus interoperation</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-1-5"><label for="ccnp-1-5">QoS architecture: wired/wireless QoS, components and policy</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-1-6"><label for="ccnp-1-6">Hardware vs software switching: CEF, CAM/TCAM, FIB vs RIB</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>2. Virtualization <span class="weight">10%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccnp-2-1"><label for="ccnp-2-1">Device virtualization: hypervisor types, VMs, virtual switching</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-2-2"><label for="ccnp-2-2">Data path virtualization: VRF, GRE and IPsec tunneling <span class="why"><strong>Real world:</strong> VRFs keep customers separated on shared infrastructure — every service provider and many enterprises use them.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-2-3"><label for="ccnp-2-3">Network virtualization concepts: LISP and VXLAN</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>3. Infrastructure <span class="weight">30%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccnp-3-1"><label for="ccnp-3-1">Layer 2: 802.1Q trunking, EtherChannel, RSTP/MST tuning</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-3-2"><label for="ccnp-3-2">OSPF advanced: multi-area, network types, summarization, filtering, virtual links <span class="why"><strong>Real world:</strong> multi-area OSPF design is the backbone of large campus networks.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-3-3"><label for="ccnp-3-3">eBGP: peering, path selection basics, configure/verify neighbors <span class="why"><strong>Real world:</strong> BGP runs the internet. Cloud peering, ISP links, multihoming — all BGP.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-3-4"><label for="ccnp-3-4">EIGRP: configure/verify, compare to OSPF</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-3-5"><label for="ccnp-3-5">Wireless: RF principles (RSSI, SNR, interference), AP join process, WLC HA, troubleshooting clients</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-3-6"><label for="ccnp-3-6">IP services: NTP/PTP, NAT/PAT, FHRP (HSRP/VRRP/GLBP), multicast basics (IGMP, PIM)</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>4. Network Assurance <span class="weight">10%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccnp-4-1"><label for="ccnp-4-1">Diagnose issues with debugs, conditional debugs, ping/traceroute variations</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-4-2"><label for="ccnp-4-2">SPAN/RSPAN/ERSPAN port mirroring for traffic analysis</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-4-3"><label for="ccnp-4-3">NetFlow / Flexible NetFlow for visibility <span class="why"><strong>Real world:</strong> "what's eating the WAN link?" — NetFlow answers it in minutes.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-4-4"><label for="ccnp-4-4">IP SLA and syslog for proactive monitoring</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-4-5"><label for="ccnp-4-5">Cisco DNA Center / Catalyst Center workflows for assurance and management</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>5. Security <span class="weight">20%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccnp-5-1"><label for="ccnp-5-1">Device access control: lines, password protection, AAA (TACACS+/RADIUS)</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-5-2"><label for="ccnp-5-2">Infrastructure security: ACLs, CoPP (Control Plane Policing)</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-5-3"><label for="ccnp-5-3">REST API security: tokens, certificates</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-5-4"><label for="ccnp-5-4">Wireless security: EAP, WebAuth, PSK, 802.1X <span class="why"><strong>Real world:</strong> 802.1X (NAC) rollouts are major enterprise projects you can lead with this knowledge.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-5-5"><label for="ccnp-5-5">Threat defense components: Cisco TrustSec, MACsec, network access control with 802.1X/MAB/WebAuth</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>6. Automation <span class="weight">10%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccnp-6-1"><label for="ccnp-6-1">Python components and scripts: interpret and build basic device-interaction code</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-6-2"><label for="ccnp-6-2">JSON, and constructing valid JSON payloads for APIs</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-6-3"><label for="ccnp-6-3">YANG data models; NETCONF vs RESTCONF <span class="why"><strong>Real world:</strong> model-driven management is replacing CLI scraping across the industry.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-6-4"><label for="ccnp-6-4">APIs of DNA Center / Catalyst Center and vManage; interpret REST API responses</label></div>
+        <div class="topic"><input type="checkbox" id="ccnp-6-5"><label for="ccnp-6-5">EEM applets; Ansible/Chef/Puppet for orchestration</label></div>
+      </div>
+    </details>
+
+    <h2 style="margin-top:40px;"><span class="hash">#</span> Pick One Concentration Exam</h2>
+    <p class="sub" style="margin-top:8px;">Core + any one of these = CCNP Enterprise. The Automation track is the demand magnet.</p>
+    <table class="info">
+      <tr><th>Exam</th><th>Track</th><th>Best for</th></tr>
+      <tr><td><strong>300-435 ENAUTO</strong> ⭐</td><td>Automation (former DevNet)</td><td>The 25%-demand-spike track: Python, APIs (IOS-XE, DNA Center, SD-WAN), NETCONF/RESTCONF, Ansible. My pick.</td></tr>
+      <tr><td>300-410 ENARSI</td><td>Advanced Routing &amp; Services</td><td>The classic deep-routing path (BGP, OSPF, EIGRP, VPN, MPLS basics). Best base if CCIE Enterprise is the goal.</td></tr>
+      <tr><td>300-415 ENSDWI</td><td>SD-WAN</td><td>Branch-connectivity specialists; very hot in large retail/banking.</td></tr>
+      <tr><td>300-420 ENSLD</td><td>Network Design</td><td>Pre-architect path; pairs well with the Level 5 goal.</td></tr>
+      <tr><td>300-425 / 300-430</td><td>Wireless Design / Implementation</td><td>Wi-Fi specialists (stadiums, hospitals, campuses).</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Hands-On Labs</h2>
+    <p class="sub">CCNP labs outgrow Packet Tracer — this level moves to EVE-NG/CML with realistic multi-site topologies, plus the free Cisco DevNet sandboxes for automation.</p>
+
+    <div class="lab-grid">
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 01</span> — Multi-Area OSPF Enterprise Campus</h3>
+        <p>8+ routers: backbone area 0, two branch areas, summarization at ABRs, a stub area, and route filtering. Then injure it: mismatched area types, missing virtual link — and repair.</p>
+        <div class="realworld"><strong>Real-world case:</strong> A national company with HQ + regional offices — exactly how their routing is structured, including why summarization keeps routing tables sane.</div>
+        <div class="meta"><span class="tag tool">EVE-NG / CML</span><span class="tag scenario">Campus routing design</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 02</span> — BGP to Two ISPs (Multihoming)</h3>
+        <p>Your edge AS peers with two simulated ISPs. Configure eBGP, influence outbound path with local-preference and inbound with AS-path prepending. Fail ISP-A and watch traffic shift.</p>
+        <div class="realworld"><strong>Real-world case:</strong> Every serious business has two internet providers. Knowing how to steer traffic between them is a $120K+ skill.</div>
+        <div class="meta"><span class="tag tool">EVE-NG / CML</span><span class="tag scenario">ISP multihoming</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 03</span> — VRF + GRE/IPsec: Two Tenants, One Network</h3>
+        <p>Carry two isolated customer networks (VRFs) across shared routers, then connect sites over an encrypted GRE-over-IPsec tunnel across a simulated internet.</p>
+        <div class="realworld"><strong>Real-world case:</strong> A managed service provider hosting two clients on shared hardware with contractual isolation — VRFs are the answer auditors accept.</div>
+        <div class="meta"><span class="tag tool">EVE-NG / CML</span><span class="tag scenario">Multi-tenant isolation</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 04</span> — NetFlow + IP SLA: Find the Bandwidth Hog</h3>
+        <p>Enable Flexible NetFlow, export to a collector, generate mixed traffic, identify the top-talker. Add IP SLA probes that alert when latency to a "datacenter" exceeds threshold.</p>
+        <div class="realworld"><strong>Real-world case:</strong> "The network is slow" at month-end close. NetFlow shows it's a backup job running at noon — you reschedule it and look like a hero.</div>
+        <div class="meta"><span class="tag tool">EVE-NG + collector</span><span class="tag scenario">Performance forensics</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 05</span> — RESTCONF/NETCONF Against Real IOS-XE</h3>
+        <p>Use the free DevNet always-on IOS-XE sandbox: retrieve interface config via RESTCONF (YANG model), modify a description via NETCONF from Python, verify on-box.</p>
+        <div class="realworld"><strong>Real-world case:</strong> Modern network platforms (and your future employer's tooling) talk YANG models, not screen-scraped CLI.</div>
+        <div class="meta"><span class="tag tool">DevNet Sandbox</span><span class="tag tool">Python + requests/ncclient</span><span class="tag scenario">Model-driven config</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 06</span> — Ansible Configuration Factory</h3>
+        <p>Inventory of 10 lab devices. Playbooks that: deploy standard SNMP/NTP/syslog config, verify compliance, and roll back drift. Store everything in Git with meaningful commits.</p>
+        <div class="realworld"><strong>Real-world case:</strong> Config drift across hundreds of devices causes outages and audit failures. "Network as code" teams exist in every Fortune 500 now.</div>
+        <div class="meta"><span class="tag tool">Ansible + EVE-NG</span><span class="tag tool">Git</span><span class="tag scenario">Config compliance</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 07</span> — SD-WAN on the DevNet Sandbox</h3>
+        <p>Use the reservable Cisco SD-WAN sandbox: explore vManage, build a policy, then pull device inventory and stats via the vManage REST API with Python.</p>
+        <div class="realworld"><strong>Real-world case:</strong> A retailer replacing MPLS at 300 stores with SD-WAN — the single most common enterprise WAN project of the decade.</div>
+        <div class="meta"><span class="tag tool">DevNet SD-WAN Sandbox</span><span class="tag scenario">Branch transformation</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 08</span> — 802.1X Network Access Control</h3>
+        <p>Configure 802.1X with a RADIUS server: a corporate laptop authenticates onto the staff VLAN, an unknown device lands in a quarantine VLAN via MAB fallback.</p>
+        <div class="realworld"><strong>Real-world case:</strong> Zero-trust initiatives start at the switch port. NAC rollout experience is heavily requested in security-conscious industries.</div>
+        <div class="meta"><span class="tag tool">EVE-NG + FreeRADIUS/ISE</span><span class="tag scenario">Zero-trust access</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Tools &amp; Simulators for This Level</h2>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <h3>EVE-NG (Community)</h3>
+        <p>The CCNP workhorse — big topologies, multiple vendors, snapshots. Needs a decent PC (32 GB RAM recommended) or a cheap dedicated mini-PC.</p>
+        <span class="cost free">Free</span>
+      </div>
+      <div class="tool-card">
+        <h3>Cisco Modeling Labs (CML) Personal</h3>
+        <p>Legal, current IOS-XE/NX-OS images straight from Cisco. Worth every dollar at this level.</p>
+        <span class="cost paid">~$199/yr</span>
+      </div>
+      <div class="tool-card">
+        <h3>Cisco DevNet Sandboxes</h3>
+        <p>Free always-on and reservable labs: IOS-XE RESTCONF, DNA Center, SD-WAN. No hardware needed for the entire automation domain.</p>
+        <span class="cost free">Free</span>
+      </div>
+      <div class="tool-card">
+        <h3>Python + Netmiko / ncclient / requests</h3>
+        <p>Your automation toolkit. Add pyATS/Genie for parsing — it's Cisco's own test framework.</p>
+        <span class="cost free">Free</span>
+      </div>
+      <div class="tool-card">
+        <h3>Ansible</h3>
+        <p>cisco.ios collections for config management. Pairs with Git for the "network as code" workflow employers want.</p>
+        <span class="cost free">Free</span>
+      </div>
+      <div class="tool-card">
+        <h3>CBT Nuggets / INE / OCG books</h3>
+        <p>Structured ENCOR video courses + the Official Cert Guide as reference. Boson ExSim again for practice exams.</p>
+        <span class="cost paid">Paid</span>
+      </div>
+    </div>
+    <div class="callout warn"><strong>Reality check:</strong> 6–12 months while working a CCNA-level job. The job experience and the cert reinforce each other — don't study this in a vacuum.</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Selling This Certificate</h2>
+    <div class="sell-grid">
+      <div class="sell-card">
+        <h3>Job Titles to Apply For</h3>
+        <ul>
+          <li><strong>Network Engineer (mid/senior)</strong></li>
+          <li><strong>Network Automation Engineer</strong> ⭐ the 25%-growth title</li>
+          <li><strong>SD-WAN Engineer</strong></li>
+          <li><strong>Infrastructure Engineer</strong></li>
+          <li><strong>Cloud Network Engineer</strong></li>
+        </ul>
+      </div>
+      <div class="sell-card">
+        <h3>Resume Bullets (adapt from the labs)</h3>
+        <ul>
+          <li>"Designed multi-area OSPF and dual-ISP BGP edge for a simulated enterprise; implemented path manipulation with local-preference and AS-path prepending."</li>
+          <li>"Built Ansible playbooks enforcing configuration compliance across 10+ Cisco devices, version-controlled in Git."</li>
+          <li>"Automated IOS-XE configuration via RESTCONF/NETCONF and YANG models using Python."</li>
+          <li>"Implemented 802.1X port-based access control with RADIUS and dynamic VLAN assignment."</li>
+        </ul>
+      </div>
+      <div class="sell-card">
+        <h3>Positioning Tip</h3>
+        <ul>
+          <li>Brand yourself as <strong>"network engineer who automates"</strong> — that phrase, plus this repo of playbooks and scripts, is what creates the salary jump at this level.</li>
+          <li>Publish one polished automation project (Lab 06) as its own pinned GitHub repo with a README and topology diagram.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="pager">
+    <a href="ccna.html"><small>← Previous</small>Level 2: CCNA</a>
+    <a class="next" href="ccie.html"><small>Next Level →</small>Level 4: CCIE</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container"><p>Level 3 of 5 &middot; CCNP Enterprise (ENCOR 350-401 + concentration) &middot; Part of my Cisco certification journey</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 4: CCIE Enterprise Infrastructure — Syllabus, Labs &amp; Tools</title>
+  <meta name="description" content="Complete CCIE Enterprise Infrastructure study guide: qualifying exam + 8-hour lab blueprint, expert-level lab strategy, tools and real-world scenarios.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="ccie">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CISCO<span>PATH</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Roadmap</a></li>
+      <li><a href="ccst.html">CCST</a></li>
+      <li><a href="ccna.html">CCNA</a></li>
+      <li><a href="ccnp.html">CCNP</a></li>
+      <li><a href="ccie.html" class="active">CCIE</a></li>
+      <li><a href="cca.html">CCAr</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">Level 4 · Expert</span>
+    <h1>Cisco Certified Internetwork Expert <span class="exam-code">(CCIE Enterprise Infrastructure)</span></h1>
+    <p>The "fighter jet pilot" of the networking world. Two stages: the ENCOR 350-401 written (already done at Level 3) qualifies you for the legendary <strong>8-hour hands-on lab exam</strong>. CCIEs command up to <strong>$170,000</strong> (highest in security) and roughly a <strong>75% salary premium</strong> over non-certified peers. Your CCIE number is yours for life.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card"><div class="num">8 hrs</div><div class="lbl">Hands-on lab exam</div></div>
+      <div class="stat-card"><div class="num">$1,600</div><div class="lbl">Lab exam fee (per attempt)</div></div>
+      <div class="stat-card"><div class="num">$170K</div><div class="lbl">Top pay (CCIE Security)</div></div>
+      <div class="stat-card"><div class="num">+75%</div><div class="lbl">Salary premium vs non-certified</div></div>
+      <div class="stat-card"><div class="num">~26%</div><div class="lbl">First-attempt pass rate (est.)</div></div>
+    </div>
+
+    <div class="callout warn"><strong>Choose your track:</strong> CCIE comes in flavors — Enterprise Infrastructure, Enterprise Wireless, Security ⭐ (the $170K one), Service Provider, Data Center, Collaboration. This page maps Enterprise Infrastructure, the natural continuation of this roadmap; the study method is identical for all tracks.</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Lab Exam Blueprint — CCIE Enterprise Infrastructure</h2>
+    <p class="sub">The 8-hour lab has two modules: <strong>Design (3 hrs)</strong> — scenario-based, no device access — and <strong>Deploy, Operate &amp; Optimize (5 hrs)</strong> — hands-on against a large virtual topology. These five domains are tested across both.</p>
+
+    <div class="progress-wrap">
+      <div class="progress-label"><span>My CCIE progress</span><span class="pct">0 / 0</span></div>
+      <div class="progress-bar"><div class="fill"></div></div>
+    </div>
+
+    <details class="domain" open>
+      <summary>1. Network Infrastructure <span class="weight">30%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccie-1-1"><label for="ccie-1-1">Switched campus: advanced STP (MST), L2 multicast (IGMP snooping), tuning &amp; protection (BPDU guard, root guard, storm control)</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-1-2"><label for="ccie-1-2">OSPF at expert depth: all LSA types, all area types, filtering, summarization at scale, fast convergence (BFD, timers, LFA) <span class="why"><strong>Expert bar:</strong> you must predict the LSDB contents before typing "show".</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccie-1-3"><label for="ccie-1-3">EIGRP: named mode, stub, summarization, query boundaries, wide metrics</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-1-4"><label for="ccie-1-4">BGP at expert depth: full path-selection algorithm, route reflectors, confederations, communities, dual-stack, dampening, convergence tuning <span class="why"><strong>Expert bar:</strong> design questions assume you can reason about 10+ AS topologies on paper.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccie-1-5"><label for="ccie-1-5">IPv6 routing &amp; transition at scale; first-hop security (RA guard, DHCPv6 guard)</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-1-6"><label for="ccie-1-6">Multicast routing: PIM sparse mode, RP design (static, BSR, Auto-RP), MSDP, SSM</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>2. Software-Defined Infrastructure <span class="weight">25%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccie-2-1"><label for="ccie-2-1">Cisco SD-Access: design and deploy fabric (LISP control plane, VXLAN data plane), policy (SGTs), fusion routers, multi-site</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-2-2"><label for="ccie-2-2">DNA/Catalyst Center: device provisioning, policy, assurance workflows</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-2-3"><label for="ccie-2-3">Cisco SD-WAN: controller deployment, OMP, TLOCs, control &amp; data policies, app-aware routing, Direct Internet Access <span class="why"><strong>Expert bar:</strong> the lab gives you broken SD-WAN policies to fix under time pressure.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccie-2-4"><label for="ccie-2-4">QoS in SD architectures end-to-end</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>3. Transport Technologies &amp; Solutions <span class="weight">15%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccie-3-1"><label for="ccie-3-1">MPLS: LDP, L3VPN (VRF, RD/RT, MP-BGP VPNv4), inter-AS basics <span class="why"><strong>Real world:</strong> understanding the provider side makes you the person who can debug the WAN circuit, not just open a ticket about it.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccie-3-2"><label for="ccie-3-2">DMVPN: all phases, NHRP, with IPsec profiles; spoke-to-spoke tunnels</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-3-3"><label for="ccie-3-3">GRE, mGRE, IPsec (IKEv2), FlexVPN fundamentals</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>4. Infrastructure Security &amp; Services <span class="weight">15%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccie-4-1"><label for="ccie-4-1">Device security: CoPP, MPP, uRPF; AAA at depth</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-4-2"><label for="ccie-4-2">802.1X/MAB/WebAuth with ISE concepts; TrustSec/SGT enforcement</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-4-3"><label for="ccie-4-3">System management: SNMPv3, logging architecture, NetFlow/IPFIX at scale</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-4-4"><label for="ccie-4-4">QoS end-to-end: classification/marking/queuing/shaping/policing across a full enterprise path</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-4-5"><label for="ccie-4-5">Network services at depth: FHRP edge cases, NAT (including VRF-aware), PTP/NTP design</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>5. Infrastructure Automation &amp; Programmability <span class="weight">15%</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccie-5-1"><label for="ccie-5-1">Data formats and models: JSON, XML, YAML, YANG (openconfig vs native)</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-5-2"><label for="ccie-5-2">NETCONF/RESTCONF operations against IOS-XE; gNMI awareness</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-5-3"><label for="ccie-5-3">Python scripting for deploy/verify; pyATS/Genie for testing <span class="why"><strong>Expert bar:</strong> the lab includes automation tasks — they are gift points if prepared, fatal if not.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccie-5-4"><label for="ccie-5-4">Ansible playbooks for IOS-XE; model-driven telemetry concepts</label></div>
+        <div class="topic"><input type="checkbox" id="ccie-5-5"><label for="ccie-5-5">EEM advanced applets; guest shell</label></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Lab Strategy — How CCIEs Actually Train</h2>
+    <p class="sub">At this level "labs" stop being exercises and become a training regimen, like an athlete's. The pattern below is how successful candidates structure 12–18 months.</p>
+
+    <div class="lab-grid">
+      <div class="lab-card">
+        <h3><span class="lab-num">PHASE 1</span> — Technology Labs (months 1–6)</h3>
+        <p>One technology at a time, to exhaustion: every OSPF area type, every BGP attribute, every DMVPN phase. Small focused topologies (4–8 devices), repeated until configs flow without thinking.</p>
+        <div class="realworld"><strong>Real-world payoff:</strong> this is the depth that lets you debug a production BGP meltdown calmly while everyone else panics.</div>
+        <div class="meta"><span class="tag tool">CML / EVE-NG Pro</span><span class="tag scenario">Depth drilling</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">PHASE 2</span> — Full-Scale Topologies (months 6–12)</h3>
+        <p>20–30 device enterprise topologies combining everything: campus + SD-Access + SD-WAN + MPLS WAN + DMVPN backup + multicast + QoS + automation. Build, break, rebuild weekly.</p>
+        <div class="realworld"><strong>Real-world payoff:</strong> indistinguishable from a real Fortune 500 network. You are literally rehearsing the day job of a principal engineer.</div>
+        <div class="meta"><span class="tag tool">CML (lab exam runs on it)</span><span class="tag tool">INE / CCIE workbooks</span><span class="tag scenario">Enterprise scale</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">PHASE 3</span> — Mock Labs Under the Clock (months 12+)</h3>
+        <p>Full 8-hour timed mock labs: 3-hour design module (paper-based scenarios, no CLI) + 5-hour deploy/operate module. Grade yourself ruthlessly; track points-per-hour.</p>
+        <div class="realworld"><strong>Real-world payoff:</strong> the discipline of working a structured method under brutal time pressure — exactly what major-incident response requires.</div>
+        <div class="meta"><span class="tag tool">Graded mock labs</span><span class="tag scenario">Exam simulation</span></div>
+      </div>
+
+      <div class="lab-card">
+        <h3><span class="lab-num">ONGOING</span> — Troubleshooting Gauntlets</h3>
+        <p>Take working topologies and have a study partner (or a script) plant 10 faults. Diagnose with a strict method: verify L1→L2→L3, control plane before data plane, never guess.</p>
+        <div class="realworld"><strong>Real-world payoff:</strong> the trouble-ticket discipline that makes CCIEs the people airlines and banks call at 3 AM — and pay accordingly.</div>
+        <div class="meta"><span class="tag tool">CML / EVE-NG</span><span class="tag scenario">Fault injection</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Tools for This Level</h2>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <h3>Cisco Modeling Labs (CML)</h3>
+        <p>Non-negotiable now — the actual lab exam runs on CML-based virtual gear. Train on what you'll be tested on.</p>
+        <span class="cost paid">~$199/yr Personal</span>
+      </div>
+      <div class="tool-card">
+        <h3>EVE-NG Professional</h3>
+        <p>For monster 30+ node topologies; many published CCIE workbook topologies ship as EVE-NG files. Needs a beefy server (64–128 GB RAM) or cloud instance.</p>
+        <span class="cost paid">~$110/yr (+ server)</span>
+      </div>
+      <div class="tool-card">
+        <h3>INE / CCIE-specific workbooks</h3>
+        <p>Structured expert-level lab workbooks and graded mock labs. The de-facto standard CCIE training vendors.</p>
+        <span class="cost paid">Paid (significant)</span>
+      </div>
+      <div class="tool-card">
+        <h3>pyATS / Genie</h3>
+        <p>Cisco's own network test framework — automate the verification of your own labs, and cover the automation domain at the same time.</p>
+        <span class="cost free">Free</span>
+      </div>
+      <div class="tool-card">
+        <h3>A study group</h3>
+        <p>Online CCIE communities (Discord/forums) for mock-lab exchanges and fault-planting partners. Nobody passes this alone.</p>
+        <span class="cost free">Free</span>
+      </div>
+      <div class="tool-card">
+        <h3>A budget plan</h3>
+        <p>Realistically $3–6K total: lab attempts ($1,600 each — most need 2), training content, and lab infrastructure. Many employers fund it; ask.</p>
+        <span class="cost paid">Plan ahead</span>
+      </div>
+    </div>
+    <div class="callout warn"><strong>Reality check:</strong> 12–18 months of 15–20 hrs/week on top of a CCNP-level day job. It's a marathon — but the 75% pay premium and lifetime CCIE number are the payoff.</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Selling This Certificate</h2>
+    <div class="sell-grid">
+      <div class="sell-card">
+        <h3>Job Titles to Apply For</h3>
+        <ul>
+          <li><strong>Senior / Principal Network Engineer</strong></li>
+          <li><strong>Network Consultant</strong> (consulting firms actively hunt CCIE numbers)</li>
+          <li><strong>Solutions Architect (pre-sales)</strong> — vendors and partners pay top dollar</li>
+          <li><strong>Network SME / Technical Lead</strong> at banks, airlines, telcos</li>
+        </ul>
+      </div>
+      <div class="sell-card">
+        <h3>How the Premium Works</h3>
+        <ul>
+          <li>Cisco partners need CCIEs on staff to keep partner status — your number has <strong>direct monetary value to employers</strong>.</li>
+          <li>Consulting day-rates for CCIEs run far above salaried equivalents; many go independent.</li>
+          <li>The number is permanent: "CCIE #XXXXX" goes on your email signature for life (status moves to inactive if you stop recertifying, but the number stays yours).</li>
+        </ul>
+      </div>
+      <div class="sell-card">
+        <h3>Portfolio Moves</h3>
+        <ul>
+          <li>Publish sanitized versions of your Phase 2 mega-topologies here — almost no candidates show 30-node designs publicly.</li>
+          <li>Write a "lessons from my CCIE journey" blog series; these consistently attract recruiter attention.</li>
+          <li>Speak at a local network meetup — CCIE prep stories fill rooms.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="pager">
+    <a href="ccnp.html"><small>← Previous</small>Level 3: CCNP</a>
+    <a class="next" href="cca.html"><small>Final Level →</small>Level 5: CCAr</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container"><p>Level 4 of 5 &middot; CCIE Enterprise Infrastructure &middot; Part of my Cisco certification journey</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
