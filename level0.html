@@ -36,14 +36,15 @@
 <section class="block"><div class="container">
   <h2><span class="hash">#</span> Goal</h2>
   <div class="callout tip"><strong>Level 0 pass condition:</strong> I can explain a small network, assign IP addresses, test connectivity, use basic Windows and Linux commands, and document one broken-network ticket without guessing.</div>
+  <div class="callout warn"><strong>Proof rule:</strong> every task must include a written note. Add a screenshot when the task has a visible result. Add a short video when the task is a process, such as opening Device Manager, using terminal commands, or explaining what you checked.</div>
 </div></section>
 <section class="block"><div class="container">
   <h2><span class="hash">#</span> Full Checklist</h2>
-  <details class="domain" open><summary>Computer and OS basics <span class="weight">Foundation + Evidence Required</span></summary><div class="topics">
-    <div class="topic"><input type="checkbox" id="l0-os-1"><label for="l0-os-1">What is a computer, CPU, RAM, disk, NIC and operating system?<span class="why">Why: every network fault eventually touches a device. Must include note + screenshot proof.</span></label></div>
-    <div class="topic"><input type="checkbox" id="l0-os-2"><label for="l0-os-2">Windows basics: Settings, Device Manager, Services, Event Viewer, network adapters. Must include note + screenshot proof.</label></div>
-    <div class="topic"><input type="checkbox" id="l0-os-3"><label for="l0-os-3">Linux basics: terminal, files, permissions, services, package installation. Must include note + screenshot proof.</label></div>
-    <div class="topic"><input type="checkbox" id="l0-os-4"><label for="l0-os-4">Files, folders, paths, extensions, logs and screenshots. Must include note + screenshot proof.</label></div>
+  <details class="domain" open><summary>Computer and OS basics <span class="weight">Foundation</span></summary><div class="topics">
+    <div class="topic"><input type="checkbox"><label>What is a computer, CPU, RAM, disk, NIC and operating system?<span class="why">Why: every network fault eventually touches a device.</span></label></div>
+    <div class="topic"><input type="checkbox"><label>Windows basics: Settings, Device Manager, Services, Event Viewer, network adapters.</label></div>
+    <div class="topic"><input type="checkbox"><label>Linux basics: terminal, files, permissions, services, package installation.</label></div>
+    <div class="topic"><input type="checkbox"><label>Files, folders, paths, extensions, logs and screenshots.</label></div>
   </div></details>
   <details class="domain" open><summary>Internet and network basics <span class="weight">Foundation</span></summary><div class="topics">
     <div class="topic"><input type="checkbox"><label>Client, server, browser, website, DNS, HTTP and HTTPS.</label></div>
@@ -63,57 +64,60 @@
     <div class="topic"><input type="checkbox"><label>Upload proof: topology screenshot, commands used, notes and one interview answer.</label></div>
   </div></details>
 </div></section>
+
 <section class="block"><div class="container">
-  <h2><span class="hash">#</span> Evidence Tracker — Computer and OS Basics</h2>
-  <p class="sub evidence-intro">For every task below, write what you did in your own words, attach a screenshot, and optionally attach a short video. The browser saves this locally. For permanent proof, export the note and commit the screenshot/video to GitHub.</p>
-  <div class="callout warn"><strong>Important:</strong> Because this is a static GitHub Pages site, attached files are saved only in this browser when small enough. Large videos should be kept on your computer and uploaded to the GitHub repo manually.</div>
+  <h2><span class="hash">#</span> Proof-of-Work Tasks</h2>
+  <p class="sub evidence-intro">Use these cards to prove that each foundation task was actually done. Notes and small attachment previews save locally in your browser. For permanent proof, export the note and commit the screenshot/video files into the GitHub repo.</p>
   <div class="evidence-grid">
-    <article class="evidence-card" data-task-id="level0-computer-hardware-os">
-      <h3>Task 1 — Computer, CPU, RAM, Disk, NIC and Operating System</h3>
-      <p class="task-goal">Open your system information and identify the CPU, RAM, disk/storage, network adapter/NIC and operating system. Explain how each one can affect a network issue.</p>
+    <article class="evidence-card" data-task-id="level0-computer-components">
+      <h3>Task 01 — Computer, CPU, RAM, disk, NIC and OS</h3>
+      <p class="task-goal">Explain what each part does and why a network issue can still be caused by the device itself.</p>
       <div class="evidence-fields">
-        <div class="evidence-field"><label>Work note</label><textarea data-field="note" placeholder="Example: I opened System Information and Device Manager. I identified CPU, RAM, disk, network adapter and OS version..."></textarea></div>
-        <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: Settings > System > About, Device Manager > Network adapters, msinfo32"></textarea></div>
-        <div class="evidence-field"><label>What I proved / learned</label><textarea data-field="reflection" placeholder="Example: I learned the NIC is the device that connects the computer to the network. If the NIC driver fails, the computer may lose network access."></textarea></div>
+        <div class="evidence-field"><label>My note</label><textarea data-field="note" placeholder="Write what you learned in your own words. Example: CPU processes instructions, RAM holds temporary working data, disk stores files, NIC connects the device to the network..."></textarea></div>
+        <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: Opened Task Manager → Performance tab, checked CPU/RAM/Disk. Opened Network adapters to see NIC."></textarea></div>
+        <div class="evidence-field"><label>What I proved</label><textarea data-field="reflection" placeholder="Example: I proved that the network adapter is a real device and that device health matters before blaming the network."></textarea></div>
         <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
         <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
       </div>
       <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
       <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
     </article>
+
     <article class="evidence-card" data-task-id="level0-windows-basics">
-      <h3>Task 2 — Windows Settings, Device Manager, Services, Event Viewer and Network Adapters</h3>
-      <p class="task-goal">Open the main Windows troubleshooting areas and capture proof that you can find adapter status, driver details, services and system logs.</p>
+      <h3>Task 02 — Windows basics</h3>
+      <p class="task-goal">Open Settings, Device Manager, Services, Event Viewer and Network adapters. Record what each tool is used for during troubleshooting.</p>
       <div class="evidence-fields">
-        <div class="evidence-field"><label>Work note</label><textarea data-field="note" placeholder="Example: I opened Device Manager, checked Network adapters, opened Services and found DHCP Client, then opened Event Viewer..."></textarea></div>
-        <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: devmgmt.msc, services.msc, eventvwr.msc, ncpa.cpl"></textarea></div>
-        <div class="evidence-field"><label>What I proved / learned</label><textarea data-field="reflection" placeholder="Example: I learned where to check if the network adapter is disabled, driver has an error, or DHCP Client service is stopped."></textarea></div>
+        <div class="evidence-field"><label>My note</label><textarea data-field="note" placeholder="Write what each Windows tool is used for. Keep it simple and practical."></textarea></div>
+        <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: Settings → Network & Internet. Win + X → Device Manager. services.msc. eventvwr.msc. ncpa.cpl."></textarea></div>
+        <div class="evidence-field"><label>What I proved</label><textarea data-field="reflection" placeholder="Example: I can find adapter status, driver issues, service status and event logs before escalating a ticket."></textarea></div>
         <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
         <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
       </div>
       <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
       <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
     </article>
+
     <article class="evidence-card" data-task-id="level0-linux-basics">
-      <h3>Task 3 — Linux Terminal, Files, Permissions, Services and Package Installation</h3>
-      <p class="task-goal">Use a Linux terminal to inspect folders, permissions, services and install/check a package. Capture commands and output.</p>
+      <h3>Task 03 — Linux basics</h3>
+      <p class="task-goal">Use terminal basics, check files, permissions and services. This prepares you for servers, routers, cloud labs and logs.</p>
       <div class="evidence-fields">
-        <div class="evidence-field"><label>Work note</label><textarea data-field="note" placeholder="Example: I opened terminal, listed files, checked permissions, checked service status and used apt to check/install a package..."></textarea></div>
-        <div class="evidence-field"><label>Commands used</label><textarea data-field="commands" placeholder="Example: pwd, ls -la, cd, systemctl status ssh, sudo apt update, apt list --installed"></textarea></div>
-        <div class="evidence-field"><label>What I proved / learned</label><textarea data-field="reflection" placeholder="Example: I learned permissions control who can read/write/execute files, and services can be checked using systemctl."></textarea></div>
+        <div class="evidence-field"><label>My note</label><textarea data-field="note" placeholder="Write what terminal, files, permissions, services and packages mean."></textarea></div>
+        <div class="evidence-field"><label>Commands used</label><textarea data-field="commands" placeholder="Example: pwd, ls, cd, cat, chmod, systemctl status, journalctl, apt search."></textarea></div>
+        <div class="evidence-field"><label>What I proved</label><textarea data-field="reflection" placeholder="Example: I can navigate Linux, inspect files and check whether a service is running."></textarea></div>
         <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
         <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
       </div>
       <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
       <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
     </article>
-    <article class="evidence-card" data-task-id="level0-files-folders-logs-screenshots">
-      <h3>Task 4 — Files, Folders, Paths, Extensions, Logs and Screenshots</h3>
-      <p class="task-goal">Create a small evidence folder, save a note, capture a screenshot, identify file extensions, and explain where logs/screenshots should be stored for a portfolio.</p>
+
+    <article class="evidence-card" data-task-id="level0-files-logs-screenshots">
+      <h3>Task 04 — Files, folders, paths, logs and screenshots</h3>
+      <p class="task-goal">Create a simple folder structure for evidence and prove you can save notes, screenshots and logs cleanly.</p>
       <div class="evidence-fields">
-        <div class="evidence-field"><label>Work note</label><textarea data-field="note" placeholder="Example: I created a folder named level0-evidence, saved notes, added screenshots, and checked file extensions..."></textarea></div>
-        <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: mkdir level0-evidence, dir, ls, screenshots folder, README.md"></textarea></div>
-        <div class="evidence-field"><label>What I proved / learned</label><textarea data-field="reflection" placeholder="Example: I learned why clean folder names and screenshots make troubleshooting evidence easy to review later."></textarea></div>
+        <div class="evidence-field"><label>My note</label><textarea data-field="note" placeholder="Write your folder structure and why clean evidence matters for learning and support tickets."></textarea></div>
+        <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: Created folders: notes, screenshots, videos, logs. Took screenshot. Saved a text note. Copied a log file."></textarea></div>
+        <div class="evidence-field"><label>What I proved</label><textarea data-field="reflection" placeholder="Example: I can collect evidence in a way another engineer can understand later."></textarea></div>
         <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
         <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
       </div>
@@ -122,6 +126,7 @@
     </article>
   </div>
 </div></section>
+
 <section class="block"><div class="container">
   <h2><span class="hash">#</span> Move Forward Gate</h2>
   <table class="info"><tr><th>Before CCST</th><th>I must be able to prove</th></tr>
