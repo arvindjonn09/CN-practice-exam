@@ -15,7 +15,9 @@
   --danger: #e85d75;
   --radius: 14px;
   --maxw: 1100px;
-  --font: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", sans-serif;
+  --font: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --glow: 0 0 24px rgba(27, 160, 215, 0.25);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,6 +29,25 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+}
+
+h1, h2, h3, .brand, .level-icon, .stat-card .num {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Subtle animated grid backdrop */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(27,160,215,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27,160,215,0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -85,7 +106,18 @@ a:hover { text-decoration: underline; }
     var(--bg);
 }
 .hero h1 { font-size: clamp(1.8rem, 4.5vw, 3rem); line-height: 1.2; margin-bottom: 16px; }
-.hero h1 em { color: var(--accent); font-style: normal; }
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg, #1ba0d7, #6cc04a, #1ba0d7);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
 .hero p.lead {
   max-width: 720px;
   margin: 0 auto 28px;
@@ -109,12 +141,19 @@ a:hover { text-decoration: underline; }
   padding: 12px 26px;
   border-radius: 10px;
   font-weight: 700;
-  background: var(--accent);
+  background: linear-gradient(135deg, #1ba0d7, #1577b8);
   color: #fff;
   border: none;
   cursor: pointer;
+  box-shadow: var(--glow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
-.btn:hover { filter: brightness(1.12); text-decoration: none; }
+.btn:hover {
+  filter: brightness(1.12);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 0 36px rgba(27, 160, 215, 0.45);
+}
 .btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
 
 /* ---------- Cert hero (per-page) ---------- */
@@ -148,11 +187,18 @@ a:hover { text-decoration: underline; }
   margin: 28px 0;
 }
 .stat-card {
-  background: var(--card);
+  background: linear-gradient(160deg, rgba(27,160,215,0.08), rgba(22,34,58,0.85));
+  backdrop-filter: blur(6px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px;
   text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--glow);
 }
 .stat-card .num { font-size: 1.4rem; font-weight: 800; color: var(--accent); }
 .stat-card .lbl { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
@@ -262,6 +308,12 @@ section.block > .container > p.sub { color: var(--text-dim); margin-bottom: 26px
   border-left: 4px solid var(--accent);
   border-radius: var(--radius);
   padding: 18px 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.lab-card:hover {
+  transform: translateY(-3px) scale(1.005);
+  box-shadow: var(--glow);
+  border-color: var(--accent);
 }
 .lab-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
 .lab-card h3 .lab-num { color: var(--accent); }
@@ -299,6 +351,12 @@ section.block > .container > p.sub { color: var(--text-dim); margin-bottom: 26px
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glow);
+  border-color: var(--accent);
 }
 .tool-card h3 { font-size: 1rem; margin-bottom: 6px; color: var(--accent); }
 .tool-card p { font-size: 0.88rem; color: var(--text-dim); }
@@ -326,7 +384,9 @@ section.block > .container > p.sub { color: var(--text-dim); margin-bottom: 26px
   padding: 22px;
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
-.roadmap-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.roadmap-card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: var(--glow); }
+.roadmap-card:hover .level-icon { box-shadow: 0 0 20px rgba(27,160,215,0.5); transform: scale(1.06); }
+.roadmap-card .level-icon { transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .roadmap-card .level-icon {
   width: 72px;
   height: 72px;
@@ -423,6 +483,24 @@ table.info tr:last-child td { border-bottom: none; }
   text-align: center;
   color: var(--text-dim);
   font-size: 0.85rem;
+}
+
+/* ---------- Motion / reveal animations ---------- */
+.sell-card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.sell-card:hover { transform: translateY(-4px); border-color: var(--accent-2); box-shadow: 0 0 24px rgba(108,192,74,0.2); }
+
+.progress-bar .fill {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent));
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ---------- Responsive ---------- */
