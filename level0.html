@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/evidence.css">
 </head>
 <body data-page="level0">
 <header class="site-header">
@@ -38,11 +39,11 @@
 </div></section>
 <section class="block"><div class="container">
   <h2><span class="hash">#</span> Full Checklist</h2>
-  <details class="domain" open><summary>Computer and OS basics <span class="weight">Foundation</span></summary><div class="topics">
-    <div class="topic"><input type="checkbox"><label>What is a computer, CPU, RAM, disk, NIC and operating system?<span class="why">Why: every network fault eventually touches a device.</span></label></div>
-    <div class="topic"><input type="checkbox"><label>Windows basics: Settings, Device Manager, Services, Event Viewer, network adapters.</label></div>
-    <div class="topic"><input type="checkbox"><label>Linux basics: terminal, files, permissions, services, package installation.</label></div>
-    <div class="topic"><input type="checkbox"><label>Files, folders, paths, extensions, logs and screenshots.</label></div>
+  <details class="domain" open><summary>Computer and OS basics <span class="weight">Foundation + Evidence Required</span></summary><div class="topics">
+    <div class="topic"><input type="checkbox" id="l0-os-1"><label for="l0-os-1">What is a computer, CPU, RAM, disk, NIC and operating system?<span class="why">Why: every network fault eventually touches a device. Must include note + screenshot proof.</span></label></div>
+    <div class="topic"><input type="checkbox" id="l0-os-2"><label for="l0-os-2">Windows basics: Settings, Device Manager, Services, Event Viewer, network adapters. Must include note + screenshot proof.</label></div>
+    <div class="topic"><input type="checkbox" id="l0-os-3"><label for="l0-os-3">Linux basics: terminal, files, permissions, services, package installation. Must include note + screenshot proof.</label></div>
+    <div class="topic"><input type="checkbox" id="l0-os-4"><label for="l0-os-4">Files, folders, paths, extensions, logs and screenshots. Must include note + screenshot proof.</label></div>
   </div></details>
   <details class="domain" open><summary>Internet and network basics <span class="weight">Foundation</span></summary><div class="topics">
     <div class="topic"><input type="checkbox"><label>Client, server, browser, website, DNS, HTTP and HTTPS.</label></div>
@@ -63,6 +64,65 @@
   </div></details>
 </div></section>
 <section class="block"><div class="container">
+  <h2><span class="hash">#</span> Evidence Tracker — Computer and OS Basics</h2>
+  <p class="sub evidence-intro">For every task below, write what you did in your own words, attach a screenshot, and optionally attach a short video. The browser saves this locally. For permanent proof, export the note and commit the screenshot/video to GitHub.</p>
+  <div class="callout warn"><strong>Important:</strong> Because this is a static GitHub Pages site, attached files are saved only in this browser when small enough. Large videos should be kept on your computer and uploaded to the GitHub repo manually.</div>
+  <div class="evidence-grid">
+    <article class="evidence-card" data-task-id="level0-computer-hardware-os">
+      <h3>Task 1 — Computer, CPU, RAM, Disk, NIC and Operating System</h3>
+      <p class="task-goal">Open your system information and identify the CPU, RAM, disk/storage, network adapter/NIC and operating system. Explain how each one can affect a network issue.</p>
+      <div class="evidence-fields">
+        <div class="evidence-field"><label>Work note</label><textarea data-field="note" placeholder="Example: I opened System Information and Device Manager. I identified CPU, RAM, disk, network adapter and OS version..."></textarea></div>
+        <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: Settings > System > About, Device Manager > Network adapters, msinfo32"></textarea></div>
+        <div class="evidence-field"><label>What I proved / learned</label><textarea data-field="reflection" placeholder="Example: I learned the NIC is the device that connects the computer to the network. If the NIC driver fails, the computer may lose network access."></textarea></div>
+        <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
+        <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
+      </div>
+      <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
+      <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
+    </article>
+    <article class="evidence-card" data-task-id="level0-windows-basics">
+      <h3>Task 2 — Windows Settings, Device Manager, Services, Event Viewer and Network Adapters</h3>
+      <p class="task-goal">Open the main Windows troubleshooting areas and capture proof that you can find adapter status, driver details, services and system logs.</p>
+      <div class="evidence-fields">
+        <div class="evidence-field"><label>Work note</label><textarea data-field="note" placeholder="Example: I opened Device Manager, checked Network adapters, opened Services and found DHCP Client, then opened Event Viewer..."></textarea></div>
+        <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: devmgmt.msc, services.msc, eventvwr.msc, ncpa.cpl"></textarea></div>
+        <div class="evidence-field"><label>What I proved / learned</label><textarea data-field="reflection" placeholder="Example: I learned where to check if the network adapter is disabled, driver has an error, or DHCP Client service is stopped."></textarea></div>
+        <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
+        <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
+      </div>
+      <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
+      <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
+    </article>
+    <article class="evidence-card" data-task-id="level0-linux-basics">
+      <h3>Task 3 — Linux Terminal, Files, Permissions, Services and Package Installation</h3>
+      <p class="task-goal">Use a Linux terminal to inspect folders, permissions, services and install/check a package. Capture commands and output.</p>
+      <div class="evidence-fields">
+        <div class="evidence-field"><label>Work note</label><textarea data-field="note" placeholder="Example: I opened terminal, listed files, checked permissions, checked service status and used apt to check/install a package..."></textarea></div>
+        <div class="evidence-field"><label>Commands used</label><textarea data-field="commands" placeholder="Example: pwd, ls -la, cd, systemctl status ssh, sudo apt update, apt list --installed"></textarea></div>
+        <div class="evidence-field"><label>What I proved / learned</label><textarea data-field="reflection" placeholder="Example: I learned permissions control who can read/write/execute files, and services can be checked using systemctl."></textarea></div>
+        <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
+        <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
+      </div>
+      <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
+      <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
+    </article>
+    <article class="evidence-card" data-task-id="level0-files-folders-logs-screenshots">
+      <h3>Task 4 — Files, Folders, Paths, Extensions, Logs and Screenshots</h3>
+      <p class="task-goal">Create a small evidence folder, save a note, capture a screenshot, identify file extensions, and explain where logs/screenshots should be stored for a portfolio.</p>
+      <div class="evidence-fields">
+        <div class="evidence-field"><label>Work note</label><textarea data-field="note" placeholder="Example: I created a folder named level0-evidence, saved notes, added screenshots, and checked file extensions..."></textarea></div>
+        <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: mkdir level0-evidence, dir, ls, screenshots folder, README.md"></textarea></div>
+        <div class="evidence-field"><label>What I proved / learned</label><textarea data-field="reflection" placeholder="Example: I learned why clean folder names and screenshots make troubleshooting evidence easy to review later."></textarea></div>
+        <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
+        <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
+      </div>
+      <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
+      <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
+    </article>
+  </div>
+</div></section>
+<section class="block"><div class="container">
   <h2><span class="hash">#</span> Move Forward Gate</h2>
   <table class="info"><tr><th>Before CCST</th><th>I must be able to prove</th></tr>
     <tr><td>Explain</td><td>IP, DNS, DHCP, gateway, router, switch, firewall, port, protocol.</td></tr>
@@ -72,5 +132,5 @@
   </table>
 </div></section>
 <footer class="site-footer"><div class="container"><p>Level 0 before CCST. Foundation first, speed later.</p></div></footer>
-<script src="js/main.js"></script><script type="module" src="js/animations.js"></script>
+<script src="js/main.js"></script><script src="js/evidence-tracker.js"></script><script type="module" src="js/animations.js"></script>
 </body></html>
