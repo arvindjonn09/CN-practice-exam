@@ -218,7 +218,6 @@ section.block > .container > p.sub { color: var(--text-dim); margin-bottom: 26px
   border: 1px solid var(--border);
   border-radius: var(--radius);
   margin-bottom: 16px;
-  overflow: hidden;
 }
 .domain summary {
   cursor: pointer;
@@ -360,16 +359,7 @@ section.block > .container > p.sub { color: var(--text-dim); margin-bottom: 26px
 }
 .tool-card h3 { font-size: 1rem; margin-bottom: 6px; color: var(--accent); }
 .tool-card p { font-size: 0.88rem; color: var(--text-dim); }
-.tool-card .cost {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.tool-card .cost.free { color: var(--accent-2); }
-.tool-card .cost.paid { color: var(--warn); }
+.tool-card .cost { display: none; }
 
 /* ---------- Roadmap (index) ---------- */
 .roadmap { display: grid; gap: 18px; }
@@ -518,8 +508,6 @@ table.info tr:last-child td { border-bottom: none; }
   background: var(--card);
   border: 1px solid var(--border);
   font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--accent);
 }
 .loop-step.alt { color: var(--accent-2); }
 .loop-arrow { color: var(--text-dim); font-weight: 700; }
