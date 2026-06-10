@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 0 Basics - CN Journey</title>
+  <meta name="description" content="Absolute IT and networking foundations before CCST: computers, OS basics, internet, IP, ports, protocols, Windows and Linux commands.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="level0">
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="level0.html" class="active">Level 0</a></li>
+      <li><a href="syllabus.html">Syllabus</a></li>
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="tickets.html">Tickets</a></li>
+      <li><a href="interview.html">Interview</a></li>
+    </ul>
+  </nav>
+</header>
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">Start Here</span>
+    <h1>Level 0: <span class="exam-code">Absolute IT and Networking Basics</span></h1>
+    <p>This page exists so the roadmap truly starts from zero. No Cisco command is useful until the basic language of computers, networks, IP addresses, ports, and troubleshooting is clear.</p>
+  </div>
+</section>
+<section class="block"><div class="container">
+  <h2><span class="hash">#</span> Goal</h2>
+  <div class="callout tip"><strong>Level 0 pass condition:</strong> I can explain a small network, assign IP addresses, test connectivity, use basic Windows and Linux commands, and document one broken-network ticket without guessing.</div>
+</div></section>
+<section class="block"><div class="container">
+  <h2><span class="hash">#</span> Full Checklist</h2>
+  <details class="domain" open><summary>Computer and OS basics <span class="weight">Foundation</span></summary><div class="topics">
+    <div class="topic"><input type="checkbox"><label>What is a computer, CPU, RAM, disk, NIC and operating system?<span class="why">Why: every network fault eventually touches a device.</span></label></div>
+    <div class="topic"><input type="checkbox"><label>Windows basics: Settings, Device Manager, Services, Event Viewer, network adapters.</label></div>
+    <div class="topic"><input type="checkbox"><label>Linux basics: terminal, files, permissions, services, package installation.</label></div>
+    <div class="topic"><input type="checkbox"><label>Files, folders, paths, extensions, logs and screenshots.</label></div>
+  </div></details>
+  <details class="domain" open><summary>Internet and network basics <span class="weight">Foundation</span></summary><div class="topics">
+    <div class="topic"><input type="checkbox"><label>Client, server, browser, website, DNS, HTTP and HTTPS.</label></div>
+    <div class="topic"><input type="checkbox"><label>What a switch, router, modem, firewall, wireless AP and cable do.</label></div>
+    <div class="topic"><input type="checkbox"><label>IP address, subnet mask, default gateway, DNS server and DHCP.</label></div>
+    <div class="topic"><input type="checkbox"><label>Ports and protocols: TCP, UDP, ICMP, DNS, DHCP, SSH, HTTP, HTTPS, RDP.</label></div>
+  </div></details>
+  <details class="domain" open><summary>Survival commands <span class="weight">Hands-on</span></summary><div class="topics">
+    <div class="topic"><input type="checkbox"><label>Windows: <code>ipconfig</code>, <code>ping</code>, <code>tracert</code>, <code>nslookup</code>, <code>arp -a</code>, <code>netstat</code>.</label></div>
+    <div class="topic"><input type="checkbox"><label>Linux: <code>ip a</code>, <code>ip route</code>, <code>ping</code>, <code>traceroute</code>, <code>dig</code>, <code>ss</code>, <code>systemctl</code>, <code>journalctl</code>.</label></div>
+    <div class="topic"><input type="checkbox"><label>Know when to use each command and what normal output looks like.</label></div>
+  </div></details>
+  <details class="domain" open><summary>Mini labs <span class="weight">Proof</span></summary><div class="topics">
+    <div class="topic"><input type="checkbox"><label>Lab 01: two PCs, one cable, manual IP addresses, first successful ping.</label></div>
+    <div class="topic"><input type="checkbox"><label>Lab 02: three PCs through a switch, same subnet, verify MAC learning.</label></div>
+    <div class="topic"><input type="checkbox"><label>Lab 03: wrong IP mask, wrong gateway and DNS fault ticket.</label></div>
+    <div class="topic"><input type="checkbox"><label>Upload proof: topology screenshot, commands used, notes and one interview answer.</label></div>
+  </div></details>
+</div></section>
+<section class="block"><div class="container">
+  <h2><span class="hash">#</span> Move Forward Gate</h2>
+  <table class="info"><tr><th>Before CCST</th><th>I must be able to prove</th></tr>
+    <tr><td>Explain</td><td>IP, DNS, DHCP, gateway, router, switch, firewall, port, protocol.</td></tr>
+    <tr><td>Use commands</td><td>Run ping, ipconfig, nslookup and traceroute, then explain the result.</td></tr>
+    <tr><td>Fix</td><td>One broken IP or DNS ticket with root cause and verification.</td></tr>
+    <tr><td>Document</td><td>Write a simple ticket note: symptom, checks, fix, proof.</td></tr>
+  </table>
+</div></section>
+<footer class="site-footer"><div class="container"><p>Level 0 before CCST. Foundation first, speed later.</p></div></footer>
+<script src="js/main.js"></script><script type="module" src="js/animations.js"></script>
+</body></html>
