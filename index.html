@@ -18,10 +18,14 @@
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="level0.html">Level 0</a></li>
+      <li><a href="syllabus.html">Syllabus</a></li>
       <li><a href="labs.html">Labs</a></li>
+      <li><a href="tickets.html">Tickets</a></li>
       <li><a href="mistakes.html">Mistakes</a></li>
       <li><a href="progress.html">Progress</a></li>
       <li><a href="commands.html">Commands</a></li>
+      <li><a href="interview.html">Interview</a></li>
     </ul>
   </nav>
 </header>
@@ -36,8 +40,8 @@
       documented. Every skill gets proof: configs, screenshots, topology files,
       and honest weekly progress.
     </p>
-    <a class="btn" href="labs.html">See my labs →</a>
-    <a class="btn ghost" href="roadmap.html">The roadmap</a>
+    <a class="btn" href="level0.html">Start at Level 0 →</a>
+    <a class="btn ghost" href="syllabus.html">Complete syllabus map</a>
   </div>
 </section>
 
@@ -123,12 +127,24 @@
     <h2><span class="hash">#</span> Where Everything Lives</h2>
     <div class="sell-grid">
       <div class="sell-card">
+        <h3><a href="level0.html">Level 0 Basics</a></h3>
+        <ul><li>The true starting point: computer basics, OS basics, IP, DNS, DHCP, ports, protocols, and survival commands.</li></ul>
+      </div>
+      <div class="sell-card">
+        <h3><a href="syllabus.html">Complete Syllabus Map</a></h3>
+        <ul><li>The master gap map: Cisco syllabus plus subnetting, OSI troubleshooting, hardware, cloud, firewall, wireless and data center basics.</li></ul>
+      </div>
+      <div class="sell-card">
         <h3><a href="roadmap.html">Roadmap</a></h3>
         <ul><li>The six levels: Zero Basics → CCST → CCNA → CCNP → CCIE → Architect Portfolio. Full syllabus checklists per level.</li></ul>
       </div>
       <div class="sell-card">
         <h3><a href="labs.html">Labs</a></h3>
         <ul><li>My lab portfolio, starting with the first 12 foundation labs. Each lab: topology, commands, break-it task, troubleshooting, proof files, status.</li></ul>
+      </div>
+      <div class="sell-card">
+        <h3><a href="tickets.html">Ticket Simulations</a></h3>
+        <ul><li>Real support-style problems: APIPA, DNS failure, wrong gateway, VLAN mistakes, VPN issues, Wi-Fi connected but no internet.</li></ul>
       </div>
       <div class="sell-card">
         <h3><a href="mistakes.html">Mistakes I Fixed</a></h3>
@@ -141,6 +157,10 @@
       <div class="sell-card">
         <h3><a href="commands.html">Commands</a></h3>
         <ul><li>Every command I've learned, organized by topic, with what it does and when I reach for it.</li></ul>
+      </div>
+      <div class="sell-card">
+        <h3><a href="interview.html">Interview Answers</a></h3>
+        <ul><li>Skill → lab proof → commands → mistake learned → professional answer. No empty theory.</li></ul>
       </div>
       <div class="sell-card">
         <h3><a href="https://github.com/arvindjonn09/CN-practice-exam" target="_blank" rel="noopener">GitHub Proof</a></h3>
@@ -166,7 +186,6 @@
 <script src="js/dashboard-data.js"></script>
 <script src="js/main.js"></script>
 <script>
-  // Render the dashboard from js/dashboard-data.js
   (function () {
     if (typeof DASHBOARD === "undefined") return;
     function set(id, text) {
@@ -181,7 +200,6 @@
     var gh = document.getElementById("dash-github");
     if (gh) gh.href = DASHBOARD.githubUrl;
 
-    // Count labs marked done on the Labs page (saved in localStorage)
     var done = 0;
     for (var i = 0; i < localStorage.length; i++) {
       var k = localStorage.key(i);
