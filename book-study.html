@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCNA Volume 2 Book Study Map - CN Journey</title>
+  <meta name="description" content="Topic-wise CCNA Volume 2 study map with labs, packet files, diagrams, proof targets, and review workflow.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="book-study">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="syllabus.html">Syllabus</a></li>
+      <li><a href="ccna.html">CCNA</a></li>
+      <li><a href="book-study.html" class="active">Book Study</a></li>
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="tickets.html">Tickets</a></li>
+      <li><a href="interview.html">Interview</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">Uploaded Book Map</span>
+    <h1>CCNA 200-301 Volume 2 <span class="exam-code">Topic-Wise Study Plan</span></h1>
+    <p>This page turns the uploaded Cisco Press Volume 2 PDF/EPUB into a study workflow for this site: read the topic, build a lab, break it, capture proof, write the mistake, and prepare an interview answer.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> How To Use The Book</h2>
+    <div class="sell-grid">
+      <div class="sell-card"><h3>1. Read Small</h3><ul><li>Study one chapter section at a time, not a whole part in one sitting.</li><li>Write a simple answer: what problem does this solve in a real network?</li></ul></div>
+      <div class="sell-card"><h3>2. Build Proof</h3><ul><li>Create a Packet Tracer or GNS3 topology for every configurable topic.</li><li>Save <code>.pkt</code>, configs, screenshots, command output, and notes.</li></ul></div>
+      <div class="sell-card"><h3>3. Break And Repair</h3><ul><li>Add one realistic fault per topic: wrong ACL direction, bad NAT statement, DHCP snooping trust mistake, or OSPF mismatch.</li><li>Document symptom, checks, root cause, fix, and verification.</li></ul></div>
+      <div class="sell-card"><h3>4. Review Like An Engineer</h3><ul><li>Add commands to <a href="commands.html">Commands</a>.</li><li>Add failures to <a href="mistakes.html">Mistakes</a>.</li><li>Add a job-style explanation to <a href="interview.html">Interview</a>.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Book Topics Grouped For Study</h2>
+    <p class="sub">This is organized by learning dependency and lab value, not only by chapter order.</p>
+
+    <details class="domain" open>
+      <summary>Module 1. Transport, Applications, And ACL Thinking <span class="weight">Ch. 1-3</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="book-1-1"><label for="book-1-1">TCP and UDP behavior: ports, reliability, connection setup, flow control, and application selection.</label></div>
+        <div class="topic"><input type="checkbox" id="book-1-2"><label for="book-1-2">DNS, HTTP, URI basics, and how a receiving host selects the right application.</label></div>
+        <div class="topic"><input type="checkbox" id="book-1-3"><label for="book-1-3">Standard IPv4 ACLs: location, direction, matching, permit/deny logic, implicit deny.</label></div>
+        <div class="topic"><input type="checkbox" id="book-1-4"><label for="book-1-4">Wildcard masks: exact host, subnet range, any/all, and reverse-engineering ACL ranges.</label></div>
+        <div class="topic"><input type="checkbox" id="book-1-5"><label for="book-1-5">Extended and named ACLs: protocol, source, destination, TCP/UDP ports, sequence editing.</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>Module 2. Security Architecture And Device Hardening <span class="weight">Ch. 4-6</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="book-2-1"><label for="book-2-1">Threat language: spoofing, DoS, reflection/amplification, man-in-the-middle, reconnaissance, malware, passwords.</label></div>
+        <div class="topic"><input type="checkbox" id="book-2-2"><label for="book-2-2">Security controls: user access, user education, firewalls, IPS, NGFW, and security zones.</label></div>
+        <div class="topic"><input type="checkbox" id="book-2-3"><label for="book-2-3">IOS passwords: console/VTY, enable secret, local users, password hashing/encryption, access control for management.</label></div>
+        <div class="topic"><input type="checkbox" id="book-2-4"><label for="book-2-4">Switch port security: sticky/static MACs, maximum addresses, violation modes, verify and recover.</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>Module 3. DHCP, Snooping, And ARP Defense <span class="weight">Ch. 7-8</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="book-3-1"><label for="book-3-1">DHCP client/server flow, pools, exclusions, default gateway, DNS, and relay with <code>ip helper-address</code>.</label></div>
+        <div class="topic"><input type="checkbox" id="book-3-2"><label for="book-3-2">Host IPv4 settings on Windows, macOS, and Linux: IP, mask, gateway, DNS, and lease checks.</label></div>
+        <div class="topic"><input type="checkbox" id="book-3-3"><label for="book-3-3">DHCP snooping trust boundaries, binding table, rogue DHCP defense, and message rate limits.</label></div>
+        <div class="topic"><input type="checkbox" id="book-3-4"><label for="book-3-4">Dynamic ARP Inspection: normal ARP review, gratuitous ARP attacks, validation checks, trusted uplinks.</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>Module 4. Management And IP Services <span class="weight">Ch. 9-12</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="book-4-1"><label for="book-4-1">Syslog: severity levels, real-time messages, stored logs, debug output, and timestamps.</label></div>
+        <div class="topic"><input type="checkbox" id="book-4-2"><label for="book-4-2">NTP: clock, timezone, stratum, redundant time sources, and loopback-source design.</label></div>
+        <div class="topic"><input type="checkbox" id="book-4-3"><label for="book-4-3">CDP and LLDP: neighbor discovery, topology mapping, and verification commands.</label></div>
+        <div class="topic"><input type="checkbox" id="book-4-4"><label for="book-4-4">NAT: static NAT, dynamic NAT, PAT overload, inside/outside interfaces, verification, and troubleshooting.</label></div>
+        <div class="topic"><input type="checkbox" id="book-4-5"><label for="book-4-5">QoS: bandwidth, delay, jitter, loss, traffic types, classification, marking, queuing, shaping, policing, congestion avoidance.</label></div>
+        <div class="topic"><input type="checkbox" id="book-4-6"><label for="book-4-6">FHRP and HSRP: virtual gateway, active/standby behavior, failover, priority, preemption, and verification.</label></div>
+        <div class="topic"><input type="checkbox" id="book-4-7"><label for="book-4-7">SNMP, FTP, and TFTP: monitoring, device management, and IOS/config file movement.</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>Module 5. Architecture: LAN, WAN, And Cloud <span class="weight">Ch. 13-15</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="book-5-1"><label for="book-5-1">Campus LAN design: two-tier, three-tier, access/distribution/core roles, and collapsed core.</label></div>
+        <div class="topic"><input type="checkbox" id="book-5-2"><label for="book-5-2">SOHO and PoE: small network layout, power budgets, powered devices, and design impact.</label></div>
+        <div class="topic"><input type="checkbox" id="book-5-3"><label for="book-5-3">WAN options: Metro Ethernet, MPLS, internet access, site-to-site VPN, remote-access VPN.</label></div>
+        <div class="topic"><input type="checkbox" id="book-5-4"><label for="book-5-4">Virtualization: server virtualization, virtual switches, physical data center network, and traffic workflow.</label></div>
+        <div class="topic"><input type="checkbox" id="book-5-5"><label for="book-5-5">Cloud: private/public cloud, IaaS/PaaS/SaaS, branch-to-cloud paths, internet VPN, private WAN, intercloud exchange.</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>Module 6. Automation And Programmability <span class="weight">Ch. 16-19</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="book-6-1"><label for="book-6-1">Planes: data, control, and management planes; traditional vs controller-based networks.</label></div>
+        <div class="topic"><input type="checkbox" id="book-6-2"><label for="book-6-2">SDN examples: OpenDaylight, ACI, APIC-EM, controller role, northbound and southbound interfaces.</label></div>
+        <div class="topic"><input type="checkbox" id="book-6-3"><label for="book-6-3">Cisco SDA: underlay, overlay, VXLAN, LISP, DNA Center, scalable groups, and intent-based operations.</label></div>
+        <div class="topic"><input type="checkbox" id="book-6-4"><label for="book-6-4">REST APIs: client/server, stateless calls, CRUD, HTTP verbs, URIs, status codes, and authentication awareness.</label></div>
+        <div class="topic"><input type="checkbox" id="book-6-5"><label for="book-6-5">JSON/YAML/XML: key-value pairs, objects, arrays, minified vs beautified JSON, and interpreting API output.</label></div>
+        <div class="topic"><input type="checkbox" id="book-6-6"><label for="book-6-6">Configuration management: drift, version control, templates, variables, Ansible, Puppet, and Chef.</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>Module 7. Final Review And Exam Readiness <span class="weight">Ch. 20</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="book-7-1"><label for="book-7-1">Practice exam workflow: timed attempts, wrong-answer review, and weak-domain repair.</label></div>
+        <div class="topic"><input type="checkbox" id="book-7-2"><label for="book-7-2">CLI skill review: commands that must be recalled under time pressure.</label></div>
+        <div class="topic"><input type="checkbox" id="book-7-3"><label for="book-7-3">Self-assessment: separate memorized answers from lab-proven understanding.</label></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Lab And Packet File Plan</h2>
+    <p class="sub">Create these under <code>labs/ccna/</code>. Each folder should hold the Packet Tracer or GNS3 file, topology image, configs, command output, and notes.</p>
+    <table class="info">
+      <tr><th>Folder</th><th>Lab</th><th>Packet / Diagram Needed</th><th>Proof Output</th></tr>
+      <tr><td><code>acl-standard/</code></td><td>Standard ACL placement and wildcard masks</td><td><code>acl-standard.pkt</code>, client-server topology</td><td><code>show access-lists</code>, ping permit/deny tests</td></tr>
+      <tr><td><code>acl-extended/</code></td><td>Extended ACL for web/DNS/ICMP control</td><td><code>acl-extended.pkt</code>, traffic path diagram</td><td>packet tests by protocol and port</td></tr>
+      <tr><td><code>port-security/</code></td><td>Sticky MACs and violation modes</td><td><code>port-security.pkt</code>, access switch diagram</td><td><code>show port-security</code>, violation recovery notes</td></tr>
+      <tr><td><code>dhcp-snooping-dai/</code></td><td>Rogue DHCP and ARP spoof defense</td><td><code>dhcp-snooping-dai.pkt</code>, trusted/untrusted port map</td><td>binding table, blocked rogue server proof</td></tr>
+      <tr><td><code>nat-pat/</code></td><td>Inside network to ISP using PAT</td><td><code>nat-pat.pkt</code>, inside/outside labels</td><td><code>show ip nat translations</code>, traceroute</td></tr>
+      <tr><td><code>hsrp/</code></td><td>Two gateways with failover</td><td><code>hsrp.gns3</code> or <code>hsrp.pkt</code>, active/standby diagram</td><td>continuous ping during failover</td></tr>
+      <tr><td><code>qos-basic/</code></td><td>Classify, mark, queue, shape, police</td><td>original QoS flow diagram</td><td>policy-map notes and verification commands</td></tr>
+      <tr><td><code>architecture/</code></td><td>Campus, WAN, cloud comparison</td><td>original LAN/WAN/cloud diagrams</td><td>design notes and interview explanation</td></tr>
+      <tr><td><code>rest-json/</code></td><td>Read API output and JSON objects</td><td>API request/response diagram</td><td>formatted JSON examples and explanation</td></tr>
+      <tr><td><code>ansible-config/</code></td><td>Config backup and drift check concept</td><td>controller-to-devices diagram</td><td>inventory, playbook notes, before/after configs</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Image Rules</h2>
+    <div class="callout warn">
+      <strong>Use original diagrams for the site.</strong> The uploaded book contains useful figures, but the public repo should not copy Cisco Press images. Redraw your own simple diagrams: topology, traffic path, packet fields, trust boundary, inside/outside NAT, HSRP failover, campus tiers, WAN/cloud paths, and controller/API flow.
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Weekly Study Rhythm</h2>
+    <div class="loop-strip">
+      <span class="loop-step">Read</span><span class="loop-arrow">-></span>
+      <span class="loop-step">Diagram</span><span class="loop-arrow">-></span>
+      <span class="loop-step alt">Build</span><span class="loop-arrow">-></span>
+      <span class="loop-step alt">Break</span><span class="loop-arrow">-></span>
+      <span class="loop-step">Prove</span><span class="loop-arrow">-></span>
+      <span class="loop-step">Review</span>
+    </div>
+    <div class="callout tip">
+      <strong>Target:</strong> one module every 1-2 weeks. Do not mark a topic complete until it has a note, a lab or diagram, a proof artifact, and a one-paragraph interview answer.
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="pager">
+    <a href="ccna.html"><small>Back to level</small>CCNA syllabus</a>
+    <a class="next" href="labs.html"><small>Next proof step</small>Build the labs</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container"><p>Book-derived study map for personal learning. Cisco Press content stays in the uploaded book; this page contains original planning, lab, and proof structure.</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+<script type="module" src="js/animations.js"></script>
+</body>
+</html>
