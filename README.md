@@ -1,4 +1,4 @@
-# Cisco Certification Roadmap — My Learning Journey & Portfolio
+# Cisco Certification Roadmap — My Learning Journey
 
 A static website tracking my complete Cisco certification path, from absolute beginner to architect:
 
@@ -10,7 +10,7 @@ A static website tracking my complete Cisco certification path, from absolute be
 
 | Page | Level | Certification |
 |------|-------|---------------|
-| [index.html](index.html) | — | Roadmap, salary data, toolbox & "how I sell these skills" strategy |
+| [index.html](index.html) | — | Roadmap, motivation data, toolbox & my learning system |
 | [ccst.html](ccst.html) | 1 · Beginner | CCST Networking (100-150) — full syllabus, 6 labs |
 | [ccna.html](ccna.html) | 2 · Associate | CCNA (200-301) — all 6 official domains, 8 labs |
 | [ccnp.html](ccnp.html) | 3 · Professional | CCNP Enterprise (ENCOR 350-401 + concentration tracks), 8 labs |
@@ -21,11 +21,11 @@ Each certification page includes:
 - ✅ **Full syllabus as an interactive checklist** — progress saves in your browser (localStorage)
 - 🧪 **Hands-on labs** mapped to **real-world scenarios** (the kind of tickets/projects you'd handle on the job)
 - 🛠 **Tools & simulators** (Packet Tracer, GNS3, EVE-NG, CML, DevNet sandboxes, Python/Ansible) with cost notes
-- 💼 **"Selling this certificate"** — job titles, ready-to-adapt resume bullets, interview story bank
+- 🌱 **"Growth check"** — skills gained, self-assessment questions, and the next growth step
 
-## How this repo doubles as my portfolio
+## How this repo works as my learning journal
 
-As I complete labs, I commit the artifacts here:
+As I complete labs, I commit the artifacts here — writing them up is part of the learning (Feynman technique), and the commit history shows my consistency:
 
 ```
 labs/
@@ -36,7 +36,7 @@ labs/
   ccar/   ← architecture documents, ADRs, case-study responses
 ```
 
-Recruiters: every claim on the site is backed by an artifact in this repo.
+Every checked-off topic on the site should be backed by an artifact in this repo — that's how I keep myself honest about what I've actually learned.
 
 ## Deploy on GitHub Pages (free)
 

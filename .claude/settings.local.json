@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git rm *)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Ignore macOS .DS_Store files *)",
+      "Bash(git push *)",
+      "Bash(git commit -q -m 'Reframe site from career marketing to personal learning & growth *)"
+    ]
+  }
+}
