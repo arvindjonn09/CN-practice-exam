@@ -1,0 +1,109 @@
+/* Evidence tracker for proof-of-work tasks */
+.evidence-intro {
+  margin-bottom: 22px;
+}
+.evidence-grid {
+  display: grid;
+  gap: 18px;
+}
+.evidence-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-2);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+.evidence-card h3 {
+  color: var(--accent-2);
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+}
+.evidence-card .task-goal {
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  font-size: 0.92rem;
+}
+.evidence-fields {
+  display: grid;
+  gap: 12px;
+}
+.evidence-field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+.evidence-field textarea,
+.evidence-field input[type="text"] {
+  width: 100%;
+  min-height: 90px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: var(--font);
+  line-height: 1.5;
+}
+.evidence-field input[type="text"] {
+  min-height: auto;
+}
+.evidence-field input[type="file"] {
+  width: 100%;
+  background: var(--bg-soft);
+  border: 1px dashed var(--border);
+  color: var(--text-dim);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.evidence-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+.evidence-actions button {
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+  border-radius: 9px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.evidence-actions button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.evidence-status {
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-size: 0.84rem;
+}
+.evidence-status.ready {
+  color: var(--accent-2);
+}
+.evidence-preview {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.evidence-preview img,
+.evidence-preview video {
+  max-width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-soft);
+}
+.evidence-file-name {
+  color: var(--text-dim);
+  font-size: 0.84rem;
+}
+.evidence-warning {
+  font-size: 0.86rem;
+  color: var(--warn);
+  margin-top: 8px;
+}
