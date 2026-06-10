@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cisco Certification Roadmap — From Zero to Network Architect</title>
-  <meta name="description" content="A complete 5-level Cisco certification learning roadmap: CCST → CCNA → CCNP → CCIE → CCAr, with syllabus, labs, tools and real-world scenarios.">
+  <title>My Networking Journey — Zero to Job-Ready Engineer</title>
+  <meta name="description" content="My networking journey from zero to job-ready engineer — lessons, labs, mistakes, configs, screenshots, and weekly progress. Learn → Lab → Break → Prove.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -14,164 +14,104 @@
 
 <header class="site-header">
   <nav class="nav">
-    <a class="brand" href="index.html">CISCO<span>PATH</span></a>
+    <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Roadmap</a></li>
-      <li><a href="ccst.html">CCST</a></li>
-      <li><a href="ccna.html">CCNA</a></li>
-      <li><a href="ccnp.html">CCNP</a></li>
-      <li><a href="ccie.html">CCIE</a></li>
-      <li><a href="cca.html">CCAr</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="mistakes.html">Mistakes</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="commands.html">Commands</a></li>
     </ul>
   </nav>
 </header>
 
 <section class="hero">
   <div class="container">
-    <span class="badge">5 Levels &middot; 1 Career</span>
-    <h1>From <em>Absolute Beginner</em> to<br>Network <em>Architect</em></h1>
+    <span class="badge">Learn → Lab → Break → Prove</span>
+    <h1>My Networking Journey from <em>Zero</em> to <em>Job-Ready Engineer</em></h1>
     <p class="lead">
-      My complete Cisco certification journey — every exam, every syllabus topic,
-      every lab, and every tool I'm using to go from zero to true networking
-      mastery. Built as a personal study log so I can track every step,
-      stay consistent, and watch myself grow.
+      Not just a roadmap — a working engineering diary. Every concept I learn becomes
+      a lab. Every lab gets broken on purpose and repaired. Every mistake gets
+      documented. Every skill gets proof: configs, screenshots, topology files,
+      and honest weekly progress.
     </p>
-    <a class="btn" href="ccst.html">Start at Level 1 →</a>
-    <a class="btn ghost" href="#learning-system">My learning system</a>
+    <a class="btn" href="labs.html">See my labs →</a>
+    <a class="btn ghost" href="roadmap.html">The roadmap</a>
   </div>
 </section>
 
 <section class="block">
   <div class="container">
-    <h2><span class="hash">#</span> The 5-Level Roadmap</h2>
-    <p class="sub">Each level has its own page with the full exam syllabus, a topic checklist that saves your progress, hands-on labs mapped to real-world scenarios, and the simulators/tools to practice on.</p>
-
-    <div class="roadmap">
-      <a class="roadmap-card" href="ccst.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">CCST</div>
-        <div>
-          <h3>1 &middot; Cisco Certified Support Technician <small>— Absolute Beginner</small></h3>
-          <p>The entry point to get your foot in the door of IT. No prerequisites, no experience needed. Proves you can support real networks on day one of a help-desk job.</p>
-          <p class="salary">Target roles: Help Desk, IT Support Technician, NOC Trainee</p>
-        </div>
-        <span class="go">→</span>
-      </a>
-
-      <a class="roadmap-card" href="ccna.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">CCNA</div>
-        <div>
-          <h3>2 &middot; Cisco Certified Network Associate <small>— Associate</small></h3>
-          <p>The classic foundation for networking. Teaches the underlying logic of how the entire internet works — valued even by cloud giants like Amazon and Microsoft.</p>
-          <p class="salary">~$75,000 average US starting salary</p>
-        </div>
-        <span class="go">→</span>
-      </a>
-
-      <a class="roadmap-card" href="ccnp.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">CCNP</div>
-        <div>
-          <h3>3 &middot; Cisco Certified Network Professional <small>— Professional</small></h3>
-          <p>Where you specialize. The Automation track (former DevNet) has seen a 25% jump in job listings — networking + Python + APIs is the hottest combo in infrastructure.</p>
-          <p class="salary">Target roles: Network Engineer, Network Automation Engineer</p>
-        </div>
-        <span class="go">→</span>
-      </a>
-
-      <a class="roadmap-card" href="ccie.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">CCIE</div>
-        <div>
-          <h3>4 &middot; Cisco Certified Internetwork Expert <small>— Expert</small></h3>
-          <p>The "fighter jet pilot" of the networking world. An 8-hour hands-on lab exam that fewer than 3% of network engineers ever pass.</p>
-          <p class="salary">Up to $170,000 (security) &middot; ~75% salary premium over non-certified peers</p>
-        </div>
-        <span class="go">→</span>
-      </a>
-
-      <a class="roadmap-card" href="cca.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">CCAr</div>
-        <div>
-          <h3>5 &middot; Cisco Certified Architect <small>— Architect</small></h3>
-          <p>The ultimate level. An elite club of fewer than 1,000 people globally. Less about configuration, more about business strategy — the track for future CTOs.</p>
-          <p class="salary">Target roles: Network Architect, Principal Engineer, CTO track</p>
-        </div>
-        <span class="go">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="container">
-    <h2><span class="hash">#</span> Why This Path Is Worth It</h2>
-    <p class="sub">Motivation for the long days — what this knowledge is worth at each rung of the ladder.</p>
-    <div class="stats-grid">
-      <div class="stat-card"><div class="num">$75K</div><div class="lbl">CCNA avg US starting salary</div></div>
-      <div class="stat-card"><div class="num">+25%</div><div class="lbl">Job-listing jump for CCNP Automation</div></div>
-      <div class="stat-card"><div class="num">$170K</div><div class="lbl">CCIE (Security) top pay</div></div>
-      <div class="stat-card"><div class="num">+75%</div><div class="lbl">CCIE salary premium vs non-certified</div></div>
-      <div class="stat-card"><div class="num">&lt;1,000</div><div class="lbl">CCAr holders worldwide</div></div>
-    </div>
+    <h2><span class="hash">#</span> My Goal</h2>
     <div class="callout tip">
-      <strong>Why even cloud companies care:</strong> AWS, Azure and Google Cloud are
-      networks at planetary scale. VPCs, transit gateways, BGP peering, hybrid
-      connectivity — it's all the same logic the CCNA/CCNP teaches. Cisco skills
-      transfer directly to cloud networking roles.
+      <strong>Mission:</strong> to become a job-ready Network / Systems / Data Center
+      Engineer by learning Cisco networking from the ground up and proving every
+      single skill through hands-on labs — documented publicly, mistakes included.
     </div>
   </div>
 </section>
 
-<section class="block" id="learning-system">
+<section class="block">
   <div class="container">
-    <h2><span class="hash">#</span> My Learning System</h2>
-    <p class="sub">A certificate is the milestone, not the goal — real growth comes from a deliberate learning system. These six habits are baked into every page of this site.</p>
+    <h2><span class="hash">#</span> Right Now</h2>
+    <p class="sub">This dashboard shows where I actually am — progress, not dreams. Updated every week.</p>
+
+    <div class="dash-grid">
+      <div class="dash-card"><div class="lbl">Current Level</div><div class="val" id="dash-level">—</div></div>
+      <div class="dash-card"><div class="lbl">This Week's Topics</div><div class="val" id="dash-topic">—</div></div>
+      <div class="dash-card"><div class="lbl">Labs Completed</div><div class="val" id="dash-labs">—</div></div>
+      <div class="dash-card"><div class="lbl">Latest Lab</div><div class="val" id="dash-latest-lab">—</div></div>
+      <div class="dash-card"><div class="lbl">Latest Mistake Learned</div><div class="val" id="dash-mistake">—</div></div>
+      <div class="dash-card"><div class="lbl">Next Milestone</div><div class="val" id="dash-milestone">—</div></div>
+      <div class="dash-card"><div class="lbl">Proof / Evidence</div><div class="val"><a id="dash-github" href="#" target="_blank" rel="noopener">GitHub repo — every lab committed</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> The Loop I Follow For Every Topic</h2>
+    <p class="sub">Most people only "learn." That's weak. Every topic on this site goes through the full engineering loop:</p>
+
+    <div class="loop-strip">
+      <span class="loop-step">Learn</span><span class="loop-arrow">→</span>
+      <span class="loop-step">Lab</span><span class="loop-arrow">→</span>
+      <span class="loop-step alt">Break</span><span class="loop-arrow">→</span>
+      <span class="loop-step alt">Troubleshoot</span><span class="loop-arrow">→</span>
+      <span class="loop-step">Prove</span><span class="loop-arrow">→</span>
+      <span class="loop-step">Review</span><span class="loop-arrow">→</span>
+      <span class="loop-step alt">Interview Answer</span>
+    </div>
 
     <div class="sell-grid">
       <div class="sell-card">
-        <h3>1. Learn in Public</h3>
+        <h3>1. Learn the concept</h3>
         <ul>
-          <li><strong>This repo is my learning journal.</strong> Every lab I complete gets committed here — Packet Tracer files, configs, topology diagrams, write-ups.</li>
-          <li>Writing up what I built forces me to explain it clearly — the <strong>Feynman technique</strong>. If I can't write it simply, I haven't learned it yet.</li>
-          <li>Green commit squares keep me honest about consistency.</li>
+          <li>What is it? Why does it matter? Where is it used in real jobs?</li>
+          <li>Simple explanation first — if I can't say it in one sentence, I don't know it yet.</li>
         </ul>
       </div>
       <div class="sell-card">
-        <h3>2. Lab-First, Not Video-First</h3>
+        <h3>2. Build the lab</h3>
         <ul>
-          <li>Watching a video feels like learning; <strong>configuring it yourself IS learning</strong>. Hands-on time should be at least 40% of total study time.</li>
-          <li>Break things on purpose: every working lab gets deliberately sabotaged, then repaired. Troubleshooting is where understanding is built.</li>
-          <li>Rebuild old labs from a blank config — if I can't, I memorized instead of learned.</li>
+          <li>Every concept becomes a topology in Packet Tracer (later GNS3/EVE-NG).</li>
+          <li>Commands typed by hand, never pasted.</li>
         </ul>
       </div>
       <div class="sell-card">
-        <h3>3. Spaced Repetition &amp; Review</h3>
+        <h3>3. Break it on purpose</h3>
         <ul>
-          <li><strong>Anki flashcards 15 min/day</strong> for facts (port numbers, AD values, timers) — memory is a system, not luck.</li>
-          <li>The topic checklists on every cert page track what I've truly covered — reviewed weekly, honestly.</li>
-          <li>Monthly: redo one old lab from scratch to fight the forgetting curve.</li>
+          <li>Wrong VLAN, missing trunk, bad mask, wrong gateway — sabotage the working lab.</li>
+          <li>Troubleshooting a thing I broke teaches more than ten videos.</li>
         </ul>
       </div>
       <div class="sell-card">
-        <h3>4. Think in Real-World Scenarios</h3>
+        <h3>4. Prove it</h3>
         <ul>
-          <li>Every lab on this site ends with a <strong>real-world case</strong> — because knowledge tied to a story sticks, and trivia evaporates.</li>
-          <li>For each topic I ask: "what ticket, outage or project would this show up in?" That question turns facts into intuition.</li>
-          <li>It also means that when I do face the real thing, I've already rehearsed it.</li>
-        </ul>
-      </div>
-      <div class="sell-card">
-        <h3>5. Stack Skills, Not Just Certs</h3>
-        <ul>
-          <li>CCNA + <strong>Linux basics</strong> + <strong>Python</strong> grows me faster than CCNA alone — skills compound.</li>
-          <li>From CCNP onward, automation (Netmiko, Ansible, REST APIs) deepens everything else I've learned.</li>
-          <li>Cloud networking (AWS VPC / Azure VNet) makes the same concepts click from a second angle: on-prem + cloud.</li>
-        </ul>
-      </div>
-      <div class="sell-card">
-        <h3>6. Apply While Learning</h3>
-        <ul>
-          <li><strong>Use each level in the real world before chasing the next one.</strong> Real tickets and projects cement theory like nothing else.</li>
-          <li>Study level N+1 while practicing level N — experience and study reinforce each other instead of competing.</li>
-          <li>Teach what I learn — explaining a concept to someone else is the final exam for whether I actually understand it.</li>
+          <li>Upload the evidence: <strong>.pkt file, running config, topology screenshot, notes</strong>.</li>
+          <li>Write the mistake journal entry and the one-paragraph interview answer.</li>
+          <li>Then mark the topic: <em>Not started → Learning → Lab done → Reviewed → Interview-ready</em>.</li>
         </ul>
       </div>
     </div>
@@ -180,61 +120,79 @@
 
 <section class="block">
   <div class="container">
-    <h2><span class="hash">#</span> The Toolbox (Used Across All Levels)</h2>
-    <p class="sub">Full details on each cert page — this is the master list of simulators and tools this whole journey runs on.</p>
-    <div class="tools-grid">
-      <div class="tool-card">
-        <h3>Cisco Packet Tracer</h3>
-        <p>Cisco's official simulator. Perfect for CCST and CCNA — drag-and-drop topologies, real IOS commands, built-in assessment activities.</p>
-        <span class="cost free">Free (Cisco Networking Academy)</span>
+    <h2><span class="hash">#</span> Where Everything Lives</h2>
+    <div class="sell-grid">
+      <div class="sell-card">
+        <h3><a href="roadmap.html">Roadmap</a></h3>
+        <ul><li>The six levels: Zero Basics → CCST → CCNA → CCNP → CCIE → Architect Portfolio. Full syllabus checklists per level.</li></ul>
       </div>
-      <div class="tool-card">
-        <h3>GNS3</h3>
-        <p>Emulates real Cisco IOS images. The step up from Packet Tracer — full command set, integrates with real VMs and Wireshark.</p>
-        <span class="cost free">Free &amp; open source</span>
+      <div class="sell-card">
+        <h3><a href="labs.html">Labs</a></h3>
+        <ul><li>My lab portfolio, starting with the first 12 foundation labs. Each lab: topology, commands, break-it task, troubleshooting, proof files, status.</li></ul>
       </div>
-      <div class="tool-card">
-        <h3>EVE-NG</h3>
-        <p>Professional network emulation platform. The standard for CCNP/CCIE-scale topologies with dozens of devices. Community edition is free.</p>
-        <span class="cost free">Free (Community) / Paid (Pro)</span>
+      <div class="sell-card">
+        <h3><a href="mistakes.html">Mistakes I Fixed</a></h3>
+        <ul><li>Engineers document failures; students hide them. Every fault, root cause, fix and lesson — this page becomes gold for interviews.</li></ul>
       </div>
-      <div class="tool-card">
-        <h3>Cisco Modeling Labs (CML)</h3>
-        <p>Cisco's official virtual lab platform with legal, current IOS-XE/NX-OS images. What the actual CCIE lab exam runs on.</p>
-        <span class="cost paid">~$199/yr (Personal)</span>
+      <div class="sell-card">
+        <h3><a href="progress.html">Weekly Progress</a></h3>
+        <ul><li>Honest weekly log: what I studied, what I built, what I fixed, what I still don't understand, and next week's plan.</li></ul>
       </div>
-      <div class="tool-card">
-        <h3>Wireshark</h3>
-        <p>Packet capture and analysis. Watching a TCP handshake or an OSPF hello in Wireshark turns theory into intuition. Used at every level.</p>
-        <span class="cost free">Free &amp; open source</span>
+      <div class="sell-card">
+        <h3><a href="commands.html">Commands</a></h3>
+        <ul><li>Every command I've learned, organized by topic, with what it does and when I reach for it.</li></ul>
       </div>
-      <div class="tool-card">
-        <h3>Cisco DevNet Sandbox</h3>
-        <p>Free cloud-hosted real Cisco gear (Catalyst, SD-WAN, ACI) with API access. Essential for the automation topics from CCNA onward.</p>
-        <span class="cost free">Free (developer.cisco.com)</span>
+      <div class="sell-card">
+        <h3><a href="https://github.com/arvindjonn09/CN-practice-exam" target="_blank" rel="noopener">GitHub Proof</a></h3>
+        <ul><li>The repo behind this site — every lab file, config and write-up committed. The commit history is the consistency record.</li></ul>
       </div>
-      <div class="tool-card">
-        <h3>Python + Netmiko / Ansible</h3>
-        <p>The automation stack: Python with Netmiko/NAPALM for device scripting, Ansible for config management, Git for everything.</p>
-        <span class="cost free">Free &amp; open source</span>
-      </div>
-      <div class="tool-card">
-        <h3>Subnetting Practice</h3>
-        <p>subnettingpractice.com and subnetting.org — daily drills until you can subnet in under 15 seconds. Non-negotiable for CCNA.</p>
-        <span class="cost free">Free</span>
-      </div>
+    </div>
+
+    <div class="callout warn" style="margin-top:26px;">
+      <strong>The rule:</strong> every week this site gains 1 new topic, 1 new lab,
+      1 mistake fixed, 1 command list, and 1 interview answer. A learning site without
+      real notes is just a painted doorway — the notes are the building.
     </div>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="container">
-    <p>My personal learning journey &middot; CCST → CCNA → CCNP → CCIE → CCAr</p>
-    <p>Cisco, CCNA, CCNP, CCIE and CCAr are trademarks of Cisco Systems, Inc. This is an independent study project.</p>
+    <p>My engineering diary &middot; Zero Basics → CCST → CCNA → CCNP → CCIE → Architect Portfolio</p>
+    <p>Cisco, CCST, CCNA, CCNP and CCIE are trademarks of Cisco Systems, Inc. This is an independent study project.</p>
   </div>
 </footer>
 
+<script src="js/dashboard-data.js"></script>
 <script src="js/main.js"></script>
+<script>
+  // Render the dashboard from js/dashboard-data.js
+  (function () {
+    if (typeof DASHBOARD === "undefined") return;
+    function set(id, text) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = text;
+    }
+    set("dash-level", DASHBOARD.currentLevel);
+    set("dash-topic", DASHBOARD.currentTopic);
+    set("dash-latest-lab", DASHBOARD.latestLab);
+    set("dash-mistake", DASHBOARD.latestMistake);
+    set("dash-milestone", DASHBOARD.nextMilestone);
+    var gh = document.getElementById("dash-github");
+    if (gh) gh.href = DASHBOARD.githubUrl;
+
+    // Count labs marked done on the Labs page (saved in localStorage)
+    var done = 0;
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf("cisco-roadmap::labs::status::") === 0) {
+        var v = localStorage.getItem(k);
+        if (v === "Lab done" || v === "Reviewed" || v === "Interview-ready") done++;
+      }
+    }
+    set("dash-labs", done + " / " + DASHBOARD.totalLabs + " foundation labs");
+  })();
+</script>
 <script type="module" src="js/animations.js"></script>
 </body>
 </html>

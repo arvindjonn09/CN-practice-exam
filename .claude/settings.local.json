@@ -5,7 +5,8 @@
       "Bash(git add *)",
       "Bash(git commit -q -m 'Ignore macOS .DS_Store files *)",
       "Bash(git push *)",
-      "Bash(git commit -q -m 'Reframe site from career marketing to personal learning & growth *)"
+      "Bash(git commit -q -m 'Reframe site from career marketing to personal learning & growth *)",
+      "Bash(git commit -q -m 'Rebuild as a proof-of-work learning platform: Learn → Lab → Break → Prove *)"
     ]
   }
 }

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Portfolio — My First 12 Foundation Labs</title>
+  <meta name="description" content="My hands-on lab portfolio: 12 foundation networking labs, each with topology, commands, a break-it task, troubleshooting steps, proof files and status.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="labs">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="labs.html" class="active">Labs</a></li>
+      <li><a href="mistakes.html">Mistakes</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="commands.html">Commands</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">Lab Portfolio</span>
+    <h1>The First 12 <span class="exam-code">Foundation Labs</span></h1>
+    <p>Foundation first — no OSPF or BGP before the basics are stone. Every lab follows the same loop: build it, verify it, <strong>break it on purpose</strong>, troubleshoot it back, then commit the proof (<code>.pkt</code> file, running config, topology screenshot, notes) to the <a href="https://github.com/arvindjonn09/CN-practice-exam" target="_blank" rel="noopener">GitHub repo</a> under <code>labs/beginner/</code>.</p>
+    <p style="margin-top:10px;">Set each lab's status as you go — it's saved in your browser and feeds the homepage dashboard.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Labs 01–12</h2>
+
+    <div class="lab-grid">
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 01</span> — PC to PC Network</h3>
+          <span class="diff beginner">Beginner</span>
+          <select class="status-select" id="lab01">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> understand IP address, subnet mask and ping — the atom of networking.</p>
+        <p class="lab-detail"><strong>Topology:</strong> PC0 ↔ crossover cable ↔ PC1. No switch, no router.</p>
+        <p class="lab-detail"><strong>Tools:</strong> Cisco Packet Tracer.</p>
+        <p class="lab-detail"><strong>Problem:</strong> make two PCs talk with nothing between them but a cable.</p>
+        <pre class="code">PC0: 192.168.1.1  /  255.255.255.0
+PC1: 192.168.1.2  /  255.255.255.0
+Verify:  ping 192.168.1.2   and   ipconfig</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> ping succeeds both directions, 0% loss.</p>
+        <p class="lab-detail"><strong>Break it:</strong> change PC1's mask to 255.255.255.128 — watch the ping die. Explain exactly why before fixing it.</p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab01/</code> → topology.png, lab01.pkt, notes.md</p>
+        <div class="realworld"><strong>Interview answer:</strong> "An IP address identifies a host; the subnet mask defines which addresses are on the same network. Two hosts on the same subnet can talk directly — I proved it with two PCs and one cable, then broke it with a mismatched mask and explained the failure."</div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 02</span> — Switch Basics</h3>
+          <span class="diff beginner">Beginner</span>
+          <select class="status-select" id="lab02">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> connect multiple PCs through a switch and see how it learns MAC addresses.</p>
+        <p class="lab-detail"><strong>Topology:</strong> 4 PCs → 1 switch (2960), all in 192.168.1.0/24.</p>
+        <p class="lab-detail"><strong>Tools:</strong> Packet Tracer.</p>
+        <p class="lab-detail"><strong>Problem:</strong> all four PCs must ping each other; then explain how the switch knew where to send each frame.</p>
+        <pre class="code">Switch> enable
+Switch# show mac address-table
+Switch# show interfaces status</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> full connectivity; MAC table shows one entry per PC after pings.</p>
+        <p class="lab-detail"><strong>Break it:</strong> give two PCs the same IP address — observe the chaos, then fix and document the symptom.</p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab02/</code> → topology.png, lab02.pkt, mac-table.txt, notes.md</p>
+        <div class="realworld"><strong>Interview answer:</strong> "A switch learns MAC addresses from incoming frames and forwards based on its MAC table, flooding only unknown destinations. I watched the table populate live with show mac address-table."</div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 03</span> — Basic Commands Survival Kit</h3>
+          <span class="diff beginner">Beginner</span>
+          <select class="status-select" id="lab03">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> own the everyday commands — show, ping, ipconfig, tracert — plus basic device setup.</p>
+        <p class="lab-detail"><strong>Topology:</strong> reuse Lab 02 (4 PCs + switch).</p>
+        <p class="lab-detail"><strong>Problem:</strong> name the switch, secure console access, save the config, and inspect everything.</p>
+        <pre class="code">Switch(config)# hostname SW1
+SW1(config)# line console 0
+SW1(config-line)# password ****  /  login
+SW1# copy running-config startup-config
+SW1# show running-config | show version | show ip interface brief
+PC:  ipconfig /all   ping   tracert</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> hostname set, console protected, config survives a reload.</p>
+        <p class="lab-detail"><strong>Break it:</strong> configure everything, reload <em>without saving</em> — feel the pain once so you never forget <code>copy run start</code>.</p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab03/</code> → running-config.txt, notes.md</p>
+        <div class="realworld"><strong>Interview answer:</strong> "My first checks on any device are show ip interface brief for port/IP state and show running-config for the live config. I save with copy run start — I learned the hard way what a reload does to unsaved work."</div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 04</span> — Subnetting a Small Office</h3>
+          <span class="diff core">Core</span>
+          <select class="status-select" id="lab04">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> divide one network into smaller networks on paper, then prove the boundaries in a lab.</p>
+        <p class="lab-detail"><strong>Topology:</strong> 1 switch, 4 PCs — two PCs in 192.168.10.0/26, two in 192.168.10.64/26.</p>
+        <p class="lab-detail"><strong>Problem:</strong> split 192.168.10.0/24 into 4 subnets for 4 departments. Document network, broadcast and usable range for each.</p>
+        <pre class="code">192.168.10.0/26   → .1–.62    (Dept A)
+192.168.10.64/26  → .65–.126  (Dept B)
+192.168.10.128/26 → .129–.190 (Dept C)
+192.168.10.192/26 → .193–.254 (Dept D)</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> same-subnet PCs ping each other; cross-subnet pings FAIL — and I can explain that this failure is correct and why a router is needed (that's Lab 07/09).</p>
+        <p class="lab-detail"><strong>Break it:</strong> put a PC's IP in one subnet but its gateway in another — predict the symptom before testing.</p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab04/</code> → subnet-plan.md, topology.png, lab04.pkt</p>
+        <div class="realworld"><strong>Interview answer:</strong> "I can take a /24 and split it into right-sized subnets, documenting network, broadcast and usable ranges. I also know hosts in different subnets can't communicate without a router — I built a lab that proves it."</div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 05</span> — VLAN Basics: HR vs IT</h3>
+          <span class="diff core">Core</span>
+          <select class="status-select" id="lab05">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> separate two departments logically on one physical switch.</p>
+        <p class="lab-detail"><strong>Topology:</strong> 1 switch, 4 PCs — 2 in VLAN 10 (HR), 2 in VLAN 20 (IT).</p>
+        <pre class="code">SW1(config)# vlan 10
+SW1(config-vlan)# name HR
+SW1(config)# vlan 20
+SW1(config-vlan)# name IT
+SW1(config)# interface fa0/1
+SW1(config-if)# switchport mode access
+SW1(config-if)# switchport access vlan 10
+Verify: show vlan brief</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> HR pings HR, IT pings IT, HR cannot ping IT — isolation proven.</p>
+        <p class="lab-detail"><strong>Break it:</strong> move one HR PC's port into VLAN 20 "by accident" — diagnose using show vlan brief, then correct the access port.</p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab05/</code> → topology.png, lab05.pkt, show-vlan-brief.txt, notes.md</p>
+        <div class="realworld"><strong>Interview answer:</strong> "A VLAN is a logical separation inside a switch. I used VLANs to separate HR and IT traffic and verified both connectivity and isolation with show vlan brief and ping tests."</div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 06</span> — Trunking Between Switches</h3>
+          <span class="diff core">Core</span>
+          <select class="status-select" id="lab06">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> pass multiple VLANs between two switches over one link.</p>
+        <p class="lab-detail"><strong>Topology:</strong> 2 switches connected; VLAN 10 and VLAN 20 PCs on both.</p>
+        <pre class="code">SW1(config)# interface gi0/1
+SW1(config-if)# switchport mode trunk
+Verify: show interfaces trunk</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> VLAN 10 PC on SW1 pings VLAN 10 PC on SW2; VLANs stay isolated from each other across both switches.</p>
+        <p class="lab-detail"><strong>Break it:</strong> leave the inter-switch link in access mode — the classic fault. Diagnose with show interfaces trunk before fixing.</p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab06/</code> → topology.png, lab06.pkt, trunk-verify.txt, notes.md → and a matching entry on the <a href="mistakes.html">Mistakes page</a>.</p>
+        <div class="realworld"><strong>Interview answer:</strong> "VLANs can't cross switches unless the inter-switch link is a trunk carrying 802.1Q tags. I've hit the exact failure — access-mode link between switches — and fixed it after reading show interfaces trunk."</div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 07</span> — Router-on-a-Stick</h3>
+          <span class="diff core">Core</span>
+          <select class="status-select" id="lab07">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> let VLANs communicate — controlled, routed, on purpose.</p>
+        <p class="lab-detail"><strong>Topology:</strong> Lab 06 topology + 1 router on a trunk port.</p>
+        <pre class="code">R1(config)# interface gi0/0.10
+R1(config-subif)# encapsulation dot1Q 10
+R1(config-subif)# ip address 192.168.10.1 255.255.255.0
+R1(config)# interface gi0/0.20
+R1(config-subif)# encapsulation dot1Q 20
+R1(config-subif)# ip address 192.168.20.1 255.255.255.0</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> HR pings IT — through the router. tracert shows the gateway hop.</p>
+        <p class="lab-detail"><strong>Break it:</strong> swap the dot1Q VLAN IDs on the two subinterfaces — a subtle, realistic fault. Find it from the symptoms.</p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab07/</code> → topology.png, lab07.pkt, router-config.txt, notes.md</p>
+        <div class="realworld"><strong>Interview answer:</strong> "Inter-VLAN routing needs a Layer 3 device. I configured router-on-a-stick with dot1Q subinterfaces so each VLAN's gateway lives on one physical router port."</div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 08</span> — DHCP</h3>
+          <span class="diff core">Core</span>
+          <select class="status-select" id="lab08">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> automatically assign IP addresses instead of typing them.</p>
+        <p class="lab-detail"><strong>Topology:</strong> Lab 07 topology; router becomes the DHCP server for both VLANs.</p>
+        <pre class="code">R1(config)# ip dhcp excluded-address 192.168.10.1 192.168.10.10
+R1(config)# ip dhcp pool HR
+R1(dhcp-config)# network 192.168.10.0 255.255.255.0
+R1(dhcp-config)# default-router 192.168.10.1
+R1(dhcp-config)# dns-server 8.8.8.8
+Verify: show ip dhcp binding   /   PC: ipconfig /renew</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> all PCs switched to DHCP get correct IP, mask, gateway and DNS automatically.</p>
+        <p class="lab-detail"><strong>Break it:</strong> remove the default-router line from one pool — clients get IPs but can't leave the subnet. Diagnose from the client side first.</p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab08/</code> → topology.png, lab08.pkt, dhcp-bindings.txt, notes.md</p>
+        <div class="realworld"><strong>Interview answer:</strong> "DHCP hands out IP, mask, gateway and DNS through the DORA exchange. I've configured pools with exclusions on a router and debugged a missing default-router option from the client's symptoms."</div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 09</span> — Static Routing</h3>
+          <span class="diff core">Core</span>
+          <select class="status-select" id="lab09">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> connect two routers manually — understand routing before any protocol does it for you.</p>
+        <p class="lab-detail"><strong>Topology:</strong> LAN A — R1 — link — R2 — LAN B.</p>
+        <pre class="code">R1(config)# ip route 192.168.2.0 255.255.255.0 10.0.0.2
+R2(config)# ip route 192.168.1.0 255.255.255.0 10.0.0.1
+Verify: show ip route</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> PCs in LAN A ping PCs in LAN B; show ip route shows the S (static) entries.</p>
+        <p class="lab-detail"><strong>Break it:</strong> delete only R2's route — ping fails even though R1's route is perfect. Lesson: <strong>traffic needs a return path.</strong></p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab09/</code> → topology.png, lab09.pkt, routing-tables.txt, notes.md</p>
+        <div class="realworld"><strong>Interview answer:</strong> "A static route tells a router how to reach a network it isn't connected to. I've debugged one-way reachability caused by a missing return route — ping needs a path in both directions."</div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 10</span> — Default Route</h3>
+          <span class="diff core">Core</span>
+          <select class="status-select" id="lab10">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> send all unknown traffic to one gateway — how every office reaches the internet.</p>
+        <p class="lab-detail"><strong>Topology:</strong> Lab 09 + a third router acting as "ISP".</p>
+        <pre class="code">R1(config)# ip route 0.0.0.0 0.0.0.0 203.0.113.1
+Verify: show ip route   → look for S* (gateway of last resort)</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> PCs reach the simulated ISP loopback without a specific route; tracert shows the path.</p>
+        <p class="lab-detail"><strong>Break it:</strong> point the default route at the wrong next hop — packets leave but vanish. Trace where they die.</p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab10/</code> → topology.png, lab10.pkt, notes.md</p>
+        <div class="realworld"><strong>Interview answer:</strong> "A default route (0.0.0.0/0) is the gateway of last resort — used when no more specific route matches. It's how branch offices send everything toward the internet edge."</div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 11</span> — Basic OSPF</h3>
+          <span class="diff challenge">Challenge</span>
+          <select class="status-select" id="lab11">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> let routers exchange routes dynamically — my first routing protocol.</p>
+        <p class="lab-detail"><strong>Topology:</strong> Lab 09's two routers (+ optionally a third), static routes removed.</p>
+        <pre class="code">R1(config)# router ospf 1
+R1(config-router)# network 192.168.1.0 0.0.0.255 area 0
+R1(config-router)# network 10.0.0.0 0.0.0.3 area 0
+Verify: show ip ospf neighbor   /   show ip route ospf</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> neighbor state FULL; O routes appear in the routing table; end-to-end ping works with zero static routes.</p>
+        <p class="lab-detail"><strong>Break it:</strong> put one router's link in area 1 while the other stays in area 0 — adjacency never forms. Diagnose with show ip ospf neighbor.</p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab11/</code> → topology.png, lab11.pkt, ospf-neighbors.txt, notes.md</p>
+        <div class="realworld"><strong>Interview answer:</strong> "OSPF is a link-state protocol where routers form adjacencies and exchange topology info. I've formed adjacencies, read the OSPF routes in the table, and troubleshot a neighbor stuck because of an area mismatch."</div>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-head">
+          <h3><span class="lab-num">LAB 12</span> — The Troubleshooting Gauntlet</h3>
+          <span class="diff challenge">Challenge</span>
+          <select class="status-select" id="lab12">
+            <option>Not started</option><option>Learning</option><option>Lab done</option><option>Reviewed</option><option>Interview-ready</option>
+          </select>
+        </div>
+        <p class="lab-detail"><strong>Goal:</strong> fix a deliberately broken network using a strict method — the final exam of the foundation.</p>
+        <p class="lab-detail"><strong>Topology:</strong> the full Lab 11 network with 4+ planted faults: a wrong IP, a wrong VLAN assignment, an access-mode trunk, a missing gateway, a broken OSPF area.</p>
+        <p class="lab-detail"><strong>Method (no guessing allowed):</strong></p>
+        <pre class="code">1. Physical/link:  show interfaces status
+2. VLANs:          show vlan brief / show interfaces trunk
+3. Addressing:     ipconfig / show ip interface brief
+4. Gateway:        ping own gateway first
+5. Routing:        show ip route / show ip ospf neighbor
+Document each fault like a ticket: symptom → checks → root cause → fix</pre>
+        <p class="lab-detail"><strong>Expected result:</strong> every PC reaches every network; all faults written up on the <a href="mistakes.html">Mistakes page</a>.</p>
+        <p class="lab-detail"><strong>Proof to commit:</strong> <code>labs/beginner/lab12/</code> → broken.pkt, fixed.pkt, tickets.md</p>
+        <div class="realworld"><strong>Interview answer:</strong> "I troubleshoot layer by layer — physical, then VLANs, then addressing, then gateway, then routing — and I document each fix like a ticket. I built a multi-fault lab specifically to drill that discipline."</div>
+      </div>
+
+    </div>
+
+    <div class="callout tip" style="margin-top:26px;">
+      <strong>After Lab 12:</strong> the foundation is real. The next lab sets live on the level pages —
+      <a href="ccst.html">CCST labs</a>, <a href="ccna.html">CCNA labs</a>, <a href="ccnp.html">CCNP labs</a> —
+      each following this same build → break → prove format.
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container"><p>My engineering diary &middot; every lab backed by committed proof</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+<script type="module" src="js/animations.js"></script>
+</body>
+</html>

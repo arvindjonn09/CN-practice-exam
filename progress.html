@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Progress — My Learning Log</title>
+  <meta name="description" content="My honest weekly learning log: topics studied, labs completed, commands learned, mistakes fixed, what I still don't understand, and next week's plan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="progress">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="mistakes.html">Mistakes</a></li>
+      <li><a href="progress.html" class="active">Progress</a></li>
+      <li><a href="commands.html">Commands</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">Learning Log</span>
+    <h1>Weekly <span class="exam-code">Progress</span></h1>
+    <p>One honest entry per week — newest on top. Not fake-perfect: the "what I still don't understand" field is the most valuable one on the page. A serious learner's log beats a polished empty castle.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> The Log</h2>
+
+    <div class="week-card">
+      <h3>Week 1 — Foundation begins</h3>
+      <p class="field"><strong>Dates:</strong> (fill in)</p>
+      <p class="field"><strong>Topics studied:</strong> what a network is, IP addresses and subnet masks, what switches do</p>
+      <p class="field"><strong>Labs completed:</strong> target — Lab 01 (PC to PC), Lab 02 (switch basics)</p>
+      <p class="field"><strong>Commands learned:</strong> ping, ipconfig /all, tracert, show mac address-table</p>
+      <p class="field"><strong>Mistakes fixed:</strong> (log them on the <a href="mistakes.html">Mistakes page</a> and reference the entry number here)</p>
+      <p class="field"><strong>What I still do not understand:</strong> (be honest — this is next week's study list)</p>
+      <p class="field"><strong>Next week plan:</strong> Lab 03 (commands survival kit), start the subnetting drills</p>
+    </div>
+
+    <div class="callout warn">
+      <strong>The weekly rule:</strong> every week adds 1 new topic, 1 new lab, 1 mistake fixed,
+      1 command list, 1 interview answer — then update <code>js/dashboard-data.js</code> so the
+      homepage dashboard reflects reality, and commit everything. Six months of this and the site
+      becomes an engineering diary, proof, and a quiet weapon.
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Entry Template</h2>
+    <p class="sub">Copy a fresh card every week (also in the repo at <code>templates/weekly-template.md</code>).</p>
+    <pre class="code">Week N — short headline
+Dates:
+Topics studied:
+Labs completed:
+Commands learned:
+Mistakes fixed:               (link entry numbers from the Mistakes page)
+What I still do not understand:
+Next week plan:</pre>
+    <div class="callout tip">
+      <strong>How to add a week:</strong> open <code>progress.html</code>, copy the latest
+      <code>&lt;div class="week-card"&gt;...&lt;/div&gt;</code> block, paste it <em>above</em> the
+      old one, fill it in, commit, push. Cloudflare redeploys automatically.
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container"><p>My engineering diary &middot; honest weekly progress, mistakes included</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+<script type="module" src="js/animations.js"></script>
+</body>
+</html>

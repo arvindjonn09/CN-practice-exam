@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commands — Everything I've Learned, By Topic</title>
+  <meta name="description" content="My growing command reference: PC tools, switch commands, VLANs, routing, DHCP, OSPF and troubleshooting — with what each does and when I use it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="commands">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="mistakes.html">Mistakes</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="commands.html" class="active">Commands</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">Reference</span>
+    <h1>Commands <span class="exam-code">I've Learned</span></h1>
+    <p>Every command earns its place here by being used in a lab — typed by hand, never pasted. Each one lists what it does and the moment I reach for it. This page grows with every lab.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> PC / Endpoint Tools <span style="font-size:0.8rem; color:var(--text-dim);">(Labs 01–03)</span></h2>
+    <table class="info">
+      <tr><th>Command</th><th>What it does</th><th>When I reach for it</th></tr>
+      <tr><td><code>ping &lt;ip&gt;</code></td><td>Tests reachability to another host</td><td>First command in almost every problem</td></tr>
+      <tr><td><code>ipconfig /all</code></td><td>Shows the PC's IP, mask, gateway, DNS, MAC</td><td>"Can't connect" — check what the machine actually has</td></tr>
+      <tr><td><code>tracert &lt;ip&gt;</code></td><td>Shows every router hop toward a destination</td><td>Ping fails — find <em>where</em> the path dies</td></tr>
+      <tr><td><code>nslookup &lt;name&gt;</code></td><td>Tests DNS name resolution</td><td>Sites won't load by name but ping-by-IP works</td></tr>
+      <tr><td><code>arp -a</code></td><td>Shows learned IP→MAC mappings</td><td>Checking if the PC ever heard from the gateway</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Switch Basics &amp; VLANs <span style="font-size:0.8rem; color:var(--text-dim);">(Labs 02–06)</span></h2>
+    <table class="info">
+      <tr><th>Command</th><th>What it does</th><th>When I reach for it</th></tr>
+      <tr><td><code>show mac address-table</code></td><td>Shows which MAC the switch learned on which port</td><td>Finding where a device physically lives</td></tr>
+      <tr><td><code>show interfaces status</code></td><td>Port up/down, speed, duplex, VLAN per port</td><td>First check for any "no link" problem</td></tr>
+      <tr><td><code>vlan 10</code> + <code>name HR</code></td><td>Creates a VLAN and names it</td><td>Segmenting departments</td></tr>
+      <tr><td><code>switchport mode access</code></td><td>Makes a port carry exactly one VLAN</td><td>Every end-device port</td></tr>
+      <tr><td><code>switchport access vlan 10</code></td><td>Assigns the port's VLAN</td><td>Putting a PC in the right department</td></tr>
+      <tr><td><code>show vlan brief</code></td><td>All VLANs and their assigned ports</td><td>"PC can't reach its own department" — check assignment</td></tr>
+      <tr><td><code>switchport mode trunk</code></td><td>Makes a link carry all VLANs with 802.1Q tags</td><td>Every switch-to-switch (and router-on-a-stick) link</td></tr>
+      <tr><td><code>show interfaces trunk</code></td><td>Which links are trunking and which VLANs they allow</td><td>"Works on same switch, fails across switches" → here first</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Device Management <span style="font-size:0.8rem; color:var(--text-dim);">(Lab 03)</span></h2>
+    <table class="info">
+      <tr><th>Command</th><th>What it does</th><th>When I reach for it</th></tr>
+      <tr><td><code>enable</code> / <code>configure terminal</code></td><td>Enter privileged then global config mode</td><td>The doorway to everything</td></tr>
+      <tr><td><code>hostname SW1</code></td><td>Names the device</td><td>First line of every device setup</td></tr>
+      <tr><td><code>show running-config</code></td><td>The live configuration</td><td>Reading what's actually configured, not assumed</td></tr>
+      <tr><td><code>copy running-config startup-config</code></td><td>Saves config so it survives reload</td><td>After every change — learned this the hard way</td></tr>
+      <tr><td><code>show ip interface brief</code></td><td>Every interface, its IP and up/down state</td><td>The fastest overview command on any device</td></tr>
+      <tr><td><code>show version</code></td><td>IOS version, uptime, hardware</td><td>Inventory and "did it just reboot?"</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Routing &amp; DHCP <span style="font-size:0.8rem; color:var(--text-dim);">(Labs 07–11)</span></h2>
+    <table class="info">
+      <tr><th>Command</th><th>What it does</th><th>When I reach for it</th></tr>
+      <tr><td><code>interface gi0/0.10</code> + <code>encapsulation dot1Q 10</code></td><td>Subinterface tagged for VLAN 10 (router-on-a-stick)</td><td>Inter-VLAN routing on one physical port</td></tr>
+      <tr><td><code>ip route &lt;net&gt; &lt;mask&gt; &lt;next-hop&gt;</code></td><td>Static route</td><td>Manually teaching a router a path</td></tr>
+      <tr><td><code>ip route 0.0.0.0 0.0.0.0 &lt;next-hop&gt;</code></td><td>Default route (gateway of last resort)</td><td>Sending unknown traffic toward the edge/ISP</td></tr>
+      <tr><td><code>show ip route</code></td><td>The routing table — C/S/S*/O codes</td><td>The single most important command in routing</td></tr>
+      <tr><td><code>ip dhcp pool HR</code> + <code>network / default-router / dns-server</code></td><td>DHCP scope on a router</td><td>Automatic addressing per VLAN</td></tr>
+      <tr><td><code>show ip dhcp binding</code></td><td>Which client got which address</td><td>"Did the client actually get a lease?"</td></tr>
+      <tr><td><code>router ospf 1</code> + <code>network &lt;net&gt; &lt;wildcard&gt; area 0</code></td><td>Enables OSPF on matching interfaces</td><td>Dynamic routing setup</td></tr>
+      <tr><td><code>show ip ospf neighbor</code></td><td>Adjacency states with other routers</td><td>OSPF problem? This is always command #1</td></tr>
+    </table>
+
+    <div class="callout tip" style="margin-top:22px;">
+      <strong>How this page grows:</strong> after each lab, the new commands move from the lab's
+      notes into a table here. If a command has never been used in one of my labs, it doesn't
+      get listed — this is a record of practice, not a copy-paste of someone's cheat sheet.
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container"><p>My engineering diary &middot; commands earned through labs</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+<script type="module" src="js/animations.js"></script>
+</body>
+</html>

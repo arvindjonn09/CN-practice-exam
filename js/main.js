@@ -43,6 +43,32 @@
 
   updateProgress();
 
+  // Lab status dropdowns — persisted, with color states
+  document.querySelectorAll(".status-select").forEach(function (sel) {
+    var key = storageKey("status::" + sel.id);
+    var saved = localStorage.getItem(key);
+    if (saved) sel.value = saved;
+
+    function paint() {
+      sel.classList.remove("s-doing", "s-done");
+      if (sel.value === "Learning" || sel.value === "Lab done") {
+        sel.classList.add("s-doing");
+      }
+      if (sel.value === "Reviewed" || sel.value === "Interview-ready") {
+        sel.classList.add("s-done");
+      }
+      if (sel.value === "Lab done") {
+        sel.classList.remove("s-doing");
+        sel.classList.add("s-done");
+      }
+    }
+    sel.addEventListener("change", function () {
+      localStorage.setItem(key, sel.value);
+      paint();
+    });
+    paint();
+  });
+
   // Per-domain counters in the summary headers
   document.querySelectorAll(".domain").forEach(function (domain) {
     var domainBoxes = domain.querySelectorAll('input[type="checkbox"]');

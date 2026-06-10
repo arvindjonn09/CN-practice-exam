@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mistakes I Fixed — My Troubleshooting Journal</title>
+  <meta name="description" content="My networking mistake journal: every fault I hit, what I checked, the root cause, the fix, and the lesson. Engineers document failures.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="mistakes">
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="mistakes.html" class="active">Mistakes</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="commands.html">Commands</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">Troubleshooting Journal</span>
+    <h1>Mistakes <span class="exam-code">I Fixed</span></h1>
+    <p>Most students hide mistakes. Engineers document them. Every fault I hit — in labs or in real life — gets an entry here: the symptom, what I checked, the root cause, the fix, and the lesson. This page is the most honest thing on the site, and it will become gold for interviews.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> The Journal</h2>
+    <p class="sub">Newest first. Each entry follows the same format — copy the template at the bottom of this page for new entries.</p>
+
+    <div class="mistake-card">
+      <h3>#001 — VLANs wouldn't cross between switches</h3>
+      <p class="field"><strong>Date:</strong> (example entry — replace with my first real one)</p>
+      <p class="field"><strong>Topic:</strong> VLAN trunking (Lab 06)</p>
+      <p class="field"><strong>What failed:</strong> PCs in VLAN 10 on two different switches could not ping each other, even though PCs in VLAN 10 on the <em>same</em> switch could.</p>
+      <p class="field"><strong>Symptom:</strong> ping timed out only when crossing the inter-switch link. No error messages anywhere — just silence.</p>
+      <p class="field"><strong>What I checked:</strong></p>
+      <pre class="code">show vlan brief          → VLANs existed on both switches ✓
+show interfaces trunk    → EMPTY on SW1. There's the smell.
+show running-config      → inter-switch port was switchport mode access</pre>
+      <p class="field"><strong>Root cause:</strong> the link between the switches was still in access mode, so it carried only one untagged VLAN instead of tagging traffic for all VLANs.</p>
+      <p class="field"><strong>Fix:</strong> configured the inter-switch port as a trunk on both sides: <code>switchport mode trunk</code>, then confirmed with <code>show interfaces trunk</code>.</p>
+      <p class="field"><strong>What I learned:</strong> VLANs cannot pass between switches unless the inter-switch link is trunking. "Same switch works, different switch doesn't" now instantly means: <em>check the trunk first</em>.</p>
+      <p class="field"><strong>Command that saved me:</strong> <code>show interfaces trunk</code></p>
+    </div>
+
+    <div class="callout tip">
+      <strong>Add the next entry:</strong> copy the template below into this page (or into
+      <code>labs/&lt;level&gt;/labXX/notes.md</code> in the repo) every time something breaks.
+      If a week passes with no new mistake, I'm not labbing hard enough.
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Entry Template</h2>
+    <p class="sub">Same rhythm every time. Less chaos, more engineering. (Also saved in the repo at <code>templates/mistake-template.md</code>.)</p>
+    <pre class="code">#0XX — Short title of what broke
+Date:
+Topic:                (and which lab, if any)
+What failed:          (one or two sentences)
+Symptom:              (exact error / behavior observed)
+What I checked:       (commands, in the order I ran them)
+Root cause:           (the real reason, not the first guess)
+Fix:                  (exact change that solved it)
+What I learned:       (the rule I'll remember)
+Command that saved me:</pre>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container"><p>My engineering diary &middot; failures documented, lessons kept</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+<script type="module" src="js/animations.js"></script>
+</body>
+</html>
