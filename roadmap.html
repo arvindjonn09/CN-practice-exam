@@ -18,10 +18,14 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="roadmap.html" class="active">Roadmap</a></li>
+      <li><a href="level0.html">Level 0</a></li>
+      <li><a href="syllabus.html">Syllabus</a></li>
       <li><a href="labs.html">Labs</a></li>
+      <li><a href="tickets.html">Tickets</a></li>
       <li><a href="mistakes.html">Mistakes</a></li>
       <li><a href="progress.html">Progress</a></li>
       <li><a href="commands.html">Commands</a></li>
+      <li><a href="interview.html">Interview</a></li>
     </ul>
   </nav>
 </header>
@@ -37,32 +41,16 @@
 <section class="block">
   <div class="container">
     <h2><span class="hash">#</span> Level 0 — Absolute Networking Basics</h2>
-    <p class="sub">Before any certification: the raw fundamentals. These are covered by the first labs on the <a href="labs.html">Labs page</a> (Labs 01–03) and shouldn't take more than 2–3 weeks.</p>
-    <div class="sell-grid">
-      <div class="sell-card">
-        <h3>Concepts</h3>
-        <ul>
-          <li>What a network actually is — two PCs and a cable</li>
-          <li>What an IP address and subnet mask mean</li>
-          <li>What switches and routers each do (one sentence each)</li>
-          <li>Binary basics — why 255 keeps showing up</li>
-        </ul>
-      </div>
-      <div class="sell-card">
-        <h3>Hands-On</h3>
-        <ul>
-          <li>Install Cisco Packet Tracer (free via Cisco Networking Academy)</li>
-          <li>Build Lab 01: two PCs, one cable, first successful ping</li>
-          <li>Learn the survival commands: <code>ping</code>, <code>ipconfig</code>, <code>tracert</code></li>
-        </ul>
-      </div>
-      <div class="sell-card">
-        <h3>Done When</h3>
-        <ul>
-          <li>I can explain to a non-technical person what happens when I ping another PC</li>
-          <li>Labs 01–03 are marked <em>Lab done</em> with proof files committed</li>
-        </ul>
-      </div>
+    <p class="sub">Before any certification: the raw fundamentals. This is now a dedicated page because “zero to hero” must truly begin at zero.</p>
+    <div class="roadmap">
+      <a class="roadmap-card" href="level0.html" style="text-decoration:none; color:inherit;">
+        <div class="level-icon">ZERO</div>
+        <div>
+          <h3>Level 0 &middot; Absolute IT and Networking Basics <small>— Start Here</small></h3>
+          <p>Computer basics, Windows/Linux survival commands, IP, DNS, DHCP, gateway, ports, protocols and the first three proof labs.</p>
+        </div>
+        <span class="go">→</span>
+      </a>
     </div>
   </div>
 </section>
@@ -93,7 +81,7 @@
         <div class="level-icon">CCNP</div>
         <div>
           <h3>Level 3 &middot; CCNP Enterprise <small>— Professional</small></h3>
-          <p>Where I specialize. Advanced routing, SD-WAN, SD-Access, and the Automation track — networking plus Python, APIs and Ansible.</p>
+          <p>Primary path: ENARSI first for deep routing, then ENAUTO for automation. Routing brain first, automation second.</p>
         </div>
         <span class="go">→</span>
       </a>
@@ -102,7 +90,7 @@
         <div class="level-icon">CCIE</div>
         <div>
           <h3>Level 4 &middot; CCIE-Level Lab Thinking <small>— Expert</small></h3>
-          <p>The 8-hour-lab mindset: predict the network's state before typing a show command, build 30-node topologies from memory, troubleshoot with a calm, strict method.</p>
+          <p>The 8-hour-lab mindset: predict the network's state before typing a show command, build large topologies from memory, troubleshoot with a calm, strict method.</p>
         </div>
         <span class="go">→</span>
       </a>
@@ -111,7 +99,7 @@
         <div class="level-icon">ARCH</div>
         <div>
           <h3>Level 5 &middot; Network Architect Portfolio <small>— Design Thinking</small></h3>
-          <p>Not a certification target — a portfolio stage. Architecture decision records, design documents, business-aware trade-offs. The shift from "how do I configure it?" to "why this design?"</p>
+          <p>Not a certification target — a portfolio stage. Architecture decision records, design documents, business-aware trade-offs. The shift from “how do I configure it?” to “why this design?”</p>
         </div>
         <span class="go">→</span>
       </a>
@@ -119,10 +107,21 @@
 
     <div class="callout warn" style="margin-top:22px;">
       <strong>Why Level 5 is a portfolio, not a cert:</strong> Cisco has ended the
-      CCAr (Cisco Certified Architect) path, so chasing it would be chasing a closed
-      door. Architect-level <em>thinking</em> is still the goal — proven through design
-      documents and decision records instead of an exam. The CCDE remains the active
-      expert-level design certification if I want a credential at that altitude.
+      CCAr path, so chasing it would be chasing a closed door. Architect-level
+      <em>thinking</em> is still the goal — proven through design documents and
+      decision records instead of an inactive certification path.
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> The Missing-Piece Map</h2>
+    <p class="sub">The Cisco path alone is not enough. This companion map adds the field skills recruiters and support teams actually expect.</p>
+    <div class="sell-grid">
+      <div class="sell-card"><h3><a href="syllabus.html">Complete Syllabus Map</a></h3><ul><li>Subnetting, OSI troubleshooting, real hardware, data center, cloud, firewall, wireless and proof standards.</li></ul></div>
+      <div class="sell-card"><h3><a href="tickets.html">Ticket Simulations</a></h3><ul><li>APIPA, DNS failure, wrong gateway, VLAN/trunk faults, VPN issue, Wi-Fi connected but no internet.</li></ul></div>
+      <div class="sell-card"><h3><a href="interview.html">Interview Answer Bank</a></h3><ul><li>Each answer connects concept, lab proof, commands, mistake learned and professional explanation.</li></ul></div>
     </div>
   </div>
 </section>
@@ -132,46 +131,14 @@
     <h2><span class="hash">#</span> The Toolbox</h2>
     <p class="sub">The simulators and tools this whole journey runs on. Details per level on each level's page.</p>
     <div class="tools-grid">
-      <div class="tool-card">
-        <h3>Cisco Packet Tracer</h3>
-        <p>The main lab environment for Levels 0–2. Drag-and-drop topologies, real IOS commands.</p>
-        <span class="cost free">Free (Cisco Networking Academy)</span>
-      </div>
-      <div class="tool-card">
-        <h3>GNS3</h3>
-        <p>Emulates real Cisco IOS. The step up from Packet Tracer — full command set, real SSH for automation scripts.</p>
-        <span class="cost free">Free &amp; open source</span>
-      </div>
-      <div class="tool-card">
-        <h3>EVE-NG</h3>
-        <p>Professional emulation platform for CCNP/CCIE-scale topologies with dozens of devices.</p>
-        <span class="cost free">Free (Community)</span>
-      </div>
-      <div class="tool-card">
-        <h3>Cisco Modeling Labs (CML)</h3>
-        <p>Cisco's official virtual lab platform with legal, current images — what the CCIE lab exam itself runs on.</p>
-        <span class="cost paid">Paid</span>
-      </div>
-      <div class="tool-card">
-        <h3>Wireshark</h3>
-        <p>Packet capture and analysis. Watching a TCP handshake turns theory into intuition. Used at every level.</p>
-        <span class="cost free">Free</span>
-      </div>
-      <div class="tool-card">
-        <h3>Cisco DevNet Sandbox</h3>
-        <p>Free cloud-hosted real Cisco gear with API access — covers the automation topics with zero hardware.</p>
-        <span class="cost free">Free</span>
-      </div>
-      <div class="tool-card">
-        <h3>Python + Netmiko / Ansible</h3>
-        <p>The automation stack from CCNA Lab 08 onward. Git for everything.</p>
-        <span class="cost free">Free</span>
-      </div>
-      <div class="tool-card">
-        <h3>Anki + subnetting drills</h3>
-        <p>Spaced repetition for facts; daily subnetting practice until answers take under 15 seconds.</p>
-        <span class="cost free">Free</span>
-      </div>
+      <div class="tool-card"><h3>Cisco Packet Tracer</h3><p>The main lab environment for Levels 0–2. Drag-and-drop topologies, real IOS commands.</p><span class="cost free">Free (Cisco Networking Academy)</span></div>
+      <div class="tool-card"><h3>GNS3</h3><p>Emulates real Cisco IOS. The step up from Packet Tracer — full command set, real SSH for automation scripts.</p><span class="cost free">Free &amp; open source</span></div>
+      <div class="tool-card"><h3>EVE-NG</h3><p>Professional emulation platform for CCNP/CCIE-scale topologies with dozens of devices.</p><span class="cost free">Free (Community)</span></div>
+      <div class="tool-card"><h3>Cisco Modeling Labs (CML)</h3><p>Cisco's official virtual lab platform with legal, current images — what the CCIE lab exam itself runs on.</p><span class="cost paid">Paid</span></div>
+      <div class="tool-card"><h3>Wireshark</h3><p>Packet capture and analysis. Watching a TCP handshake turns theory into intuition. Used at every level.</p><span class="cost free">Free</span></div>
+      <div class="tool-card"><h3>Cisco DevNet Sandbox</h3><p>Free cloud-hosted real Cisco gear with API access — covers the automation topics with zero hardware.</p><span class="cost free">Free</span></div>
+      <div class="tool-card"><h3>Python + Netmiko / Ansible</h3><p>The automation stack from CCNA onward. Git for everything.</p><span class="cost free">Free</span></div>
+      <div class="tool-card"><h3>Anki + subnetting drills</h3><p>Spaced repetition for facts; daily subnetting practice until answers take under 15 seconds.</p><span class="cost free">Free</span></div>
     </div>
   </div>
 </section>
