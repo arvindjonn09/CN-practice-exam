@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCNA Topic - Standard ACL</title>
+  <meta name="description" content="CCNA Standard ACL topic lesson with explanation, lab sessions, practice, proof upload, comments and interview answer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/evidence.css">
+</head>
+<body data-page="topic-ccna-standard-acl">
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ccna.html" class="active">CCNA</a></li>
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="commands.html">Commands</a></li>
+      <li><a href="mistakes.html">Mistakes</a></li>
+      <li><a href="interview.html">Interview</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">CCNA · ACLs</span>
+    <h1>Standard ACLs: <span class="exam-code">Control Traffic By Source IP</span></h1>
+    <p>This topic turns access control from theory into proof. You will understand what a standard ACL checks, where to place it, how to configure it, how to break it, how to fix it, and how to explain it in an interview.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Where To Study From</h2>
+    <table class="info">
+      <tr><th>Source</th><th>What to study</th></tr>
+      <tr><td>CCNA Volume 2 study path</td><td>Module 1: Transport, Applications and ACL Thinking. Focus on standard IPv4 ACLs, wildcard masks, placement, direction, permit/deny logic and implicit deny.</td></tr>
+      <tr><td>CCNA syllabus page</td><td>Security Fundamentals: configure and verify standard and extended ACLs.</td></tr>
+      <tr><td>Lab source</td><td>Packet Tracer or GNS3 with two LANs, one router, one server and two PCs.</td></tr>
+    </table>
+    <div class="callout tip"><strong>Study target:</strong> do not only memorize syntax. Your goal is to prove why standard ACLs are placed close to the destination.</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Simple Explanation</h2>
+    <div class="sell-grid">
+      <div class="sell-card"><h3>What is a Standard ACL?</h3><ul><li>A standard ACL filters traffic using the <strong>source IP address only</strong>.</li><li>It cannot check destination IP, port number, or application.</li></ul></div>
+      <div class="sell-card"><h3>Why it matters</h3><ul><li>It lets you block or allow users based on where traffic comes from.</li><li>It is simple, but dangerous if placed in the wrong location.</li></ul></div>
+      <div class="sell-card"><h3>Placement rule</h3><ul><li>Place standard ACLs close to the <strong>destination</strong>.</li><li>Reason: because they only know source, placing them too early can block more traffic than intended.</li></ul></div>
+      <div class="sell-card"><h3>Hidden rule</h3><ul><li>Every ACL ends with an invisible <strong>deny any</strong>.</li><li>If you do not permit traffic, it is denied by default.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Diagram To Draw</h2>
+    <p class="sub">Draw this before configuring. If you cannot draw the traffic path, the CLI becomes a cave with angry bats.</p>
+    <pre class="code">PC-A: 192.168.10.10/24        Server: 192.168.30.10/24
+        │                              │
+LAN 10 ─┴─ R1 ───────────────── LAN 30 ┴─ Server Network
+        │
+PC-B: 192.168.20.10/24
+
+Goal:
+- Block PC-A from reaching the server.
+- Allow PC-B to reach the server.
+- Place the standard ACL near LAN 30, close to the destination.</pre>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Commands To Learn</h2>
+    <pre class="code">access-list 10 deny host 192.168.10.10
+access-list 10 permit any
+interface g0/2
+ ip access-group 10 out
+
+show access-lists
+show ip interface g0/2
+ping 192.168.30.10
+traceroute 192.168.30.10</pre>
+    <div class="callout warn"><strong>Do not paste blindly:</strong> interface names and IP addresses must match your topology.</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Lab Sessions</h2>
+    <div class="lab-grid">
+      <div class="lab-card">
+        <h3><span class="lab-num">SESSION 01</span> — Build The Topology</h3>
+        <p>Create two user LANs and one server LAN. Configure IP addresses and routing. Prove all devices can ping before adding the ACL.</p>
+        <div class="meta"><span class="tag tool">Packet Tracer</span><span class="tag scenario">Baseline connectivity</span></div>
+      </div>
+      <div class="lab-card">
+        <h3><span class="lab-num">SESSION 02</span> — Apply Standard ACL</h3>
+        <p>Deny PC-A source IP and permit all others. Apply the ACL outbound on the interface closest to the server network.</p>
+        <div class="meta"><span class="tag tool">Cisco IOS</span><span class="tag scenario">Traffic filtering</span></div>
+      </div>
+      <div class="lab-card">
+        <h3><span class="lab-num">SESSION 03</span> — Break It On Purpose</h3>
+        <p>Apply the ACL on the wrong interface or wrong direction. Observe how the wrong traffic gets blocked. Document the symptom.</p>
+        <div class="meta"><span class="tag scenario">Troubleshooting</span><span class="tag scenario">Mistake journal</span></div>
+      </div>
+      <div class="lab-card">
+        <h3><span class="lab-num">SESSION 04</span> — Fix And Verify</h3>
+        <p>Move the ACL to the correct place. Verify with ping, show access-lists counters and show ip interface.</p>
+        <div class="meta"><span class="tag tool">Verification</span><span class="tag scenario">Proof</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Practice Questions</h2>
+    <table class="info">
+      <tr><th>Question</th><th>Expected answer</th></tr>
+      <tr><td>What does a standard ACL match?</td><td>Source IP address only.</td></tr>
+      <tr><td>Where should a standard ACL usually be placed?</td><td>Close to the destination.</td></tr>
+      <tr><td>Why not place it close to the source?</td><td>It may block that source from reaching other destinations because it cannot check destination or port.</td></tr>
+      <tr><td>What happens if no ACL line matches?</td><td>The implicit deny blocks the traffic.</td></tr>
+      <tr><td>Which command shows ACL hit counters?</td><td><code>show access-lists</code>.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Proof And Notes</h2>
+    <p class="sub evidence-intro">Complete this proof card before marking the topic as lab done or interview-ready.</p>
+    <div class="evidence-grid">
+      <article class="evidence-card" data-task-id="topic-ccna-standard-acl-proof">
+        <h3>Proof — Standard ACL lab</h3>
+        <p class="task-goal">Upload proof that you built, broke, fixed and verified a standard ACL.</p>
+        <div class="evidence-fields">
+          <div class="evidence-field"><label>My notes</label><textarea data-field="note" placeholder="Explain what a standard ACL does, where you placed it, and why."></textarea></div>
+          <div class="evidence-field"><label>Commands used</label><textarea data-field="commands" placeholder="Paste your typed commands and verification commands here."></textarea></div>
+          <div class="evidence-field"><label>What I proved</label><textarea data-field="reflection" placeholder="Example: PC-A was blocked, PC-B was allowed, counters increased, and the ACL was on the correct interface/direction."></textarea></div>
+          <div class="evidence-field"><label>My comments / confusion</label><textarea data-field="comments" placeholder="Write what confused you, what mistake you made, and what you need to review later."></textarea></div>
+          <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
+          <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
+        </div>
+        <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
+        <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> GitHub Proof Checklist</h2>
+    <table class="info">
+      <tr><th>File</th><th>Where to save it</th></tr>
+      <tr><td>Packet Tracer file</td><td><code>labs/ccna/acl-standard/acl-standard.pkt</code></td></tr>
+      <tr><td>Topology screenshot</td><td><code>labs/ccna/acl-standard/topology.png</code></td></tr>
+      <tr><td>Running config</td><td><code>labs/ccna/acl-standard/r1-running-config.txt</code></td></tr>
+      <tr><td>Exported note</td><td><code>notes/ccna/acl-standard.md</code></td></tr>
+      <tr><td>Mistake note</td><td><code>mistakes/ccna/acl-wrong-direction.md</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Interview Answer</h2>
+    <div class="callout tip"><strong>Answer:</strong> A standard ACL filters traffic based only on source IP address. Because it cannot check destination or application port, I usually place it close to the destination so I do not accidentally block the source from reaching other networks. I verify it using ping tests, <code>show access-lists</code> counters, and <code>show ip interface</code> to confirm where the ACL is applied.</div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="container"><p>CCNA topic: Standard ACL. Study, lab, break, fix, prove.</p></div></footer>
+<script src="js/main.js"></script><script src="js/evidence-tracker.js"></script><script type="module" src="js/animations.js"></script>
+</body>
+</html>
