@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCST Cybersecurity Study Path - CN Journey</title>
+  <meta name="description" content="CCST Cybersecurity book study path with modules, topics, labs, notes, proof tasks, screenshots, videos and interview-ready explanations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/evidence.css">
+</head>
+<body data-page="ccst-cybersecurity">
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="level0.html">Level 0</a></li>
+      <li><a href="ccst.html">CCST Networking</a></li>
+      <li><a href="ccst-cybersecurity.html" class="active">CCST Cybersecurity</a></li>
+      <li><a href="ccna.html">CCNA</a></li>
+      <li><a href="proof.html">Proof</a></li>
+      <li><a href="review.html">Review</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">Beginner Security Path</span>
+    <h1>CCST Cybersecurity <span class="exam-code">Book Study Path</span></h1>
+    <p>This page converts the uploaded CCST Cybersecurity study guide into a daily study system: read small, explain simply, perform a mini task, upload proof, export notes, and build interview-ready answers.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> How To Study This Book</h2>
+    <p class="sub">Do not read like a passenger. Study like a support technician building evidence.</p>
+    <div class="sell-grid">
+      <div class="sell-card"><h3>1. Read Small</h3><ul><li>Study one topic, not a whole chapter in one sitting.</li><li>Write the idea in your own words.</li></ul></div>
+      <div class="sell-card"><h3>2. Do A Mini Task</h3><ul><li>Open the tool, inspect the setting, run the command, or draw the diagram.</li><li>Every topic should produce proof.</li></ul></div>
+      <div class="sell-card"><h3>3. Upload Evidence</h3><ul><li>Screenshot visible results.</li><li>Use video for a process, like checking Event Viewer or Windows Defender.</li></ul></div>
+      <div class="sell-card"><h3>4. Export Notes</h3><ul><li>Export the note as Markdown.</li><li>Commit the exported note and evidence to GitHub for permanent proof.</li></ul></div>
+    </div>
+    <div class="callout warn"><strong>Copyright rule:</strong> this page does not copy the book text. It uses the book structure to create original explanations, labs, proof tasks, and study workflow.</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Modules From The Book</h2>
+    <p class="sub">The uploaded book is organized into 13 chapters. This learning path groups them into five exam-ready modules.</p>
+
+    <details class="domain" open>
+      <summary>Module 1. Essential Security Principles <span class="weight">Ch. 1, 4, 5</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccstcy-1-1"><label for="ccstcy-1-1">Vulnerabilities, threats, exploits and risks.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-1-2"><label for="ccstcy-1-2">Attack vectors, hardening and defense in depth.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-1-3"><label for="ccstcy-1-3">Common threats: malware, ransomware, botnets, denial of service and social engineering.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-1-4"><label for="ccstcy-1-4">Access management: AAA, RADIUS, MFA and password policies.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-1-5"><label for="ccstcy-1-5">Encryption, hashing, certificates, PKI and data states.</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>Module 2. Basic Network Security Concepts <span class="weight">Ch. 2, 3, 5</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccstcy-2-1"><label for="ccstcy-2-1">TCP/IP protocol vulnerabilities: TCP, UDP, HTTP, ARP, ICMP, DHCP and DNS.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-2-2"><label for="ccstcy-2-2">IPv4, IPv6, MAC addresses, segmentation, CIDR, NAT and public/private networks.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-2-3"><label for="ccstcy-2-3">Security devices and architecture: DMZ, proxy, honeypot, IDS and IPS.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-2-4"><label for="ccstcy-2-4">Secure wireless SOHO network: SSID, MAC filtering and encryption standards.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-2-5"><label for="ccstcy-2-5">Secure access technologies: ACL, firewall, VPN and NAC.</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>Module 3. Endpoint Security Concepts <span class="weight">Ch. 6, 7</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccstcy-3-1"><label for="ccstcy-3-1">Windows, macOS and Linux security features.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-3-2"><label for="ccstcy-3-2">Windows Defender, host-based firewalls, CLI and PowerShell basics.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-3-3"><label for="ccstcy-3-3">File and directory permissions, privilege escalation and secure updates.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-3-4"><label for="ccstcy-3-4">Endpoint tools: netstat, nslookup, tcpdump and scan logs.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-3-5"><label for="ccstcy-3-5">System logs: Event Viewer, audit logs, system/application logs and syslog anomalies.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-3-6"><label for="ccstcy-3-6">Inventory, backups, compliance, BYOD, malware scanning and remediation.</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>Module 4. Vulnerability Assessment And Risk Management <span class="weight">Ch. 8, 9, 10</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccstcy-4-1"><label for="ccstcy-4-1">Vulnerability identification, management and mitigation.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-4-2"><label for="ccstcy-4-2">Reconnaissance, port scanning, automation and vulnerability databases.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-4-3"><label for="ccstcy-4-3">Threat intelligence, CVEs, cybersecurity reports and proactive documentation.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-4-4"><label for="ccstcy-4-4">Risk ranking, mitigation strategies, data classifications and security assessments.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-4-5"><label for="ccstcy-4-5">Disaster recovery, BCP, backups, redundancy, high availability and testing.</label></div>
+      </div>
+    </details>
+
+    <details class="domain">
+      <summary>Module 5. Incident Handling And Digital Forensics <span class="weight">Ch. 11, 12, 13</span><span class="domain-count tag"></span></summary>
+      <div class="topics">
+        <div class="topic"><input type="checkbox" id="ccstcy-5-1"><label for="ccstcy-5-1">Security monitoring, SIEM, SOAR and escalation decisions.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-5-2"><label for="ccstcy-5-2">Packet captures, log entries and suspicious event identification.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-5-3"><label for="ccstcy-5-3">Cyber Kill Chain, MITRE ATT&CK, Diamond Model and TTPs.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-5-4"><label for="ccstcy-5-4">Artifacts, sources of evidence, evidence preservation and chain of custody.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-5-5"><label for="ccstcy-5-5">Compliance frameworks: GDPR, HIPAA, PCI-DSS, FERPA and FISMA.</label></div>
+        <div class="topic"><input type="checkbox" id="ccstcy-5-6"><label for="ccstcy-5-6">Incident response policy, plan, procedure and life-cycle stages.</label></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> First Four Proof Tasks</h2>
+    <p class="sub evidence-intro">Start here. These tasks create visible proof that you studied and practiced the first security concepts.</p>
+    <div class="evidence-grid">
+      <article class="evidence-card" data-task-id="ccst-cybersecurity-security-principles">
+        <h3>Task 01 — Explain CIA, threat, vulnerability, exploit and risk</h3>
+        <p class="task-goal">Create your own simple explanation and give one real-world example for each term.</p>
+        <div class="evidence-fields">
+          <div class="evidence-field"><label>My note</label><textarea data-field="note" placeholder="Explain CIA, threat, vulnerability, exploit and risk in your own words."></textarea></div>
+          <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="No command required. Optional: screenshot your handwritten or digital concept map."></textarea></div>
+          <div class="evidence-field"><label>What I proved</label><textarea data-field="reflection" placeholder="Example: I can separate a weakness, an attacker action, and business impact."></textarea></div>
+          <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
+          <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
+        </div>
+        <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
+        <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
+      </article>
+
+      <article class="evidence-card" data-task-id="ccst-cybersecurity-social-engineering">
+        <h3>Task 02 — Social engineering examples</h3>
+        <p class="task-goal">Build a small table of phishing, vishing, smishing, tailgating and shoulder surfing.</p>
+        <div class="evidence-fields">
+          <div class="evidence-field"><label>My note</label><textarea data-field="note" placeholder="Write one sentence for each attack and one prevention method."></textarea></div>
+          <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Optional: create the table in notes app or spreadsheet and screenshot it."></textarea></div>
+          <div class="evidence-field"><label>What I proved</label><textarea data-field="reflection" placeholder="Example: I can identify human-based attacks and explain how to reduce them."></textarea></div>
+          <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
+          <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
+        </div>
+        <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
+        <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
+      </article>
+
+      <article class="evidence-card" data-task-id="ccst-cybersecurity-windows-defender">
+        <h3>Task 03 — Windows Defender and host firewall check</h3>
+        <p class="task-goal">Open Windows Security and Windows Defender Firewall. Record what is enabled and why it matters.</p>
+        <div class="evidence-fields">
+          <div class="evidence-field"><label>My note</label><textarea data-field="note" placeholder="Write what you checked: virus protection, firewall profile, allowed apps, and security status."></textarea></div>
+          <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: Windows Security → Virus & threat protection. Control Panel → Windows Defender Firewall → Allowed apps."></textarea></div>
+          <div class="evidence-field"><label>What I proved</label><textarea data-field="reflection" placeholder="Example: I can verify endpoint protection before blaming the network."></textarea></div>
+          <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
+          <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
+        </div>
+        <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
+        <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
+      </article>
+
+      <article class="evidence-card" data-task-id="ccst-cybersecurity-event-viewer">
+        <h3>Task 04 — Event Viewer security log</h3>
+        <p class="task-goal">Open Event Viewer and find Security, System and Application logs. Screenshot one event and explain what it shows.</p>
+        <div class="evidence-fields">
+          <div class="evidence-field"><label>My note</label><textarea data-field="note" placeholder="Write what Event Viewer is, which logs you checked, and what one event means."></textarea></div>
+          <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: Win + R → eventvwr.msc → Windows Logs → Security/System/Application."></textarea></div>
+          <div class="evidence-field"><label>What I proved</label><textarea data-field="reflection" placeholder="Example: I can inspect logs and use evidence instead of guessing."></textarea></div>
+          <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
+          <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
+        </div>
+        <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
+        <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> First Study Schedule</h2>
+    <table class="info">
+      <tr><th>Day</th><th>Topic</th><th>Proof</th></tr>
+      <tr><td>Day 1</td><td>CIA, threats, vulnerabilities, exploits and risks</td><td>Note + concept map screenshot</td></tr>
+      <tr><td>Day 2</td><td>Common attacks and social engineering</td><td>Attack table + prevention note</td></tr>
+      <tr><td>Day 3</td><td>Windows Defender and firewall basics</td><td>Screenshot + short explanation</td></tr>
+      <tr><td>Day 4</td><td>Event Viewer and logs</td><td>Screenshot + event explanation</td></tr>
+      <tr><td>Day 5</td><td>Review and interview answer</td><td>Export notes + one spoken/video explanation</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="container"><p>CCST Cybersecurity path. Read small, prove everything, export notes.</p></div></footer>
+<script src="js/main.js"></script><script src="js/evidence-tracker.js"></script><script type="module" src="js/animations.js"></script>
+</body></html>
