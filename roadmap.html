@@ -3,132 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learning Dashboard — Cisco Networking Journey</title>
-  <meta name="description" content="Daily study dashboard for IT foundations, CCST, CCNA, CCNP, CCIE-level labs and network architecture portfolio.">
+  <title>Daily Learning Dashboard — CN Journey</title>
+  <meta name="description" content="Daily learning dashboard for IT foundations, CCST, CCNA, CCNP, CCIE and network architecture study paths.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body data-page="roadmap">
 <header class="site-header">
   <nav class="nav">
-    <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
+    <a class="brand" href="index.html">CN JOURNEY</a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
       <li><a href="roadmap.html" class="active">Dashboard</a></li>
-      <li><a href="level0.html">Level 0</a></li>
       <li><a href="ccst.html">CCST</a></li>
-      <li><a href="ccst-cybersecurity.html">CCST Cyber</a></li>
       <li><a href="ccna.html">CCNA</a></li>
-      <li><a href="labs.html">Labs</a></li>
-      <li><a href="interview.html">Interview</a></li>
+      <li><a href="ccnp.html">CCNP</a></li>
+      <li><a href="ccie.html">CCIE</a></li>
+      <li><a href="cca.html">Architecture</a></li>
+      <li><a href="proof.html">Proof</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="cert-hero">
-  <div class="container">
-    <span class="level-tag">Daily Study Cockpit</span>
-    <h1>Choose A Path. <span class="exam-code">Study, Lab, Prove.</span></h1>
-    <p>This is no longer only a roadmap. It is the daily dashboard for learning networking properly: open a path, expand modules, study one topic, complete lab sessions, write notes, upload proof, export evidence, and prepare interview answers.</p>
-  </div>
-</section>
+<main class="dashboard-shell">
+  <section class="dashboard-hero">
+    <h1>Daily Learning Dashboard</h1>
+    <p>Open the site and immediately know what to study, prove, and review today.</p>
+  </section>
 
-<section class="block">
-  <div class="container">
-    <h2><span class="hash">#</span> Today’s Mission</h2>
-    <div class="sell-grid">
-      <div class="sell-card"><h3>Continue Study</h3><ul><li><a href="topic-ccna-standard-acl.html">CCNA: Standard ACLs</a></li><li>Read explanation, draw diagram, finish lab sessions.</li></ul></div>
-      <div class="sell-card"><h3>Upload Missing Proof</h3><ul><li>Screenshot topology.</li><li>Export notes and save GitHub proof path.</li></ul></div>
-      <div class="sell-card"><h3>Review Weak Area</h3><ul><li>ACL direction and placement.</li><li>Implicit deny and verification commands.</li></ul></div>
-      <div class="sell-card"><h3>Interview Practice</h3><ul><li>Explain what you built.</li><li>Say what broke and how you fixed it.</li></ul></div>
-    </div>
-  </div>
-</section>
+  <section class="dashboard-top" aria-label="Today dashboard">
+    <article class="mission-panel">
+      <div>
+        <div class="mission-kicker">Today's Mission</div>
+        <div class="mission-title">CCNA → Standard ACLs</div>
+        <div class="mission-sub">Read → Lab → Break → Fix → Export note</div>
+      </div>
+      <a class="dash-button" href="topic-ccna-standard-acl.html">Start Study</a>
+    </article>
 
-<section class="block">
-  <div class="container">
-    <h2><span class="hash">#</span> Learning Paths</h2>
-    <p class="sub">Each card opens a proper study path. The target is not just reading. The target is proof.</p>
-    <div class="roadmap">
-      <a class="roadmap-card" href="level0.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">L0</div><div><h3>IT / Networking Foundations <small>— Start Here</small></h3><p>Computer basics, OS basics, IP, DNS, DHCP, gateway, ports, protocols, screenshots, notes and proof tasks.</p></div><span class="go">Study →</span>
-      </a>
-      <a class="roadmap-card" href="ccst.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">CCST</div><div><h3>CCST Networking <small>— Beginner Network Support</small></h3><p>Networking support basics before CCNA: devices, media, addressing, basic troubleshooting and support-style labs.</p></div><span class="go">Study →</span>
-      </a>
-      <a class="roadmap-card" href="ccst-cybersecurity.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">CYBER</div><div><h3>CCST Cybersecurity <small>— Beginner Security Support</small></h3><p>Security concepts, network security, endpoint security, risk, vulnerability, incident handling, evidence and notes.</p></div><span class="go">Study →</span>
-      </a>
-      <a class="roadmap-card" href="ccna.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">CCNA</div><div><h3>CCNA <small>— Job-Ready Network Engineer</small></h3><p>Network fundamentals, VLANs, routing, OSPF, NAT, ACLs, security, automation, labs, break/fix practice and proof.</p></div><span class="go">Study →</span>
-      </a>
-      <a class="roadmap-card" href="ccnp.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">CCNP</div><div><h3>CCNP Enterprise <small>— Professional</small></h3><p>Primary path: ENARSI first for routing depth, then ENAUTO for automation. Routing brain first, automation second.</p></div><span class="go">Study →</span>
-      </a>
-      <a class="roadmap-card" href="ccie.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">CCIE</div><div><h3>CCIE-Level Lab Thinking <small>— Expert Practice</small></h3><p>Large topology thinking, 8-hour lab discipline, troubleshooting method, verification, speed and calm network reasoning.</p></div><span class="go">Study →</span>
-      </a>
-      <a class="roadmap-card" href="cca.html" style="text-decoration:none; color:inherit;">
-        <div class="level-icon">ARCH</div><div><h3>Network Architecture Portfolio <small>— Design Thinking</small></h3><p>Architecture decision records, design documents, trade-offs, migration plans, business impact and final portfolio proof.</p></div><span class="go">Study →</span>
-      </a>
-    </div>
-  </div>
-</section>
+    <article class="weak-panel">
+      <div class="weak-kicker">Weak Topic Review</div>
+      <div class="weak-title">3 topics need proof</div>
+      <div class="weak-sub">ACL direction, NAT inside/outside,<br>OSPF neighbor states</div>
+    </article>
+  </section>
 
-<section class="block">
-  <div class="container">
-    <h2><span class="hash">#</span> How Every Topic Must Work</h2>
-    <div class="sell-grid">
-      <div class="sell-card"><h3>1. Learn</h3><ul><li>Where to study from.</li><li>Simple explanation and real-world example.</li><li>Diagram or visual model.</li></ul></div>
-      <div class="sell-card"><h3>2. Lab</h3><ul><li>Build the topology.</li><li>Configure the feature.</li><li>Verify with commands.</li></ul></div>
-      <div class="sell-card"><h3>3. Break / Fix</h3><ul><li>Create one realistic mistake.</li><li>Record symptom, root cause and fix.</li><li>Save comments and confusion.</li></ul></div>
-      <div class="sell-card"><h3>4. Prove</h3><ul><li>Upload screenshot or video.</li><li>Export note.</li><li>Save GitHub evidence path.</li></ul></div>
-    </div>
-  </div>
-</section>
+  <section class="path-grid" aria-label="Learning paths">
+    <a class="path-card" href="level0.html">
+      <div>
+        <h2 class="path-title">IT / Networking Foundations</h2>
+        <div class="path-current">Current: OS basics</div>
+        <div class="path-proof">12 proofs</div>
+        <div class="path-progress-label">Progress 35%</div>
+        <div class="progress-track"><div class="progress-fill" style="width:35%"></div></div>
+      </div>
+      <span class="dash-button">Study</span>
+    </a>
 
-<section class="block">
-  <div class="container">
-    <h2><span class="hash">#</span> First Working Topic Pages</h2>
-    <table class="info">
-      <tr><th>Path</th><th>Topic</th><th>Status</th></tr>
-      <tr><td>CCST Cybersecurity</td><td><a href="topic-ccst-security-principles.html">Security Principles</a></td><td>Lesson + proof task ready</td></tr>
-      <tr><td>CCNA</td><td><a href="topic-ccna-standard-acl.html">Standard ACL</a></td><td>Lesson + lab sessions + comments + proof ready</td></tr>
-    </table>
-  </div>
-</section>
+    <a class="path-card" href="ccst.html">
+      <div>
+        <h2 class="path-title">CCST Networking</h2>
+        <div class="path-current">Current: DNS &amp; DHCP</div>
+        <div class="path-proof">2 proofs</div>
+        <div class="path-progress-label">Progress 10%</div>
+        <div class="progress-track"><div class="progress-fill" style="width:10%"></div></div>
+      </div>
+      <span class="dash-button">Study</span>
+    </a>
 
-<section class="block">
-  <div class="container">
-    <h2><span class="hash">#</span> Proof Standard</h2>
-    <p class="sub">A topic is not complete until someone else can understand what was studied and what was proven.</p>
-    <table class="info">
-      <tr><th>Proof Type</th><th>What it shows</th></tr>
-      <tr><td>Notes</td><td>What I understood in my own words.</td></tr>
-      <tr><td>Screenshot</td><td>Visible result: topology, command output, log, configuration or setting.</td></tr>
-      <tr><td>Video</td><td>Process proof: how I checked, tested, broke and fixed something.</td></tr>
-      <tr><td>GitHub path</td><td>Permanent proof location for labs, configs, notes, screenshots and mistakes.</td></tr>
-      <tr><td>Comments</td><td>Confusion, mistake, review reminder and next improvement.</td></tr>
-    </table>
-  </div>
-</section>
+    <a class="path-card" href="ccst-cybersecurity.html">
+      <div>
+        <h2 class="path-title">CCST Cybersecurity</h2>
+        <div class="path-current">Current: Security Principles</div>
+        <div class="path-proof">1 proof</div>
+        <div class="path-progress-label">Progress 6%</div>
+        <div class="progress-track"><div class="progress-fill" style="width:6%"></div></div>
+      </div>
+      <span class="dash-button">Study</span>
+    </a>
 
-<section class="block">
-  <div class="container">
-    <h2><span class="hash">#</span> Missing-Piece Map</h2>
-    <div class="sell-grid">
-      <div class="sell-card"><h3><a href="syllabus.html">Complete Syllabus Map</a></h3><ul><li>Subnetting, OSI troubleshooting, real hardware, data center, cloud, firewall, wireless and proof standards.</li></ul></div>
-      <div class="sell-card"><h3><a href="tickets.html">Ticket Simulations</a></h3><ul><li>APIPA, DNS failure, wrong gateway, VLAN/trunk faults, VPN issue, Wi-Fi connected but no internet.</li></ul></div>
-      <div class="sell-card"><h3><a href="interview.html">Interview Answer Bank</a></h3><ul><li>Each answer connects concept, lab proof, commands, mistake learned and professional explanation.</li></ul></div>
-    </div>
-  </div>
-</section>
+    <a class="path-card" href="ccna.html">
+      <div>
+        <h2 class="path-title">CCNA</h2>
+        <div class="path-current">Current: Standard ACL</div>
+        <div class="path-proof">4 proofs</div>
+        <div class="path-progress-label">Progress 18%</div>
+        <div class="progress-track"><div class="progress-fill" style="width:18%"></div></div>
+      </div>
+      <span class="dash-button">Study</span>
+    </a>
 
-<footer class="site-footer">
-  <div class="container"><p>Daily dashboard · Foundations → CCST → CCNA → CCNP → CCIE-Level Labs → Network Architecture Portfolio</p></div>
-</footer>
+    <a class="path-card" href="ccnp.html">
+      <div>
+        <h2 class="path-title">CCNP</h2>
+        <div class="path-current">Locked until CCNA labs</div>
+        <div class="path-proof" style="color:var(--dash-muted)">0 proofs</div>
+        <div class="path-progress-label">Progress 0%</div>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+      <span class="dash-button">Study</span>
+    </a>
+
+    <a class="path-card" href="ccie.html">
+      <div>
+        <h2 class="path-title">CCIE</h2>
+        <div class="path-current">Future expert labs</div>
+        <div class="path-proof" style="color:var(--dash-muted)">0 proofs</div>
+        <div class="path-progress-label">Progress 0%</div>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+      <span class="dash-button">Study</span>
+    </a>
+
+    <a class="path-card" href="cca.html">
+      <div>
+        <h2 class="path-title">Network Architecture</h2>
+        <div class="path-current">Design portfolio</div>
+        <div class="path-proof" style="color:var(--dash-muted)">0 proofs</div>
+        <div class="path-progress-label">Progress 0%</div>
+        <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+      <span class="dash-button">Study</span>
+    </a>
+  </section>
+
+  <section class="dashboard-panels">
+    <article class="dashboard-panel">
+      <h2>How Every Topic Works</h2>
+      <ul>
+        <li>Where to study from</li>
+        <li>Simple explanation and diagram</li>
+        <li>Lab sessions and practice questions</li>
+        <li>Break it, fix it, verify it</li>
+        <li>Notes, comments, screenshot/video proof and export</li>
+      </ul>
+    </article>
+    <article class="dashboard-panel">
+      <h2>Working Topic Pages</h2>
+      <ul>
+        <li><a href="topic-ccst-security-principles.html">CCST Cybersecurity: Security Principles</a></li>
+        <li><a href="topic-ccna-standard-acl.html">CCNA: Standard ACLs</a></li>
+        <li><a href="tickets.html">Ticket simulations</a></li>
+        <li><a href="interview.html">Interview answer bank</a></li>
+      </ul>
+    </article>
+  </section>
+</main>
+
 <script src="js/main.js"></script>
 <script type="module" src="js/animations.js"></script>
 </body>
