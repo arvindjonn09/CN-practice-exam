@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCST Topic - Security Principles</title>
+  <meta name="description" content="Beginner-friendly CCST Cybersecurity topic page for CIA, threats, vulnerabilities, exploits and risk with notes, examples, proof and quiz.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/evidence.css">
+</head>
+<body data-page="topic-ccst-security-principles">
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ccst-cybersecurity.html" class="active">CCST Cybersecurity</a></li>
+      <li><a href="proof.html">Proof</a></li>
+      <li><a href="review.html">Review</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cert-hero">
+  <div class="container">
+    <span class="level-tag">CCST Cybersecurity · Module 1</span>
+    <h1>Security Principles: <span class="exam-code">CIA, Threat, Vulnerability, Exploit and Risk</span></h1>
+    <p>This is the first real cybersecurity language lesson. Before tools, firewalls and logs, you must be able to separate what is valuable, what can go wrong, how it can be attacked, and what business impact it creates.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Where To Study From</h2>
+    <table class="info">
+      <tr><th>Source</th><th>What to read</th></tr>
+      <tr><td>Uploaded CCST Cybersecurity book</td><td>Chapter 1: Security Concepts. Focus on technology-based attacks, social-based attacks, malware, summary and exam essentials.</td></tr>
+      <tr><td>Exam objective map</td><td>Objective 1.1: vulnerabilities, threats, exploits, risks, attack vectors, hardening, defense in depth, CIA, attackers, reasons for attacks and code of ethics.</td></tr>
+      <tr><td>Practice style</td><td>Do not memorize first. Build a one-page concept map and one real-world example for each term.</td></tr>
+    </table>
+    <div class="callout tip"><strong>Reading target:</strong> read only the Security Concepts opening part first, then stop and write your own explanation. The goal is understanding, not page count.</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Simple Explanation</h2>
+    <div class="sell-grid">
+      <div class="sell-card"><h3>CIA Triad</h3><ul><li><strong>Confidentiality:</strong> only the right people can see the data.</li><li><strong>Integrity:</strong> data stays correct and is not secretly changed.</li><li><strong>Availability:</strong> systems and data are usable when needed.</li></ul></div>
+      <div class="sell-card"><h3>Threat</h3><ul><li>A possible danger that can cause harm.</li><li>Example: attacker, malware, insider, power failure, phishing email.</li></ul></div>
+      <div class="sell-card"><h3>Vulnerability</h3><ul><li>A weakness that can be used by a threat.</li><li>Example: weak password, unpatched software, open port, bad permission.</li></ul></div>
+      <div class="sell-card"><h3>Exploit</h3><ul><li>The method or action used to take advantage of a vulnerability.</li><li>Example: using a known bug to run code or stealing credentials through phishing.</li></ul></div>
+      <div class="sell-card"><h3>Risk</h3><ul><li>The chance and impact of something bad happening.</li><li>Risk = valuable asset + threat + vulnerability + possible impact.</li></ul></div>
+      <div class="sell-card"><h3>Hardening</h3><ul><li>Reducing weak points before an attack.</li><li>Example: patching, disabling unused services, strong passwords, MFA and least privilege.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Real-World Example</h2>
+    <div class="callout tip"><strong>Scenario:</strong> a small office stores customer invoices on a shared Windows folder. One user has a weak password and the folder allows too many people to edit files.</div>
+    <table class="info">
+      <tr><th>Term</th><th>In this scenario</th></tr>
+      <tr><td>Asset</td><td>Customer invoices and business records.</td></tr>
+      <tr><td>Threat</td><td>Phishing attacker or insider misuse.</td></tr>
+      <tr><td>Vulnerability</td><td>Weak password and excessive folder permissions.</td></tr>
+      <tr><td>Exploit</td><td>Attacker steals the password and modifies or deletes invoices.</td></tr>
+      <tr><td>Risk</td><td>Data loss, wrong billing, privacy breach, business downtime.</td></tr>
+      <tr><td>Hardening</td><td>MFA, strong password policy, least privilege, backups and audit logs.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Diagram To Draw</h2>
+    <p class="sub">Draw this in your notebook, Excalidraw, Draw.io or any whiteboard app. Upload the screenshot as proof.</p>
+    <pre class="code">Asset: Customer invoices
+        ↓
+Threat: Phishing attacker
+        ↓ uses
+Vulnerability: Weak password + bad permissions
+        ↓ causes
+Exploit: Unauthorized login / file modification
+        ↓ creates
+Risk: Data loss + business impact
+        ↓ reduced by
+Controls: MFA + least privilege + backups + logs</pre>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Mini Lab</h2>
+    <div class="lab-grid">
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 01</span> — Folder Permission Risk Check</h3>
+        <p>Create a test folder on Windows. Check who has access. Take a screenshot of the permissions window. Write whether too many users can modify the folder.</p>
+        <div class="realworld"><strong>Real-world case:</strong> many breaches start with simple permission mistakes, not Hollywood hacking.</div>
+        <div class="meta"><span class="tag tool">Windows</span><span class="tag scenario">Permissions</span><span class="tag scenario">Beginner security</span></div>
+      </div>
+      <div class="lab-card">
+        <h3><span class="lab-num">LAB 02</span> — Weak Password Risk Note</h3>
+        <p>Write a short note explaining why weak passwords affect confidentiality, integrity and availability. Add one control for each.</p>
+        <div class="realworld"><strong>Real-world case:</strong> support technicians often start security checks by verifying account and access controls.</div>
+        <div class="meta"><span class="tag tool">Notes</span><span class="tag scenario">Risk explanation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Proof Task</h2>
+    <p class="sub evidence-intro">Complete this before marking the topic as understood.</p>
+    <div class="evidence-grid">
+      <article class="evidence-card" data-task-id="topic-ccst-security-principles-proof">
+        <h3>Proof — Security principles explained with evidence</h3>
+        <p class="task-goal">Write the explanation, draw the diagram, upload a screenshot and export the note.</p>
+        <div class="evidence-fields">
+          <div class="evidence-field"><label>My note</label><textarea data-field="note" placeholder="Explain CIA, threat, vulnerability, exploit, risk and hardening using one real-world example."></textarea></div>
+          <div class="evidence-field"><label>Commands / clicks used</label><textarea data-field="commands" placeholder="Example: Right click folder → Properties → Security tab. Checked permissions. Drew concept map."></textarea></div>
+          <div class="evidence-field"><label>What I proved</label><textarea data-field="reflection" placeholder="Example: I can identify the asset, threat, vulnerability, exploit, risk and control in a simple office scenario."></textarea></div>
+          <div class="evidence-field"><label>Screenshot proof</label><input type="file" accept="image/*" data-evidence="screenshot"></div>
+          <div class="evidence-field"><label>Optional video proof</label><input type="file" accept="video/*" data-evidence="video"></div>
+        </div>
+        <div class="evidence-actions"><button data-action="save">Save locally</button><button data-action="export">Export note</button><button data-action="clear">Clear</button></div>
+        <div class="evidence-status">Not saved yet.</div><div class="evidence-warning"></div><div class="evidence-preview"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Quick Quiz</h2>
+    <table class="info">
+      <tr><th>Question</th><th>Expected answer</th></tr>
+      <tr><td>What is the difference between threat and vulnerability?</td><td>Threat is the danger. Vulnerability is the weakness the danger can use.</td></tr>
+      <tr><td>What part of CIA is affected if files are secretly changed?</td><td>Integrity.</td></tr>
+      <tr><td>What part of CIA is affected if a system is offline during business hours?</td><td>Availability.</td></tr>
+      <tr><td>Give one hardening action for weak passwords.</td><td>MFA, strong password policy, account lockout, password manager or user training.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <h2><span class="hash">#</span> Interview Answer Builder</h2>
+    <div class="callout tip"><strong>Answer:</strong> The CIA triad is the basic model for protecting information. Confidentiality means only authorized people can access data, integrity means data remains accurate, and availability means systems are usable when needed. A threat is something that can cause harm, a vulnerability is a weakness, an exploit is the method used to abuse that weakness, and risk is the possible business impact. In a support role, I would identify the asset, check the weakness, apply controls like MFA, patching and least privilege, then document the evidence.</div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="container"><p>Topic lesson: Security principles. Study, prove, export.</p></div></footer>
+<script src="js/main.js"></script><script src="js/evidence-tracker.js"></script><script type="module" src="js/animations.js"></script>
+</body>
+</html>
