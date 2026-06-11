@@ -1,0 +1,103 @@
+{
+  "path": "ccna",
+  "topics": [
+    {
+      "id": "ccna-vlan",
+      "module": "Network Access",
+      "subject": "network-access",
+      "title": "VLANs — Virtual Local Area Networks",
+      "file": "topics/ccna/vlan.html",
+      "estimatedTime": "45 min",
+      "difficulty": "intermediate",
+      "source": "CCNA Official Cert Guide, Chapter 11",
+      "labRequired": true,
+      "proofRequired": ["note", "screenshot", "commands", "packet-file"],
+      "keywords": ["vlan", "access port", "trunk", "802.1q", "native vlan"],
+      "order": 1
+    },
+    {
+      "id": "ccna-trunking",
+      "module": "Network Access",
+      "subject": "network-access",
+      "title": "Trunking — 802.1Q and VTP",
+      "file": "topics/ccna/trunking.html",
+      "estimatedTime": "40 min",
+      "difficulty": "intermediate",
+      "source": "CCNA Official Cert Guide, Chapter 12",
+      "labRequired": true,
+      "proofRequired": ["note", "screenshot", "commands", "packet-file"],
+      "keywords": ["trunk", "802.1q", "vtp", "native vlan", "encapsulation"],
+      "order": 2
+    },
+    {
+      "id": "ccna-standard-acl",
+      "module": "Security Fundamentals",
+      "subject": "security-fundamentals",
+      "title": "Standard ACLs",
+      "file": "topics/ccna/standard-acl.html",
+      "estimatedTime": "35 min",
+      "difficulty": "intermediate",
+      "source": "CCNA Official Cert Guide, ACL Chapter",
+      "labRequired": true,
+      "proofRequired": ["note", "screenshot", "commands", "packet-file"],
+      "keywords": ["acl", "access list", "permit", "deny", "wildcard", "standard"],
+      "order": 3
+    },
+    {
+      "id": "ccna-extended-acl",
+      "module": "Security Fundamentals",
+      "subject": "security-fundamentals",
+      "title": "Extended ACLs",
+      "file": "topics/ccna/extended-acl.html",
+      "estimatedTime": "40 min",
+      "difficulty": "intermediate",
+      "source": "CCNA Official Cert Guide, ACL Chapter",
+      "labRequired": true,
+      "proofRequired": ["note", "screenshot", "commands", "packet-file"],
+      "keywords": ["extended acl", "source", "destination", "port", "protocol", "named acl"],
+      "order": 4
+    },
+    {
+      "id": "ccna-ospf",
+      "module": "IP Connectivity",
+      "subject": "ip-connectivity",
+      "title": "OSPF — Open Shortest Path First",
+      "file": "topics/ccna/ospf.html",
+      "estimatedTime": "60 min",
+      "difficulty": "intermediate",
+      "source": "CCNA Official Cert Guide, OSPF Chapter",
+      "labRequired": true,
+      "proofRequired": ["note", "screenshot", "commands", "packet-file"],
+      "keywords": ["ospf", "lsa", "spf", "area", "router-id", "hello", "dead interval", "DR", "BDR"],
+      "order": 5
+    },
+    {
+      "id": "ccna-nat-pat",
+      "module": "IP Services",
+      "subject": "ip-services",
+      "title": "NAT and PAT",
+      "file": "topics/ccna/nat-pat.html",
+      "estimatedTime": "45 min",
+      "difficulty": "intermediate",
+      "source": "CCNA Official Cert Guide, NAT Chapter",
+      "labRequired": true,
+      "proofRequired": ["note", "screenshot", "commands", "packet-file"],
+      "keywords": ["nat", "pat", "inside local", "inside global", "overload", "translation"],
+      "order": 6
+    },
+    {
+      "id": "ccna-dhcp",
+      "module": "IP Services",
+      "subject": "ip-services",
+      "title": "DHCP — Dynamic Host Configuration Protocol",
+      "file": "topics/ccna/dhcp.html",
+      "estimatedTime": "35 min",
+      "difficulty": "beginner",
+      "source": "CCNA Official Cert Guide, DHCP Chapter",
+      "labRequired": true,
+      "proofRequired": ["note", "screenshot", "commands", "packet-file"],
+      "keywords": ["dhcp", "discover", "offer", "request", "ack", "pool", "excluded", "relay agent"],
+      "order": 7
+    }
+  ]
+}

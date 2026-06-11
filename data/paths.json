@@ -1,0 +1,103 @@
+{
+  "paths": [
+    {
+      "id": "foundations",
+      "level": 0,
+      "name": "IT Foundations",
+      "slug": "foundations",
+      "icon": "🖥️",
+      "color": "dim",
+      "description": "Absolute basics before any certification — hardware, OS, cabling, binary math.",
+      "locked": false,
+      "subjects": []
+    },
+    {
+      "id": "ccst-networking",
+      "level": 1,
+      "name": "CCST Networking",
+      "slug": "ccst-networking",
+      "icon": "🌐",
+      "color": "blue",
+      "description": "Entry-level Cisco networking certification. Covers fundamentals, IP addressing, and basic network operations.",
+      "locked": false,
+      "subjects": [
+        { "id": "net-fundamentals",  "name": "Network Fundamentals",        "icon": "🌐", "color": "blue",   "modules": 3, "topics": 14 },
+        { "id": "net-access",        "name": "Network Access & Media",       "icon": "🔌", "color": "green",  "modules": 2, "topics": 10 },
+        { "id": "ip-addressing",     "name": "IP Addressing Basics",         "icon": "📡", "color": "warn",   "modules": 3, "topics": 12 },
+        { "id": "security-basics",   "name": "Security Fundamentals",        "icon": "🛡️", "color": "danger", "modules": 2, "topics": 9  },
+        { "id": "it-support",        "name": "IT Support Essentials",        "icon": "🔧", "color": "purple", "modules": 2, "topics": 8  }
+      ]
+    },
+    {
+      "id": "ccst-cybersecurity",
+      "level": 1,
+      "name": "CCST Cybersecurity",
+      "slug": "ccst-cybersecurity",
+      "icon": "🛡️",
+      "color": "danger",
+      "description": "Entry-level Cisco cybersecurity certification. Covers security principles, threats, tools, and incident response.",
+      "locked": false,
+      "subjects": [
+        { "id": "security-principles", "name": "Security Principles",         "icon": "🔐", "color": "danger", "modules": 2, "topics": 8  },
+        { "id": "threats-vulns",       "name": "Threats & Vulnerabilities",   "icon": "⚠️", "color": "warn",   "modules": 3, "topics": 11 },
+        { "id": "security-tools",      "name": "Security Tools & Monitoring", "icon": "🔍", "color": "blue",   "modules": 2, "topics": 9  },
+        { "id": "incident-response",   "name": "Incident Response",           "icon": "🚨", "color": "danger", "modules": 2, "topics": 7  }
+      ]
+    },
+    {
+      "id": "ccna",
+      "level": 2,
+      "name": "CCNA",
+      "slug": "ccna",
+      "icon": "🔀",
+      "color": "green",
+      "description": "Associate-level networking. Routing, switching, VLANs, ACLs, NAT, OSPF, wireless, automation.",
+      "locked": true,
+      "unlockAfter": ["ccst-networking"],
+      "subjects": [
+        { "id": "network-fundamentals", "name": "Network Fundamentals",        "icon": "🌐", "color": "blue",   "modules": 4, "topics": 18 },
+        { "id": "network-access",       "name": "Network Access (VLANs)",      "icon": "🔌", "color": "green",  "modules": 3, "topics": 14 },
+        { "id": "ip-connectivity",      "name": "IP Connectivity (Routing)",   "icon": "🗺️", "color": "warn",   "modules": 4, "topics": 16 },
+        { "id": "ip-services",          "name": "IP Services (NAT, DHCP, NTP)","icon": "⚙️", "color": "blue",   "modules": 3, "topics": 12 },
+        { "id": "security-fundamentals","name": "Security Fundamentals (ACL)", "icon": "🔐", "color": "danger", "modules": 2, "topics": 8  },
+        { "id": "automation",           "name": "Automation & Programmability","icon": "🤖", "color": "purple", "modules": 2, "topics": 7  }
+      ]
+    },
+    {
+      "id": "ccnp",
+      "level": 3,
+      "name": "CCNP",
+      "slug": "ccnp",
+      "icon": "⚡",
+      "color": "warn",
+      "description": "Professional-level. Advanced routing, switching, SD-WAN, network design.",
+      "locked": true,
+      "unlockAfter": ["ccna"],
+      "subjects": []
+    },
+    {
+      "id": "ccie",
+      "level": 4,
+      "name": "CCIE",
+      "slug": "ccie",
+      "icon": "🏆",
+      "color": "danger",
+      "description": "Expert-level. Lab-based exam, advanced troubleshooting, full network design and implementation.",
+      "locked": true,
+      "unlockAfter": ["ccnp"],
+      "subjects": []
+    },
+    {
+      "id": "architecture",
+      "level": 5,
+      "name": "Network Architect",
+      "slug": "architecture",
+      "icon": "🏛️",
+      "color": "purple",
+      "description": "Design and architect enterprise networks. Business requirements → technical solutions.",
+      "locked": true,
+      "unlockAfter": ["ccie"],
+      "subjects": []
+    }
+  ]
+}

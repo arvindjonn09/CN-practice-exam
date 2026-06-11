@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FILL: title and meta -->
+  <title>TOPIC TITLE — CN Journey</title>
+  <meta name="description" content="FILL: one-sentence description of this topic">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/topic.css">
+  <link rel="stylesheet" href="../../css/evidence.css">
+</head>
+<body>
+
+<!-- Navigation (rendered by app.js) -->
+<div id="site-nav"></div>
+
+<main class="page-topic">
+
+  <!-- Breadcrumb -->
+  <!-- FILL: update path name, subject name, and topic title -->
+  <nav class="breadcrumb" aria-label="breadcrumb" id="breadcrumb">
+    <a href="/dashboard.html">Dashboard</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="/paths/ccna.html">PATH NAME</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="/paths/ccna.html#subject-id">SUBJECT NAME</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">TOPIC TITLE</span>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════
+       STEP PROGRESS BAR (Learn → Lab → Quiz)
+       JS (progress.js) updates classes: done / active / pending
+  ═══════════════════════════════════════════════════════════════ -->
+  <div class="step-bar">
+    <div class="step-bar-label">Your progress on this topic</div>
+    <div class="step-track">
+      <div class="step-node">
+        <div class="step-circle active" data-step="learn">1</div>
+        <div class="step-info">
+          <div class="step-name active" data-step="learn">Learn</div>
+          <div class="step-desc">Concept &amp; commands</div>
+        </div>
+      </div>
+      <div class="step-line" data-after="learn"></div>
+      <div class="step-node">
+        <div class="step-circle pending" data-step="lab">2</div>
+        <div class="step-info">
+          <div class="step-name pending" data-step="lab">Lab</div>
+          <div class="step-desc">Hands-on practice</div>
+        </div>
+      </div>
+      <div class="step-line" data-after="lab"></div>
+      <div class="step-node">
+        <div class="step-circle pending" data-step="quiz">3</div>
+        <div class="step-info">
+          <div class="step-name pending" data-step="quiz">Quiz &amp; Prove</div>
+          <div class="step-desc">Check &amp; submit proof</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SECTION 1 — TOPIC IDENTITY
+  ═══════════════════════════════════════ -->
+  <div class="topic-header">
+    <div class="topic-badges">
+      <!-- FILL: path badge, difficulty badge, estimated time -->
+      <span class="badge badge-blue">CCNA</span>
+      <span class="badge badge-dim">Security Fundamentals</span>
+      <span class="badge badge-dim">Intermediate</span>
+    </div>
+    <h1 class="topic-title">TOPIC TITLE</h1><!-- FILL -->
+    <div class="topic-meta">
+      <div class="topic-meta-item">⏱ FILL min to study</div>
+      <div class="topic-meta-item">🔬 Lab included</div>
+      <div class="topic-meta-item">❓ FILL questions</div>
+    </div>
+    <!-- Status selector -->
+    <div class="topic-status-bar">
+      <span class="text-dim fs-sm">Your status:</span>
+      <select class="status-select" id="topic-status-select">
+        <option value="not-started">Not started</option>
+        <option value="learning">Currently learning</option>
+        <option value="lab-done">Lab done</option>
+        <option value="quiz-passed">Quiz passed</option>
+        <option value="reviewed">Reviewed &amp; confident</option>
+        <option value="interview-ready">Interview ready</option>
+      </select>
+      <span class="notes-saved-msg" id="status-saved-msg">✓ Saved</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SECTION 2 — WHAT YOU WILL LEARN
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="objectives">
+    <div class="topic-section-title">
+      <span class="ts-num">2</span>What You Will Learn
+    </div>
+    <!-- FILL: 4-6 learning objectives -->
+    <ul class="objectives-list">
+      <li>FILL: learning objective 1</li>
+      <li>FILL: learning objective 2</li>
+      <li>FILL: learning objective 3</li>
+      <li>FILL: learning objective 4</li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 3 — WHERE TO STUDY FROM
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="sources">
+    <div class="topic-section-title">
+      <span class="ts-num">3</span>Where to Study From
+    </div>
+    <div class="card card-sm">
+      <table class="sources-table">
+        <thead>
+          <tr><th>Source</th><th>Chapter / Section</th><th>Pages</th></tr>
+        </thead>
+        <tbody>
+          <!-- FILL: book references -->
+          <tr><td>FILL: Book title</td><td>FILL: Chapter name</td><td>FILL: pp. xxx–xxx</td></tr>
+          <tr><td>Cisco Documentation</td><td>FILL: relevant doc link or title</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 4 — SIMPLE EXPLANATION
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="explanation">
+    <div class="topic-section-title">
+      <span class="ts-num">4</span>Simple Explanation
+    </div>
+    <!-- FILL: 2-3 sentence concept summary -->
+    <div class="concept-intro">
+      FILL: Write a clear 2-3 sentence explanation of the concept in plain language.
+      No jargon first — explain it like you're talking to someone who just started networking.
+      Then add the technical detail.
+    </div>
+    <!-- FILL: 4 concept cards (What / Why / How / Where) -->
+    <div class="concept-cards">
+      <div class="concept-card">
+        <div class="cc-icon">❓</div>
+        <div class="cc-title">What is it?</div>
+        <div class="cc-body">FILL: one-sentence definition</div>
+      </div>
+      <div class="concept-card">
+        <div class="cc-icon">💡</div>
+        <div class="cc-title">Why do we use it?</div>
+        <div class="cc-body">FILL: the problem it solves</div>
+      </div>
+      <div class="concept-card">
+        <div class="cc-icon">⚙️</div>
+        <div class="cc-title">How does it work?</div>
+        <div class="cc-body">FILL: the mechanism in 1-2 sentences</div>
+      </div>
+      <div class="concept-card">
+        <div class="cc-icon">📍</div>
+        <div class="cc-title">Where is it configured?</div>
+        <div class="cc-body">FILL: which device / interface / mode</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 5 — REAL-WORLD USE
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="realworld">
+    <div class="topic-section-title">
+      <span class="ts-num">5</span>Real-World Use
+    </div>
+    <div class="realworld-box">
+      <strong>On the job:</strong>
+      FILL: Describe a realistic scenario where a network engineer would use this technology.
+      E.g. "A company has 3 departments. The finance team must not reach the HR servers.
+      You apply an ACL on the router to block that traffic — this is exactly where Standard ACLs are used."
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 6 — DIAGRAM
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="diagram">
+    <div class="topic-section-title">
+      <span class="ts-num">6</span>Diagram
+    </div>
+    <div class="diagram-container">
+      <div class="diagram-title">FILL: Diagram title — draw this yourself to learn it</div>
+      <!-- OPTION A: ASCII diagram -->
+      <div class="diagram-ascii">
+FILL: ASCII topology or flow diagram goes here.
+Example:
+
+  [PC-A]──────[Switch]──────[Router]──────[Server]
+  10.0.0.10                  10.0.0.1       192.168.1.10
+                             ↑
+                         ACL applied here
+      </div>
+      <!-- OPTION B: CSS animation (uncomment and fill for animated diagrams) -->
+      <!--
+      <div class="anim-container" id="topic-animation">
+        <div class="anim-label">FILL: Animation title</div>
+        FILL: animation HTML goes here
+      </div>
+      -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 7 — COMMANDS / TOOLS
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="commands">
+    <div class="topic-section-title">
+      <span class="ts-num">7</span>Commands &amp; Tools
+    </div>
+    <!-- FILL: all relevant commands from the book -->
+    <div class="commands-block">
+      <div class="commands-header">
+        <span class="commands-label">Configuration Commands</span>
+        <button class="copy-btn" data-target="config-commands">Copy</button>
+      </div>
+      <div class="commands-body" id="config-commands">
+        <!-- FILL: one .cmd-row per command -->
+        <div class="cmd-row">
+          <span class="cmd-code">FILL: command here</span>
+          <span class="cmd-desc">FILL: what this command does</span>
+        </div>
+        <div class="cmd-row">
+          <span class="cmd-code">FILL: command here</span>
+          <span class="cmd-desc">FILL: what this command does</span>
+        </div>
+      </div>
+    </div>
+    <div class="commands-block">
+      <div class="commands-header">
+        <span class="commands-label">Verification Commands</span>
+        <button class="copy-btn" data-target="verify-commands">Copy</button>
+      </div>
+      <div class="commands-body" id="verify-commands">
+        <div class="cmd-row">
+          <span class="cmd-code">FILL: show command</span>
+          <span class="cmd-desc">FILL: what to look for in the output</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 8 — LAB SESSION 1
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="lab1">
+    <div class="topic-section-title">
+      <span class="ts-num">8</span>Lab Session 1
+    </div>
+    <div class="lab-card">
+      <div class="lab-card-header">
+        <div class="lab-num">L1</div>
+        <div>
+          <div class="lab-title">FILL: Lab 1 title</div>
+          <div class="lab-meta">Cisco Packet Tracer · FILL: ~xx min</div>
+        </div>
+      </div>
+      <div class="lab-body">
+        <div class="lab-goal">
+          <strong>Goal:</strong> FILL: what the learner will build and verify
+        </div>
+        <!-- Topology diagram for the lab -->
+        <div class="diagram-container" style="margin-bottom:16px">
+          <div class="diagram-title">Lab topology</div>
+          <div class="diagram-ascii">
+FILL: lab topology diagram
+          </div>
+        </div>
+        <!-- Steps -->
+        <div class="lab-steps">
+          <!-- FILL: 4-6 step-by-step instructions -->
+          <div class="lab-step pending">
+            <div class="lab-step-num sn-pending">1</div>
+            <div>FILL: Step 1 instruction</div>
+          </div>
+          <div class="lab-step pending">
+            <div class="lab-step-num sn-pending">2</div>
+            <div>FILL: Step 2 instruction</div>
+          </div>
+          <div class="lab-step pending">
+            <div class="lab-step-num sn-pending">3</div>
+            <div>FILL: Step 3 instruction</div>
+          </div>
+          <div class="lab-step pending">
+            <div class="lab-step-num sn-pending">4</div>
+            <div>FILL: Step 4 — verify with: <code>FILL: show command</code></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 9 — LAB SESSION 2
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="lab2">
+    <div class="topic-section-title">
+      <span class="ts-num">9</span>Lab Session 2
+    </div>
+    <div class="lab-card">
+      <div class="lab-card-header">
+        <div class="lab-num">L2</div>
+        <div>
+          <div class="lab-title">FILL: Lab 2 title (more advanced scenario)</div>
+          <div class="lab-meta">Cisco Packet Tracer · FILL: ~xx min</div>
+        </div>
+      </div>
+      <div class="lab-body">
+        <div class="lab-goal">
+          <strong>Goal:</strong> FILL: builds on Lab 1, adds a new challenge
+        </div>
+        <div class="lab-steps">
+          <div class="lab-step pending">
+            <div class="lab-step-num sn-pending">1</div>
+            <div>FILL: Step 1</div>
+          </div>
+          <div class="lab-step pending">
+            <div class="lab-step-num sn-pending">2</div>
+            <div>FILL: Step 2</div>
+          </div>
+          <div class="lab-step pending">
+            <div class="lab-step-num sn-pending">3</div>
+            <div>FILL: Step 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mark lab done button -->
+    <div style="margin-top:12px;text-align:right">
+      <button class="btn btn-green btn-sm" id="lab-done-btn" onclick="markLabDone()">
+        ✓ Mark Lab Done — Go to Quiz
+      </button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 10 — BREAK-IT TASK
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="break-it">
+    <div class="topic-section-title">
+      <span class="ts-num">10</span>Break-It Task
+    </div>
+    <div class="task-card break">
+      <h4>Intentionally break the config — then fix it</h4>
+      <ul class="task-list">
+        <!-- FILL: 2-3 things to break deliberately to learn from failure -->
+        <li>FILL: break action 1 (e.g. "Apply the ACL in the wrong direction")</li>
+        <li>FILL: break action 2 (e.g. "Use wrong wildcard mask")</li>
+        <li>FILL: break action 3 (e.g. "Remove the permit statement")</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 11 — FIX-IT TASK
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="fix-it">
+    <div class="topic-section-title">
+      <span class="ts-num">11</span>Fix-It Task
+    </div>
+    <div class="task-card fix">
+      <h4>Troubleshooting steps</h4>
+      <ul class="task-list">
+        <!-- FILL: logical troubleshooting steps -->
+        <li>FILL: first check (e.g. "Run <code>show ip access-lists</code> — check hit counts")</li>
+        <li>FILL: second check</li>
+        <li>FILL: third check (e.g. "Check direction — is it in or out?")</li>
+        <li>FILL: fix command</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 12 — VERIFICATION
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="verification">
+    <div class="topic-section-title">
+      <span class="ts-num">12</span>Verification
+    </div>
+    <div class="task-card verify">
+      <h4>How to confirm it's working correctly</h4>
+      <ul class="task-list">
+        <!-- FILL: verification commands and what to look for in output -->
+        <li>FILL: verification step 1 — what command and what output to expect</li>
+        <li>FILL: verification step 2</li>
+        <li>FILL: final test (e.g. "Ping from PC-A to Server — should get 5 replies")</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 13 — PRACTICE QUESTIONS
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="quiz">
+    <div class="topic-section-title">
+      <span class="ts-num">13</span>Practice Questions
+    </div>
+    <p class="text-dim fs-sm" style="margin-bottom:16px">Answer all questions, then check your score. You need 80% to unlock the next topic.</p>
+
+    <!-- FILL: 5 multiple-choice questions -->
+
+    <!-- Question 1 -->
+    <div class="quiz-card" data-q="1">
+      <div class="quiz-q">FILL: Question 1 text?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q1" value="a"> A. FILL: option A</label>
+        <label class="quiz-option"><input type="radio" name="q1" value="b"> B. FILL: option B</label>
+        <label class="quiz-option"><input type="radio" name="q1" value="c"> C. FILL: option C (correct)</label>
+        <label class="quiz-option"><input type="radio" name="q1" value="d"> D. FILL: option D</label>
+      </div>
+      <button class="quiz-check-btn" onclick="checkAnswer(this, 'q1', 'c')">Check Answer</button>
+      <div class="quiz-feedback">FILL: explanation of why C is correct</div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="quiz-card" data-q="2">
+      <div class="quiz-q">FILL: Question 2 text?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q2" value="a"> A. FILL</label>
+        <label class="quiz-option"><input type="radio" name="q2" value="b"> B. FILL (correct)</label>
+        <label class="quiz-option"><input type="radio" name="q2" value="c"> C. FILL</label>
+        <label class="quiz-option"><input type="radio" name="q2" value="d"> D. FILL</label>
+      </div>
+      <button class="quiz-check-btn" onclick="checkAnswer(this, 'q2', 'b')">Check Answer</button>
+      <div class="quiz-feedback">FILL: explanation</div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="quiz-card" data-q="3">
+      <div class="quiz-q">FILL: Question 3 text?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q3" value="a"> A. FILL (correct)</label>
+        <label class="quiz-option"><input type="radio" name="q3" value="b"> B. FILL</label>
+        <label class="quiz-option"><input type="radio" name="q3" value="c"> C. FILL</label>
+        <label class="quiz-option"><input type="radio" name="q3" value="d"> D. FILL</label>
+      </div>
+      <button class="quiz-check-btn" onclick="checkAnswer(this, 'q3', 'a')">Check Answer</button>
+      <div class="quiz-feedback">FILL: explanation</div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="quiz-card" data-q="4">
+      <div class="quiz-q">FILL: Question 4 text?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q4" value="a"> A. FILL</label>
+        <label class="quiz-option"><input type="radio" name="q4" value="b"> B. FILL</label>
+        <label class="quiz-option"><input type="radio" name="q4" value="c"> C. FILL</label>
+        <label class="quiz-option"><input type="radio" name="q4" value="d"> D. FILL (correct)</label>
+      </div>
+      <button class="quiz-check-btn" onclick="checkAnswer(this, 'q4', 'd')">Check Answer</button>
+      <div class="quiz-feedback">FILL: explanation</div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="quiz-card" data-q="5">
+      <div class="quiz-q">FILL: Question 5 text?</div>
+      <div class="quiz-options">
+        <label class="quiz-option"><input type="radio" name="q5" value="a"> A. FILL</label>
+        <label class="quiz-option"><input type="radio" name="q5" value="b"> B. FILL (correct)</label>
+        <label class="quiz-option"><input type="radio" name="q5" value="c"> C. FILL</label>
+        <label class="quiz-option"><input type="radio" name="q5" value="d"> D. FILL</label>
+      </div>
+      <button class="quiz-check-btn" onclick="checkAnswer(this, 'q5', 'b')">Check Answer</button>
+      <div class="quiz-feedback">FILL: explanation</div>
+    </div>
+
+    <!-- Score summary -->
+    <div id="quiz-result" style="display:none;margin-top:20px" class="card">
+      <div id="quiz-score-text" class="fw-700" style="font-size:1.1rem;margin-bottom:8px"></div>
+      <div id="quiz-score-msg" class="text-dim fs-sm"></div>
+      <div style="margin-top:12px;display:flex;gap:10px">
+        <button class="btn btn-outline btn-sm" onclick="resetQuiz()">Retry</button>
+        <a id="next-topic-btn" class="btn btn-primary btn-sm" href="FILL-NEXT-TOPIC.html" style="display:none">Next Topic →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 14 — MY NOTES
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="notes">
+    <div class="topic-section-title">
+      <span class="ts-num">14</span>My Notes
+    </div>
+    <textarea class="notes-area" id="evidence-notes"
+      placeholder="Write anything here — your summary, what confused you, key points you want to remember...&#10;&#10;This saves automatically in your browser."></textarea>
+    <div class="notes-save-row">
+      <span class="notes-saved-msg" id="notes-saved">✓ Saved locally</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 15 — MY COMMENTS / CONFUSION
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="comments">
+    <div class="topic-section-title">
+      <span class="ts-num">15</span>My Comments &amp; Confusion
+    </div>
+    <div class="callout callout-warn" style="margin-bottom:12px">
+      Write what you don't understand yet. It's OK to be confused — naming it is the first step to fixing it.
+    </div>
+    <textarea class="notes-area" id="evidence-comments" style="min-height:100px"
+      placeholder="What still doesn't make sense? What would you need to re-read? Any questions you'd ask a teacher?"></textarea>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 16 — COMMANDS I USED
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="my-commands">
+    <div class="topic-section-title">
+      <span class="ts-num">16</span>Commands I Actually Used
+    </div>
+    <textarea class="notes-area" id="evidence-commands" style="font-family:var(--font-mono);font-size:0.85rem;min-height:100px"
+      placeholder="Paste the commands you actually ran in your lab here...&#10;&#10;interface GigabitEthernet0/0&#10;ip access-group 10 in"></textarea>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 17 — SCREENSHOT / VIDEO PROOF
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="proof">
+    <div class="topic-section-title">
+      <span class="ts-num">17</span>Screenshot &amp; Video Proof
+    </div>
+    <div class="proof-section">
+      <label class="proof-upload-area" for="screenshot-input">
+        <div class="upload-icon">📷</div>
+        <p><strong>Drop screenshot here or click to upload</strong></p>
+        <p class="fs-sm text-muted">PNG, JPG — max 3MB — saves in browser</p>
+        <input type="file" id="screenshot-input" accept="image/*">
+      </label>
+      <div class="file-preview" id="screenshot-preview"></div>
+
+      <label class="proof-upload-area" for="video-input" style="margin-top:12px">
+        <div class="upload-icon">🎥</div>
+        <p><strong>Drop lab video here or click to upload</strong></p>
+        <p class="fs-sm text-muted">MP4, WebM — max 3MB — saves in browser</p>
+        <input type="file" id="video-input" accept="video/*">
+      </label>
+      <div class="file-preview" id="video-preview"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 18 — GITHUB PROOF CHECKLIST
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="github-checklist">
+    <div class="topic-section-title">
+      <span class="ts-num">18</span>GitHub Proof Checklist
+    </div>
+    <div class="callout callout-blue" style="margin-bottom:14px">
+      Commit these to <code>labs/FILL-PATH/FILL-LAB-FOLDER/</code> on GitHub to build your proof portfolio.
+    </div>
+    <div class="gh-checklist">
+      <div class="gh-item"><input type="checkbox" id="gh1"><label for="gh1">Screenshot of working lab (ping output / topology)</label></div>
+      <div class="gh-item"><input type="checkbox" id="gh2"><label for="gh2">Cisco Packet Tracer file (.pkt)</label></div>
+      <div class="gh-item"><input type="checkbox" id="gh3"><label for="gh3">Commands used (running-config or notes.md)</label></div>
+      <div class="gh-item"><input type="checkbox" id="gh4"><label for="gh4">Lab note exported and committed</label></div>
+      <div class="gh-item"><input type="checkbox" id="gh5"><label for="gh5">Quiz score 80%+ achieved</label></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 19 — EXPORT NOTE
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="export">
+    <div class="topic-section-title">
+      <span class="ts-num">19</span>Export Note
+    </div>
+    <div class="export-row">
+      <span class="export-hint">Download your notes as a Markdown file to commit alongside your lab files on GitHub.</span>
+      <button class="btn btn-outline btn-sm" id="export-md-btn">⬇ Export as Markdown</button>
+      <button class="btn btn-ghost btn-sm" id="clear-evidence-btn">🗑 Clear saved data</button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       SECTION 20 — INTERVIEW ANSWER
+  ═══════════════════════════════════════ -->
+  <section class="topic-section" id="interview">
+    <div class="topic-section-title">
+      <span class="ts-num">20</span>Interview Answer
+    </div>
+    <!-- FILL: interview question and model answer -->
+    <div class="interview-card">
+      <div class="interview-q">FILL: What is TOPIC TITLE and when would you use it?</div>
+      <div class="interview-a">
+        FILL: Write a 3-4 sentence interview-quality answer that explains:
+        1) What it is, 2) Why/when you'd use it, 3) A specific example from your lab.
+        Example: "A Standard ACL filters traffic based only on source IP address.
+        I'd use it close to the destination when I want to block all traffic from a specific subnet.
+        In my lab, I applied ACL 10 on the router's inbound interface to prevent 192.168.1.0/24
+        from reaching the server, which I verified using show ip access-lists and confirmed the hit counts incremented."
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       TOPIC NAVIGATION (Prev / Next)
+  ═══════════════════════════════════════ -->
+  <nav class="topic-nav" aria-label="Topic navigation">
+    <!-- FILL: prev/next topic links -->
+    <a class="tn-btn" href="FILL-PREV-TOPIC.html">
+      <span class="tn-arrow">←</span>
+      <div>
+        <span class="tn-dir">Previous topic</span>
+        <span class="tn-name">FILL: prev topic title</span>
+      </div>
+    </a>
+    <a class="tn-btn next" href="FILL-NEXT-TOPIC.html">
+      <div>
+        <span class="tn-dir">Next topic</span>
+        <span class="tn-name">FILL: next topic title</span>
+      </div>
+      <span class="tn-arrow">→</span>
+    </a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  CN Journey · Built for learning, not just reading · <a href="/dashboard.html">Back to Dashboard</a>
+</footer>
+
+<!-- Scripts -->
+<script src="../../js/app.js"></script>
+<script src="../../js/progress.js"></script>
+<script src="../../js/evidence-tracker.js"></script>
+<script>
+  /* ── FILL: Update these two values for every topic page ── */
+  const TOPIC_ID    = 'FILL-ccna-topic-id';     // e.g. 'ccna-standard-acl'
+  const TOPIC_TITLE = 'FILL: Full Topic Title';  // e.g. 'Standard ACLs'
+  const TOPIC_PATH  = 'FILL-path-id';            // e.g. 'ccna'
+
+  /* Init nav, progress, evidence */
+  renderNav('path');
+  Progress.initStatusSelect(TOPIC_PATH, TOPIC_ID);
+  Progress.updateStepBar(TOPIC_PATH, TOPIC_ID);
+  Evidence.initTopicPage(TOPIC_ID, TOPIC_TITLE);
+
+  /* ── Quiz logic ── */
+  const quizAnswers = {};
+  const correctAnswers = { q1: 'c', q2: 'b', q3: 'a', q4: 'd', q5: 'b' }; // FILL: update per topic
+
+  function checkAnswer(btn, qName, correct) {
+    const card    = btn.closest('.quiz-card');
+    const chosen  = card.querySelector(`input[name="${qName}"]:checked`);
+    if (!chosen) { btn.textContent = 'Select an answer first'; return; }
+    const isRight = chosen.value === correct;
+    quizAnswers[qName] = isRight;
+    card.querySelectorAll('.quiz-option').forEach(opt => {
+      const v = opt.querySelector('input').value;
+      if (v === correct)     opt.classList.add('correct');
+      if (v === chosen.value && !isRight) opt.classList.add('wrong');
+    });
+    const fb = card.querySelector('.quiz-feedback');
+    fb.classList.add('show', isRight ? 'correct' : 'wrong');
+    btn.disabled = true;
+    card.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = true);
+    if (Object.keys(quizAnswers).length === 5) showQuizResult();
+  }
+
+  function showQuizResult() {
+    const score  = Object.values(quizAnswers).filter(Boolean).length;
+    const total  = 5;
+    const pct    = Math.round((score / total) * 100);
+    const passed = pct >= 80;
+    const result = document.getElementById('quiz-result');
+    document.getElementById('quiz-score-text').textContent = `Score: ${score}/${total} (${pct}%)`;
+    document.getElementById('quiz-score-msg').textContent = passed
+      ? '✓ Passed! You can move to the next topic.'
+      : 'Not quite — review the explanations above and try again.';
+    result.style.borderColor = passed ? 'var(--green)' : 'var(--danger)';
+    if (passed) {
+      Progress.setStepDone(TOPIC_PATH, TOPIC_ID, 'quiz');
+      Progress.setQuizScore(TOPIC_PATH, TOPIC_ID, score, total);
+      Progress.setTopicStatus(TOPIC_PATH, TOPIC_ID, 'quiz-passed');
+      Progress.updateStepBar(TOPIC_PATH, TOPIC_ID);
+      document.getElementById('next-topic-btn').style.display = 'inline-flex';
+    }
+    result.style.display = 'block';
+  }
+
+  function resetQuiz() {
+    quizAnswers = {};
+    document.querySelectorAll('.quiz-card').forEach(card => {
+      card.querySelectorAll('.quiz-option').forEach(o => { o.classList.remove('correct','wrong'); });
+      card.querySelectorAll('input[type="radio"]').forEach(r => { r.checked = false; r.disabled = false; });
+      const fb = card.querySelector('.quiz-feedback');
+      fb.classList.remove('show','correct','wrong');
+      const btn = card.querySelector('.quiz-check-btn');
+      btn.textContent = 'Check Answer'; btn.disabled = false;
+    });
+    document.getElementById('quiz-result').style.display = 'none';
+  }
+
+  function markLabDone() {
+    Progress.setStepDone(TOPIC_PATH, TOPIC_ID, 'lab');
+    Progress.setTopicStatus(TOPIC_PATH, TOPIC_ID, 'lab-done');
+    Progress.updateStepBar(TOPIC_PATH, TOPIC_ID);
+    document.getElementById('lab-done-btn').textContent = '✓ Lab marked done';
+    document.getElementById('lab-done-btn').disabled = true;
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+
+</body>
+</html>

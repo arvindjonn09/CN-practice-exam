@@ -1,177 +1,124 @@
-// Local proof-of-work tracker for static GitHub Pages.
-// Notes and small attachment previews are saved in this browser's localStorage.
-// For permanent portfolio proof, export the note and commit screenshots/videos to GitHub.
-(function () {
-  const STORAGE_PREFIX = "cnjourney::evidence::";
-  const MAX_STORE_BYTES = 1024 * 1024 * 2; // keep localStorage friendly
+/**
+ * evidence-tracker.js — Notes, commands, screenshots, export to Markdown
+ * Saves to localStorage. Each field identified by topicId + fieldName.
+ */
 
-  function key(taskId, field) {
-    return STORAGE_PREFIX + taskId + "::" + field;
+const Evidence = (() => {
+  const NS = 'cnj::evidence';
+  const key = (topicId, field) => `${NS}::${topicId}::${field}`;
+
+  function save(topicId, field, value) {
+    try { localStorage.setItem(key(topicId, field), value); return true; }
+    catch { return false; }
+  }
+  function load(topicId, field) {
+    return localStorage.getItem(key(topicId, field)) || '';
+  }
+  function clear(topicId) {
+    Object.keys(localStorage)
+      .filter(k => k.startsWith(`${NS}::${topicId}::`))
+      .forEach(k => localStorage.removeItem(k));
   }
 
-  function byteSize(value) {
-    return new Blob([value || ""]).size;
+  function bindTextarea(topicId, fieldName, elementId) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    el.value = load(topicId, fieldName);
+    let timer;
+    el.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const ok = save(topicId, fieldName, el.value);
+        const msg = el.closest('.topic-section')?.querySelector('.notes-saved-msg');
+        if (msg && ok) { msg.classList.add('show'); setTimeout(() => msg.classList.remove('show'), 2000); }
+      }, 600);
+    });
   }
 
-  function downloadText(filename, text) {
-    const blob = new Blob([text], { type: "text/markdown;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
+  function bindFileUpload(topicId, fieldName, inputId, previewId) {
+    const input   = document.getElementById(inputId);
+    const preview = document.getElementById(previewId);
+    if (!input) return;
+    const saved = load(topicId, fieldName);
+    if (saved && preview) renderPreview(preview, saved, load(topicId, fieldName + '-name'));
+    input.addEventListener('change', () => {
+      const file = input.files[0];
+      if (!file) return;
+      if (file.size > 3 * 1024 * 1024) { alert('File too large — keep under 3MB.'); return; }
+      const reader = new FileReader();
+      reader.onload = e => {
+        const data = e.target.result;
+        save(topicId, fieldName, data);
+        save(topicId, fieldName + '-name', file.name);
+        if (preview) renderPreview(preview, data, file.name);
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function renderPreview(el, dataUrl, name) {
+    el.classList.add('show');
+    const isVideo = dataUrl.startsWith('data:video');
+    el.innerHTML = isVideo
+      ? `<video controls><source src="${dataUrl}"></video><div class="file-preview-name">${name || 'video'}<span>Saved</span></div>`
+      : `<img src="${dataUrl}" alt="proof"><div class="file-preview-name">${name || 'screenshot'}<span>Saved</span></div>`;
+  }
+
+  function exportMarkdown(topicId, topicTitle) {
+    const notes    = load(topicId, 'notes');
+    const commands = load(topicId, 'commands');
+    const comments = load(topicId, 'comments');
+    const md = [
+      `# ${topicTitle}`,
+      `> Exported from CN Journey — ${new Date().toLocaleDateString()}`,
+      '',
+      notes    ? `## My Notes\n${notes}` : '',
+      commands ? `## Commands Used\n\`\`\`\n${commands}\n\`\`\`` : '',
+      comments ? `## Questions / Confusion\n${comments}` : '',
+      '',
+      '## GitHub Proof Checklist',
+      '- [ ] Screenshot uploaded',
+      '- [ ] .pkt file committed',
+      '- [ ] Commands verified',
+      '- [ ] Lab note pushed',
+    ].filter(Boolean).join('\n\n');
+    const blob = new Blob([md], { type: 'text/markdown' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${topicId}-notes.md`;
     a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
+    URL.revokeObjectURL(a.href);
   }
 
-  function setStatus(card, message, ready) {
-    const status = card.querySelector(".evidence-status");
-    if (!status) return;
-    status.textContent = message;
-    status.classList.toggle("ready", Boolean(ready));
-  }
-
-  function updatePreview(card, type, dataUrl, fileName) {
-    const preview = card.querySelector(".evidence-preview");
-    if (!preview) return;
-    preview.innerHTML = "";
-
-    if (!dataUrl) return;
-
-    if (type === "image") {
-      const img = document.createElement("img");
-      img.src = dataUrl;
-      img.alt = fileName || "Screenshot evidence";
-      preview.appendChild(img);
-    } else if (type === "video") {
-      const video = document.createElement("video");
-      video.src = dataUrl;
-      video.controls = true;
-      preview.appendChild(video);
-    }
-
-    if (fileName) {
-      const name = document.createElement("div");
-      name.className = "evidence-file-name";
-      name.textContent = fileName;
-      preview.appendChild(name);
-    }
-  }
-
-  function buildMarkdown(card) {
-    const taskId = card.dataset.taskId;
-    const title = card.querySelector("h3")?.textContent?.trim() || taskId;
-    const note = card.querySelector("textarea[data-field='note']")?.value?.trim() || "";
-    const commands = card.querySelector("textarea[data-field='commands']")?.value?.trim() || "";
-    const reflection = card.querySelector("textarea[data-field='reflection']")?.value?.trim() || "";
-    const screenshotName = localStorage.getItem(key(taskId, "screenshotName")) || "Not attached";
-    const videoName = localStorage.getItem(key(taskId, "videoName")) || "Not attached";
-    const today = new Date().toISOString().slice(0, 10);
-
-    return `# ${title}\n\n` +
-      `Date: ${today}\n\n` +
-      `## What I did\n${note || "- "}\n\n` +
-      `## Commands / clicks I used\n${commands || "- "}\n\n` +
-      `## What I proved\n${reflection || "- "}\n\n` +
-      `## Evidence files\n` +
-      `- Screenshot: ${screenshotName}\n` +
-      `- Video: ${videoName}\n\n` +
-      `## Next review\n- Explain this task without looking at notes.\n`;
-  }
-
-  function saveCard(card) {
-    const taskId = card.dataset.taskId;
-    card.querySelectorAll("textarea[data-field]").forEach((textarea) => {
-      localStorage.setItem(key(taskId, textarea.dataset.field), textarea.value);
-    });
-    setStatus(card, "Saved locally in this browser. Export note and commit evidence to GitHub for permanent proof.", true);
-  }
-
-  function clearCard(card) {
-    const taskId = card.dataset.taskId;
-    ["note", "commands", "reflection", "screenshot", "screenshotName", "video", "videoName"].forEach((field) => {
-      localStorage.removeItem(key(taskId, field));
-    });
-    card.querySelectorAll("textarea[data-field]").forEach((textarea) => textarea.value = "");
-    card.querySelectorAll("input[type='file']").forEach((input) => input.value = "");
-    const preview = card.querySelector(".evidence-preview");
-    if (preview) preview.innerHTML = "";
-    setStatus(card, "Cleared local evidence for this task.", false);
-  }
-
-  function handleFile(card, input, type) {
-    const taskId = card.dataset.taskId;
-    const file = input.files && input.files[0];
-    if (!file) return;
-
-    const warning = card.querySelector(".evidence-warning");
-    if (warning) warning.textContent = "";
-
-    const reader = new FileReader();
-    reader.onload = function () {
-      const dataUrl = reader.result;
-      if (byteSize(dataUrl) > MAX_STORE_BYTES) {
-        if (warning) {
-          warning.textContent = "This file is too large for browser storage. Keep the original file and commit it to GitHub manually.";
-        }
-        localStorage.setItem(key(taskId, type + "Name"), file.name);
-        updatePreview(card, type, "", file.name);
-        setStatus(card, "File name saved. Large file must be stored in GitHub manually.", false);
-        return;
-      }
-
-      localStorage.setItem(key(taskId, type), dataUrl);
-      localStorage.setItem(key(taskId, type + "Name"), file.name);
-      updatePreview(card, type, dataUrl, file.name);
-      setStatus(card, "Evidence attached locally. Export note and commit files to GitHub for permanent proof.", true);
-    };
-    reader.readAsDataURL(file);
-  }
-
-  function hydrateCard(card) {
-    const taskId = card.dataset.taskId;
-    card.querySelectorAll("textarea[data-field]").forEach((textarea) => {
-      textarea.value = localStorage.getItem(key(taskId, textarea.dataset.field)) || "";
-    });
-
-    const screenshot = localStorage.getItem(key(taskId, "screenshot"));
-    const screenshotName = localStorage.getItem(key(taskId, "screenshotName"));
-    if (screenshot || screenshotName) updatePreview(card, "image", screenshot, screenshotName);
-
-    const video = localStorage.getItem(key(taskId, "video"));
-    const videoName = localStorage.getItem(key(taskId, "videoName"));
-    if (video || videoName) updatePreview(card, "video", video, videoName);
-  }
-
-  function init() {
-    document.querySelectorAll(".evidence-card[data-task-id]").forEach((card) => {
-      hydrateCard(card);
-
-      card.querySelectorAll("textarea[data-field]").forEach((textarea) => {
-        textarea.addEventListener("input", () => saveCard(card));
+  function initTopicPage(topicId, topicTitle) {
+    bindTextarea(topicId, 'notes',    'evidence-notes');
+    bindTextarea(topicId, 'commands', 'evidence-commands');
+    bindTextarea(topicId, 'comments', 'evidence-comments');
+    bindFileUpload(topicId, 'screenshot', 'screenshot-input', 'screenshot-preview');
+    bindFileUpload(topicId, 'video',      'video-input',      'video-preview');
+    const exportBtn = document.getElementById('export-md-btn');
+    if (exportBtn) exportBtn.addEventListener('click', () => exportMarkdown(topicId, topicTitle));
+    const clearBtn = document.getElementById('clear-evidence-btn');
+    if (clearBtn) clearBtn.addEventListener('click', () => {
+      if (!confirm('Clear all saved notes and files for this topic?')) return;
+      clear(topicId);
+      ['evidence-notes','evidence-commands','evidence-comments'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.value = '';
       });
-
-      card.querySelector("input[data-evidence='screenshot']")?.addEventListener("change", (event) => {
-        handleFile(card, event.target, "screenshot");
+      ['screenshot-preview','video-preview'].forEach(id => {
+        const el = document.getElementById(id); if (el) { el.classList.remove('show'); el.innerHTML = ''; }
       });
-
-      card.querySelector("input[data-evidence='video']")?.addEventListener("change", (event) => {
-        handleFile(card, event.target, "video");
-      });
-
-      card.querySelector("button[data-action='save']")?.addEventListener("click", () => saveCard(card));
-      card.querySelector("button[data-action='clear']")?.addEventListener("click", () => clearCard(card));
-      card.querySelector("button[data-action='export']")?.addEventListener("click", () => {
-        const taskId = card.dataset.taskId;
-        downloadText(taskId + "-evidence.md", buildMarkdown(card));
+    });
+    document.querySelectorAll('.gh-item input[type="checkbox"]').forEach(cb => {
+      const k = `cnj::evidence::${topicId}::gh-${cb.id}`;
+      cb.checked = localStorage.getItem(k) === 'true';
+      cb.closest('.gh-item')?.classList.toggle('checked', cb.checked);
+      cb.addEventListener('change', () => {
+        localStorage.setItem(k, cb.checked);
+        cb.closest('.gh-item')?.classList.toggle('checked', cb.checked);
       });
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
+  return { save, load, clear, bindTextarea, bindFileUpload, exportMarkdown, initTopicPage };
 })();

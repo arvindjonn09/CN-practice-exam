@@ -1,0 +1,61 @@
+{
+  "path": "ccst-cybersecurity",
+  "topics": [
+    {
+      "id": "ccst-cyber-security-principles",
+      "module": "Security Principles",
+      "subject": "security-principles",
+      "title": "Security Principles — CIA Triad",
+      "file": "topics/ccst-cybersecurity/security-principles.html",
+      "estimatedTime": "30 min",
+      "difficulty": "beginner",
+      "source": "CCST Cybersecurity Official Cert Guide, Chapter 1",
+      "labRequired": false,
+      "proofRequired": ["note", "screenshot"],
+      "keywords": ["cia", "confidentiality", "integrity", "availability", "security principles"],
+      "order": 1
+    },
+    {
+      "id": "ccst-cyber-social-engineering",
+      "module": "Threats & Vulnerabilities",
+      "subject": "threats-vulns",
+      "title": "Social Engineering Attacks",
+      "file": "topics/ccst-cybersecurity/social-engineering.html",
+      "estimatedTime": "25 min",
+      "difficulty": "beginner",
+      "source": "CCST Cybersecurity Official Cert Guide, Chapter 3",
+      "labRequired": false,
+      "proofRequired": ["note"],
+      "keywords": ["phishing", "spear phishing", "vishing", "smishing", "pretexting", "baiting"],
+      "order": 2
+    },
+    {
+      "id": "ccst-cyber-windows-defender",
+      "module": "Security Tools & Monitoring",
+      "subject": "security-tools",
+      "title": "Windows Defender & Antivirus",
+      "file": "topics/ccst-cybersecurity/windows-defender.html",
+      "estimatedTime": "30 min",
+      "difficulty": "beginner",
+      "source": "CCST Cybersecurity Official Cert Guide, Chapter 6",
+      "labRequired": true,
+      "proofRequired": ["note", "screenshot"],
+      "keywords": ["windows defender", "antivirus", "real-time protection", "scan", "quarantine"],
+      "order": 3
+    },
+    {
+      "id": "ccst-cyber-event-viewer",
+      "module": "Security Tools & Monitoring",
+      "subject": "security-tools",
+      "title": "Event Viewer & Log Analysis",
+      "file": "topics/ccst-cybersecurity/event-viewer.html",
+      "estimatedTime": "35 min",
+      "difficulty": "beginner",
+      "source": "CCST Cybersecurity Official Cert Guide, Chapter 7",
+      "labRequired": true,
+      "proofRequired": ["note", "screenshot"],
+      "keywords": ["event viewer", "event log", "security log", "system log", "event id", "windows logs"],
+      "order": 4
+    }
+  ]
+}

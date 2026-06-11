@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — CN Journey</title>
+  <meta name="description" content="Your CN Journey learning dashboard — track progress, continue where you left off.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<main class="page">
+
+  <!-- Welcome Hero -->
+  <div class="welcome-hero">
+    <div>
+      <div class="welcome-greeting">Welcome back 👋</div>
+      <div class="welcome-level">
+        <div class="level-dot"></div>
+        <span class="badge badge-blue">Level 1 — CCST Networking</span>
+      </div>
+      <h1>Keep the momentum going</h1>
+      <div class="welcome-progress">
+        <div class="wp-bar"><div class="wp-fill" style="width:0%"></div></div>
+        <span class="wp-text" id="progress-text">0% complete · 0 topics done</span>
+      </div>
+    </div>
+    <a href="paths/ccst-networking.html" class="continue-cta">
+      Continue Learning →
+      <span class="cta-sub" id="continue-topic">Pick up where you left off</span>
+    </a>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num stat-blue" data-count="0">0</div>
+      <div class="stat-label">Topics Done</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num stat-green" data-count="0">0</div>
+      <div class="stat-label">Labs Complete</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num stat-warn" data-count="0" data-suffix="%">0%</div>
+      <div class="stat-label">Quiz Avg Score</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num stat-dim" data-count="0">0</div>
+      <div class="stat-label">Day Streak</div>
+    </div>
+  </div>
+
+  <!-- Main + Sidebar -->
+  <div class="layout-main-side">
+    <div>
+      <!-- Today's Focus -->
+      <div class="focus-card">
+        <div class="focus-card-title">Your current path — CCST Networking</div>
+
+        <div class="focus-topic current">
+          <div class="ft-badge ftb-active">▶</div>
+          <div class="ft-info">
+            <div class="ft-title">Start here: Network Fundamentals</div>
+            <div class="ft-meta">Module 1 · Topic 1 — What is a Network?</div>
+          </div>
+          <a href="topics/ccst-networking/what-is-a-network.html" class="ft-action fta-blue">Start →</a>
+        </div>
+
+        <div class="focus-topic">
+          <div class="ft-badge ftb-locked">🔒</div>
+          <div class="ft-info">
+            <div class="ft-title">Network Devices</div>
+            <div class="ft-meta">Unlock by finishing Topic 1</div>
+          </div>
+          <span class="ft-action fta-gray">Locked</span>
+        </div>
+
+        <div class="focus-topic">
+          <div class="ft-badge ftb-locked">🔒</div>
+          <div class="ft-info">
+            <div class="ft-title">IP Addressing Basics</div>
+            <div class="ft-meta">Module 3 — unlock in sequence</div>
+          </div>
+          <span class="ft-action fta-gray">Locked</span>
+        </div>
+      </div>
+
+      <!-- Subject progress -->
+      <div class="subject-progress-list">
+        <div class="spl-title">CCST Networking — Subject Progress</div>
+        <div class="spl-item">
+          <div class="spl-row"><span class="spl-name">Network Fundamentals</span><span class="spl-pct">0%</span></div>
+          <div class="spl-bar"><div class="spl-fill spl-blue" style="width:0%"></div></div>
+        </div>
+        <div class="spl-item">
+          <div class="spl-row"><span class="spl-name">Network Access &amp; Media</span><span class="spl-pct">Locked</span></div>
+          <div class="spl-bar"><div class="spl-fill spl-blue" style="width:0%"></div></div>
+        </div>
+        <div class="spl-item">
+          <div class="spl-row"><span class="spl-name">IP Addressing Basics</span><span class="spl-pct">Locked</span></div>
+          <div class="spl-bar"><div class="spl-fill spl-green" style="width:0%"></div></div>
+        </div>
+        <div class="spl-item">
+          <div class="spl-row"><span class="spl-name">Security Fundamentals</span><span class="spl-pct">Locked</span></div>
+          <div class="spl-bar"><div class="spl-fill spl-blue" style="width:0%"></div></div>
+        </div>
+        <div class="spl-item">
+          <div class="spl-row"><span class="spl-name">IT Support Essentials</span><span class="spl-pct">Locked</span></div>
+          <div class="spl-bar"><div class="spl-fill spl-blue" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="widget">
+        <div class="widget-title">Study Streak</div>
+        <div class="streak-num">0</div>
+        <div class="streak-sub">days in a row 🔥</div>
+        <div class="streak-dots">
+          <div class="s-dot sd-off">M</div>
+          <div class="s-dot sd-off">T</div>
+          <div class="s-dot sd-off">W</div>
+          <div class="s-dot sd-off">T</div>
+          <div class="s-dot sd-off">F</div>
+          <div class="s-dot sd-off">S</div>
+          <div class="s-dot sd-today">S</div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">Recent Activity</div>
+        <div class="activity-item">
+          <div class="a-dot ad-blue"></div>
+          <div>
+            <div class="a-text">No activity yet — start your first topic!</div>
+            <div class="a-time">Get going 🚀</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">Quick Access</div>
+        <div class="quick-grid">
+          <a class="quick-item" href="labs/index.html"><span class="qi-icon">🔬</span><span class="qi-label">Labs</span></a>
+          <a class="quick-item" href="review/index.html"><span class="qi-icon">📝</span><span class="qi-label">Review</span></a>
+          <a class="quick-item" href="proof/index.html"><span class="qi-icon">✅</span><span class="qi-label">Proof</span></a>
+          <a class="quick-item" href="paths/ccna.html"><span class="qi-icon">🔀</span><span class="qi-label">CCNA</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  CN Journey · Learn → Lab → Break → Fix → Prove → Interview Ready
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/progress.js"></script>
+<script>
+  renderNav('dashboard');
+</script>
+</body>
+</html>
