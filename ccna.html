@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="ccna">
-
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">CN<span>JOURNEY</span></a>
@@ -26,20 +25,19 @@
     </ul>
   </nav>
 </header>
-
 <section class="cert-hero">
   <div class="container">
     <span class="level-tag">Level 2 · Associate</span>
     <h1>Cisco Certified Network Associate <span class="exam-code">(CCNA · 200-301)</span></h1>
-    <p>The classic foundation of networking. The CCNA teaches the underlying logic of how the entire internet works — which is why it's valued even by cloud giants like Amazon and Microsoft. This is the level that makes me <strong>job-ready</strong>: every topic below gets learned, labbed, broken and proven.</p>
+    <p>The classic foundation of networking. The CCNA teaches the underlying logic of how the entire internet works. This is the level that makes me job-ready: every topic below gets learned, labbed, broken and proven.</p>
   </div>
 </section>
-
 <section class="block">
   <div class="container">
     <h2><span class="hash">#</span> Syllabus — The 6 Official Domains</h2>
-    <p class="sub">Official 200-301 exam blueprint with Cisco's exact domain weightings. This is the single most important checklist on this site — the CCNA is the foundation everything else builds on.</p>
+    <p class="sub">Official 200-301 exam blueprint with Cisco's exact domain weightings. This is the single most important checklist on this site because the CCNA is the foundation everything else builds on.</p>
     <div class="callout tip"><strong>Uploaded book path:</strong> the CCNA Volume 2 PDF/EPUB study map is built into this page below, with topic groups, labs, packet files, diagrams, and proof artifacts.</div>
+    <div class="callout warn"><strong>New study rule:</strong> topic rows are not enough. When a topic has a lesson link, open it first, then complete the lab, proof upload, comments and export note.</div>
 
     <div class="progress-wrap">
       <div class="progress-label"><span>My CCNA progress</span><span class="pct">0 / 0</span></div>
@@ -49,51 +47,15 @@
     <details class="domain" open>
       <summary>1. Network Fundamentals <span class="weight">20%</span><span class="domain-count tag"></span></summary>
       <div class="topics">
-        <div class="topic"><input type="checkbox" id="ccna-1-1"><label for="ccna-1-1">Role and function of network components: routers, L2/L3 switches, firewalls (NGFW), IPS, access points, controllers, endpoints, servers, PoE</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-1-2"><label for="ccna-1-2">Network topology architectures: 2-tier, 3-tier, spine-leaf, WAN, SOHO, on-prem vs cloud <span class="why"><strong>Real world:</strong> spine-leaf is what every modern data center (and cloud) runs.</span></label></div>
-        <div class="topic"><input type="checkbox" id="ccna-1-3"><label for="ccna-1-3">Physical interfaces and cabling; identify interface/cable issues (collisions, errors, duplex/speed mismatch)</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-1-4"><label for="ccna-1-4">TCP vs UDP — headers, reliability, when each is used</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-1-5"><label for="ccna-1-5">IPv4 addressing and subnetting — VLSM, fast binary math <span class="why"><strong>Real world:</strong> you must subnet in your head; daily drills until it's 15 seconds per question.</span></label></div>
-        <div class="topic"><input type="checkbox" id="ccna-1-6"><label for="ccna-1-6">IPv6 addressing: types (global unicast, link-local, multicast, anycast), SLAAC, prefixes</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-1-7"><label for="ccna-1-7">Wireless principles: channels (non-overlapping), SSID, RF basics, encryption</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-1-1"><label for="ccna-1-1">Role and function of network components: routers, L2/L3 switches, firewalls, IPS, access points, controllers, endpoints, servers, PoE</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-1-2"><label for="ccna-1-2">Network topology architectures: 2-tier, 3-tier, spine-leaf, WAN, SOHO, on-prem vs cloud</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-1-3"><label for="ccna-1-3">Physical interfaces and cabling; identify interface/cable issues</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-1-4"><label for="ccna-1-4">TCP vs UDP: headers, reliability, when each is used</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-1-5"><label for="ccna-1-5">IPv4 addressing and subnetting: VLSM, fast binary math</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-1-6"><label for="ccna-1-6">IPv6 addressing: types, SLAAC, prefixes</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-1-7"><label for="ccna-1-7">Wireless principles: channels, SSID, RF basics, encryption</label></div>
         <div class="topic"><input type="checkbox" id="ccna-1-8"><label for="ccna-1-8">Virtualization fundamentals: VMs, containers, VRFs</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-1-9"><label for="ccna-1-9">Switching concepts: MAC learning &amp; aging, frame switching, frame flooding, MAC address table</label></div>
-      </div>
-    </details>
-
-    <details class="domain">
-      <summary>2. Network Access <span class="weight">20%</span><span class="domain-count tag"></span></summary>
-      <div class="topics">
-        <div class="topic"><input type="checkbox" id="ccna-2-1"><label for="ccna-2-1">Configure and verify VLANs (normal range), access ports, voice VLAN <span class="why"><strong>Real world:</strong> VLAN segmentation is the bread-and-butter of every office network.</span></label></div>
-        <div class="topic"><input type="checkbox" id="ccna-2-2"><label for="ccna-2-2">Interswitch connectivity: trunk ports, 802.1Q, native VLAN</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-2-3"><label for="ccna-2-3">Layer 2 discovery protocols: CDP and LLDP</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-2-4"><label for="ccna-2-4">EtherChannel (LACP) — configure and verify L2/L3 port channels</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-2-5"><label for="ccna-2-5">Rapid PVST+ Spanning Tree: root bridge, port roles &amp; states, PortFast <span class="why"><strong>Real world:</strong> an STP loop can take down an entire building — engineers are hired for knowing this.</span></label></div>
-        <div class="topic"><input type="checkbox" id="ccna-2-6"><label for="ccna-2-6">Cisco wireless architectures: AP modes, WLC, management access (Telnet/SSH/HTTPS/console/TACACS+/RADIUS)</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-2-7"><label for="ccna-2-7">Configure WLAN for client connectivity in the GUI: SSID, security, QoS profile</label></div>
-      </div>
-    </details>
-
-    <details class="domain">
-      <summary>3. IP Connectivity <span class="weight">25%</span><span class="domain-count tag"></span></summary>
-      <div class="topics">
-        <div class="topic"><input type="checkbox" id="ccna-3-1"><label for="ccna-3-1">Interpret the routing table: protocol codes, prefix, mask, next hop, administrative distance, metric, gateway of last resort <span class="why"><strong>Real world:</strong> reading "show ip route" correctly is the core skill of network engineering.</span></label></div>
-        <div class="topic"><input type="checkbox" id="ccna-3-2"><label for="ccna-3-2">How a router makes forwarding decisions: longest match, AD, metric</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-3-3"><label for="ccna-3-3">Configure and verify IPv4/IPv6 static routing: default, network, host, floating static</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-3-4"><label for="ccna-3-4">Single-area OSPFv2: neighbor adjacencies, point-to-point vs broadcast, DR/BDR, router ID <span class="why"><strong>Real world:</strong> OSPF runs most enterprise internal networks. The heaviest-weighted single topic on the exam.</span></label></div>
-        <div class="topic"><input type="checkbox" id="ccna-3-5"><label for="ccna-3-5">First Hop Redundancy Protocols (HSRP/VRRP) — purpose and behavior</label></div>
-      </div>
-    </details>
-
-    <details class="domain">
-      <summary>4. IP Services <span class="weight">10%</span><span class="domain-count tag"></span></summary>
-      <div class="topics">
-        <div class="topic"><input type="checkbox" id="ccna-4-1"><label for="ccna-4-1">Configure and verify NAT: static and PAT (overload) <span class="why"><strong>Real world:</strong> every office's internet edge does PAT — you will configure this in your first job.</span></label></div>
-        <div class="topic"><input type="checkbox" id="ccna-4-2"><label for="ccna-4-2">NTP in client/server mode; why time sync matters for logs</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-4-3"><label for="ccna-4-3">Role of DHCP and DNS within the network; DHCP relay (ip helper-address)</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-4-4"><label for="ccna-4-4">SNMP and syslog features — facilities, levels, use in monitoring</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-4-5"><label for="ccna-4-5">QoS: classification, marking, queuing, policing/shaping concepts</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-4-6"><label for="ccna-4-6">Configure SSH for remote device access; TFTP/FTP roles for IOS upgrades</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-1-9"><label for="ccna-1-9">Switching concepts: MAC learning, aging, flooding and MAC table</label></div>
       </div>
     </details>
 
@@ -103,21 +65,20 @@
         <div class="topic"><input type="checkbox" id="ccna-5-1"><label for="ccna-5-1">Security concepts: threats, vulnerabilities, exploits, mitigation; security program elements</label></div>
         <div class="topic"><input type="checkbox" id="ccna-5-2"><label for="ccna-5-2">Device access control: local passwords, privilege levels, AAA with TACACS+/RADIUS</label></div>
         <div class="topic"><input type="checkbox" id="ccna-5-3"><label for="ccna-5-3">VPN types: site-to-site IPsec vs remote-access</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-5-4"><label for="ccna-5-4">Configure and verify standard &amp; extended ACLs <span class="why"><strong>Real world:</strong> ACLs are tested in nearly every network engineer interview.</span></label></div>
-        <div class="topic"><input type="checkbox" id="ccna-5-5"><label for="ccna-5-5">Layer 2 security: DHCP snooping, dynamic ARP inspection, port security</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-5-6"><label for="ccna-5-6">Wireless security: WPA2/WPA3, configure WLAN with WPA2-PSK</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-5-4"><label for="ccna-5-4"><a href="topic-ccna-standard-acl.html">Configure and verify standard ACLs</a> <span class="why"><strong>Start here:</strong> full lesson with explanation, diagram, lab sessions, break/fix practice, proof upload, comments and interview answer.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccna-5-5"><label for="ccna-5-5">Configure and verify extended ACLs <span class="why">Topic lesson pending.</span></label></div>
+        <div class="topic"><input type="checkbox" id="ccna-5-6"><label for="ccna-5-6">Layer 2 security: DHCP snooping, dynamic ARP inspection, port security</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-5-7"><label for="ccna-5-7">Wireless security: WPA2/WPA3, configure WLAN with WPA2-PSK</label></div>
       </div>
     </details>
 
     <details class="domain">
-      <summary>6. Automation &amp; Programmability <span class="weight">10%</span><span class="domain-count tag"></span></summary>
+      <summary>Other CCNA Domains <span class="weight">Remaining</span><span class="domain-count tag"></span></summary>
       <div class="topics">
-        <div class="topic"><input type="checkbox" id="ccna-6-1"><label for="ccna-6-1">How automation impacts network management; controller-based vs traditional networking</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-6-2"><label for="ccna-6-2">Software-defined architecture: overlay/underlay/fabric; separation of control &amp; data plane</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-6-3"><label for="ccna-6-3">REST APIs: verbs (GET/POST/PUT/DELETE), HTTP codes, CRUD, authentication <span class="why"><strong>Real world:</strong> this 10% of the exam is where the industry is going — invest extra here.</span></label></div>
-        <div class="topic"><input type="checkbox" id="ccna-6-4"><label for="ccna-6-4">Configuration management: Ansible and Terraform concepts</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-6-5"><label for="ccna-6-5">Interpret JSON-encoded data</label></div>
-        <div class="topic"><input type="checkbox" id="ccna-6-6"><label for="ccna-6-6">AI &amp; machine learning in network operations (new in latest blueprint revision)</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-other-1"><label for="ccna-other-1">Network Access: VLANs, trunks, STP, EtherChannel, wireless architecture.</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-other-2"><label for="ccna-other-2">IP Connectivity: routing table, static routes, OSPF and FHRP.</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-other-3"><label for="ccna-other-3">IP Services: NAT/PAT, NTP, DHCP, DNS, SNMP, syslog, QoS and SSH.</label></div>
+        <div class="topic"><input type="checkbox" id="ccna-other-4"><label for="ccna-other-4">Automation and Programmability: APIs, JSON, Ansible, Terraform and controller-based networking.</label></div>
       </div>
     </details>
   </div>
@@ -129,9 +90,9 @@
     <p class="sub">Use this for the Cisco Press CCNA 200-301 Official Cert Guide Volume 2 PDF/EPUB. The book becomes an engineering workflow: read small, build proof, break it, repair it, and write the interview answer.</p>
     <div class="sell-grid">
       <div class="sell-card"><h3>1. Read Small</h3><ul><li>Study one chapter section at a time, not a whole part in one sitting.</li><li>Write a simple answer: what problem does this solve in a real network?</li></ul></div>
-      <div class="sell-card"><h3>2. Build Proof</h3><ul><li>Create a Packet Tracer or GNS3 topology for every configurable topic.</li><li>Save <code>.pkt</code>, configs, screenshots, command output, and notes.</li></ul></div>
-      <div class="sell-card"><h3>3. Break And Repair</h3><ul><li>Add one realistic fault per topic: wrong ACL direction, bad NAT statement, DHCP snooping trust mistake, or OSPF mismatch.</li><li>Document symptom, checks, root cause, fix, and verification.</li></ul></div>
-      <div class="sell-card"><h3>4. Review Like An Engineer</h3><ul><li>Add commands to <a href="commands.html">Commands</a>.</li><li>Add failures to <a href="mistakes.html">Mistakes</a>.</li><li>Add a job-style explanation to <a href="interview.html">Interview</a>.</li></ul></div>
+      <div class="sell-card"><h3>2. Open Topic Lesson</h3><ul><li>When a topic page exists, use it for explanation, lab sessions, practice and proof.</li><li>Topic pages are where real learning happens.</li></ul></div>
+      <div class="sell-card"><h3>3. Build Proof</h3><ul><li>Create a Packet Tracer or GNS3 topology for every configurable topic.</li><li>Save packet files, configs, screenshots, command output, comments and notes.</li></ul></div>
+      <div class="sell-card"><h3>4. Break And Repair</h3><ul><li>Add one realistic fault per topic.</li><li>Document symptom, checks, root cause, fix and verification.</li></ul></div>
     </div>
   </div>
 </section>
@@ -140,264 +101,22 @@
   <div class="container">
     <h2><span class="hash">#</span> Volume 2 Topics Grouped For Study</h2>
     <p class="sub">This is organized by learning dependency and lab value, not only by chapter order.</p>
-
     <details class="domain" open>
       <summary>Module 1. Transport, Applications, And ACL Thinking <span class="weight">Ch. 1-3</span><span class="domain-count tag"></span></summary>
       <div class="topics">
         <div class="topic"><input type="checkbox" id="book-1-1"><label for="book-1-1">TCP and UDP behavior: ports, reliability, connection setup, flow control, and application selection.</label></div>
         <div class="topic"><input type="checkbox" id="book-1-2"><label for="book-1-2">DNS, HTTP, URI basics, and how a receiving host selects the right application.</label></div>
-        <div class="topic"><input type="checkbox" id="book-1-3"><label for="book-1-3">Standard IPv4 ACLs: location, direction, matching, permit/deny logic, implicit deny.</label></div>
+        <div class="topic"><input type="checkbox" id="book-1-3"><label for="book-1-3"><a href="topic-ccna-standard-acl.html">Standard IPv4 ACLs: location, direction, matching, permit/deny logic, implicit deny.</a> <span class="why">Full topic lesson available.</span></label></div>
         <div class="topic"><input type="checkbox" id="book-1-4"><label for="book-1-4">Wildcard masks: exact host, subnet range, any/all, and reverse-engineering ACL ranges.</label></div>
         <div class="topic"><input type="checkbox" id="book-1-5"><label for="book-1-5">Extended and named ACLs: protocol, source, destination, TCP/UDP ports, sequence editing.</label></div>
       </div>
     </details>
-
-    <details class="domain">
-      <summary>Module 2. Security Architecture And Device Hardening <span class="weight">Ch. 4-6</span><span class="domain-count tag"></span></summary>
-      <div class="topics">
-        <div class="topic"><input type="checkbox" id="book-2-1"><label for="book-2-1">Threat language: spoofing, DoS, reflection/amplification, man-in-the-middle, reconnaissance, malware, passwords.</label></div>
-        <div class="topic"><input type="checkbox" id="book-2-2"><label for="book-2-2">Security controls: user access, user education, firewalls, IPS, NGFW, and security zones.</label></div>
-        <div class="topic"><input type="checkbox" id="book-2-3"><label for="book-2-3">IOS passwords: console/VTY, enable secret, local users, password hashing/encryption, access control for management.</label></div>
-        <div class="topic"><input type="checkbox" id="book-2-4"><label for="book-2-4">Switch port security: sticky/static MACs, maximum addresses, violation modes, verify and recover.</label></div>
-      </div>
-    </details>
-
-    <details class="domain">
-      <summary>Module 3. DHCP, Snooping, And ARP Defense <span class="weight">Ch. 7-8</span><span class="domain-count tag"></span></summary>
-      <div class="topics">
-        <div class="topic"><input type="checkbox" id="book-3-1"><label for="book-3-1">DHCP client/server flow, pools, exclusions, default gateway, DNS, and relay with <code>ip helper-address</code>.</label></div>
-        <div class="topic"><input type="checkbox" id="book-3-2"><label for="book-3-2">Host IPv4 settings on Windows, macOS, and Linux: IP, mask, gateway, DNS, and lease checks.</label></div>
-        <div class="topic"><input type="checkbox" id="book-3-3"><label for="book-3-3">DHCP snooping trust boundaries, binding table, rogue DHCP defense, and message rate limits.</label></div>
-        <div class="topic"><input type="checkbox" id="book-3-4"><label for="book-3-4">Dynamic ARP Inspection: normal ARP review, gratuitous ARP attacks, validation checks, trusted uplinks.</label></div>
-      </div>
-    </details>
-
-    <details class="domain">
-      <summary>Module 4. Management And IP Services <span class="weight">Ch. 9-12</span><span class="domain-count tag"></span></summary>
-      <div class="topics">
-        <div class="topic"><input type="checkbox" id="book-4-1"><label for="book-4-1">Syslog: severity levels, real-time messages, stored logs, debug output, and timestamps.</label></div>
-        <div class="topic"><input type="checkbox" id="book-4-2"><label for="book-4-2">NTP: clock, timezone, stratum, redundant time sources, and loopback-source design.</label></div>
-        <div class="topic"><input type="checkbox" id="book-4-3"><label for="book-4-3">CDP and LLDP: neighbor discovery, topology mapping, and verification commands.</label></div>
-        <div class="topic"><input type="checkbox" id="book-4-4"><label for="book-4-4">NAT: static NAT, dynamic NAT, PAT overload, inside/outside interfaces, verification, and troubleshooting.</label></div>
-        <div class="topic"><input type="checkbox" id="book-4-5"><label for="book-4-5">QoS: bandwidth, delay, jitter, loss, traffic types, classification, marking, queuing, shaping, policing, congestion avoidance.</label></div>
-        <div class="topic"><input type="checkbox" id="book-4-6"><label for="book-4-6">FHRP and HSRP: virtual gateway, active/standby behavior, failover, priority, preemption, and verification.</label></div>
-        <div class="topic"><input type="checkbox" id="book-4-7"><label for="book-4-7">SNMP, FTP, and TFTP: monitoring, device management, and IOS/config file movement.</label></div>
-      </div>
-    </details>
-
-    <details class="domain">
-      <summary>Module 5. Architecture: LAN, WAN, And Cloud <span class="weight">Ch. 13-15</span><span class="domain-count tag"></span></summary>
-      <div class="topics">
-        <div class="topic"><input type="checkbox" id="book-5-1"><label for="book-5-1">Campus LAN design: two-tier, three-tier, access/distribution/core roles, and collapsed core.</label></div>
-        <div class="topic"><input type="checkbox" id="book-5-2"><label for="book-5-2">SOHO and PoE: small network layout, power budgets, powered devices, and design impact.</label></div>
-        <div class="topic"><input type="checkbox" id="book-5-3"><label for="book-5-3">WAN options: Metro Ethernet, MPLS, internet access, site-to-site VPN, remote-access VPN.</label></div>
-        <div class="topic"><input type="checkbox" id="book-5-4"><label for="book-5-4">Virtualization: server virtualization, virtual switches, physical data center network, and traffic workflow.</label></div>
-        <div class="topic"><input type="checkbox" id="book-5-5"><label for="book-5-5">Cloud: private/public cloud, IaaS/PaaS/SaaS, branch-to-cloud paths, internet VPN, private WAN, intercloud exchange.</label></div>
-      </div>
-    </details>
-
-    <details class="domain">
-      <summary>Module 6. Automation And Programmability <span class="weight">Ch. 16-19</span><span class="domain-count tag"></span></summary>
-      <div class="topics">
-        <div class="topic"><input type="checkbox" id="book-6-1"><label for="book-6-1">Planes: data, control, and management planes; traditional vs controller-based networks.</label></div>
-        <div class="topic"><input type="checkbox" id="book-6-2"><label for="book-6-2">SDN examples: OpenDaylight, ACI, APIC-EM, controller role, northbound and southbound interfaces.</label></div>
-        <div class="topic"><input type="checkbox" id="book-6-3"><label for="book-6-3">Cisco SDA: underlay, overlay, VXLAN, LISP, DNA Center, scalable groups, and intent-based operations.</label></div>
-        <div class="topic"><input type="checkbox" id="book-6-4"><label for="book-6-4">REST APIs: client/server, stateless calls, CRUD, HTTP verbs, URIs, status codes, and authentication awareness.</label></div>
-        <div class="topic"><input type="checkbox" id="book-6-5"><label for="book-6-5">JSON/YAML/XML: key-value pairs, objects, arrays, minified vs beautified JSON, and interpreting API output.</label></div>
-        <div class="topic"><input type="checkbox" id="book-6-6"><label for="book-6-6">Configuration management: drift, version control, templates, variables, Ansible, Puppet, and Chef.</label></div>
-      </div>
-    </details>
-
-    <details class="domain">
-      <summary>Module 7. Final Review And Exam Readiness <span class="weight">Ch. 20</span><span class="domain-count tag"></span></summary>
-      <div class="topics">
-        <div class="topic"><input type="checkbox" id="book-7-1"><label for="book-7-1">Practice exam workflow: timed attempts, wrong-answer review, and weak-domain repair.</label></div>
-        <div class="topic"><input type="checkbox" id="book-7-2"><label for="book-7-2">CLI skill review: commands that must be recalled under time pressure.</label></div>
-        <div class="topic"><input type="checkbox" id="book-7-3"><label for="book-7-3">Self-assessment: separate memorized answers from lab-proven understanding.</label></div>
-      </div>
-    </details>
   </div>
 </section>
-
-<section class="block">
-  <div class="container">
-    <h2><span class="hash">#</span> Volume 2 Lab And Packet File Plan</h2>
-    <p class="sub">Create these under <code>labs/ccna/</code>. Each folder should hold the Packet Tracer or GNS3 file, topology image, configs, command output, and notes.</p>
-    <table class="info">
-      <tr><th>Folder</th><th>Lab</th><th>Packet / Diagram Needed</th><th>Proof Output</th></tr>
-      <tr><td><code>acl-standard/</code></td><td>Standard ACL placement and wildcard masks</td><td><code>acl-standard.pkt</code>, client-server topology</td><td><code>show access-lists</code>, ping permit/deny tests</td></tr>
-      <tr><td><code>acl-extended/</code></td><td>Extended ACL for web/DNS/ICMP control</td><td><code>acl-extended.pkt</code>, traffic path diagram</td><td>packet tests by protocol and port</td></tr>
-      <tr><td><code>port-security/</code></td><td>Sticky MACs and violation modes</td><td><code>port-security.pkt</code>, access switch diagram</td><td><code>show port-security</code>, violation recovery notes</td></tr>
-      <tr><td><code>dhcp-snooping-dai/</code></td><td>Rogue DHCP and ARP spoof defense</td><td><code>dhcp-snooping-dai.pkt</code>, trusted/untrusted port map</td><td>binding table, blocked rogue server proof</td></tr>
-      <tr><td><code>nat-pat/</code></td><td>Inside network to ISP using PAT</td><td><code>nat-pat.pkt</code>, inside/outside labels</td><td><code>show ip nat translations</code>, traceroute</td></tr>
-      <tr><td><code>hsrp/</code></td><td>Two gateways with failover</td><td><code>hsrp.gns3</code> or <code>hsrp.pkt</code>, active/standby diagram</td><td>continuous ping during failover</td></tr>
-      <tr><td><code>qos-basic/</code></td><td>Classify, mark, queue, shape, police</td><td>Original QoS flow diagram</td><td>policy-map notes and verification commands</td></tr>
-      <tr><td><code>architecture/</code></td><td>Campus, WAN, cloud comparison</td><td>Original LAN/WAN/cloud diagrams</td><td>design notes and interview explanation</td></tr>
-      <tr><td><code>rest-json/</code></td><td>Read API output and JSON objects</td><td>API request/response diagram</td><td>formatted JSON examples and explanation</td></tr>
-      <tr><td><code>ansible-config/</code></td><td>Config backup and drift check concept</td><td>Controller-to-devices diagram</td><td>inventory, playbook notes, before/after configs</td></tr>
-    </table>
-    <div class="callout warn"><strong>Image rule:</strong> do not copy Cisco Press figures into the public repo. Redraw your own simple diagrams: topology, traffic path, packet fields, trust boundary, inside/outside NAT, HSRP failover, campus tiers, WAN/cloud paths, and controller/API flow.</div>
-    <div class="loop-strip">
-      <span class="loop-step">Read</span><span class="loop-arrow">-></span>
-      <span class="loop-step">Diagram</span><span class="loop-arrow">-></span>
-      <span class="loop-step alt">Build</span><span class="loop-arrow">-></span>
-      <span class="loop-step alt">Break</span><span class="loop-arrow">-></span>
-      <span class="loop-step">Prove</span><span class="loop-arrow">-></span>
-      <span class="loop-step">Review</span>
-    </div>
-    <div class="callout tip"><strong>Target:</strong> one module every 1-2 weeks. Do not mark a topic complete until it has a note, a lab or diagram, a proof artifact, and a one-paragraph interview answer.</div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="container">
-    <h2><span class="hash">#</span> Hands-On Labs</h2>
-    <p class="sub">These build on each other into one growing "company network" — exactly how real enterprises evolve. All lab files get committed to this repo.</p>
-
-    <div class="lab-grid">
-      <div class="lab-card">
-        <h3><span class="lab-num">LAB 01</span> — VLAN &amp; Trunking: Segment the Office</h3>
-        <p>3 switches, 3 departments (Sales, Engineering, Guest). Create VLANs, configure access &amp; trunk ports, verify isolation, then add inter-VLAN routing (router-on-a-stick, then SVIs on a L3 switch).</p>
-        <div class="realworld"><strong>Real-world case:</strong> HR demands their traffic be isolated from the guest Wi-Fi for compliance — the most common segmentation request in any company.</div>
-        <div class="meta"><span class="tag tool">Packet Tracer</span><span class="tag scenario">Compliance segmentation</span></div>
-      </div>
-
-      <div class="lab-card">
-        <h3><span class="lab-num">LAB 02</span> — Spanning Tree &amp; EtherChannel: Survive a Cable Loop</h3>
-        <p>Build a redundant switch triangle. Identify the root bridge, predict blocked ports, fail a link and watch reconvergence. Bundle links with LACP EtherChannel.</p>
-        <div class="realworld"><strong>Real-world case:</strong> Someone plugs both ends of a cable into the same switch and the floor goes down — STP knowledge is why it doesn't.</div>
-        <div class="meta"><span class="tag tool">Packet Tracer / GNS3</span><span class="tag scenario">Loop prevention</span></div>
-      </div>
-
-      <div class="lab-card">
-        <h3><span class="lab-num">LAB 03</span> — Subnetting a Real Company</h3>
-        <p>Given 172.16.0.0/16 and a brief (4 sites, different host counts, room to grow), design a VLSM addressing plan, document it, and implement it across the topology.</p>
-        <div class="realworld"><strong>Real-world case:</strong> Your company acquires a smaller firm — you must design address space that won't collide and won't run out. Architects do this for a living.</div>
-        <div class="meta"><span class="tag tool">Spreadsheet + Packet Tracer</span><span class="tag scenario">IP plan design</span></div>
-      </div>
-
-      <div class="lab-card">
-        <h3><span class="lab-num">LAB 04</span> — OSPF: Connect Three Branches</h3>
-        <p>3 routers in single-area OSPF. Verify adjacencies, influence DR/BDR election, advertise a default route, break an adjacency (mismatched timers) and troubleshoot it back.</p>
-        <div class="realworld"><strong>Real-world case:</strong> A branch office drops off the network after a change window — "show ip ospf neighbor" is your first command, and you'll know why.</div>
-        <div class="meta"><span class="tag tool">GNS3 / Packet Tracer</span><span class="tag scenario">Branch outage</span></div>
-      </div>
-
-      <div class="lab-card">
-        <h3><span class="lab-num">LAB 05</span> — Internet Edge: NAT, ACLs &amp; DHCP</h3>
-        <p>One edge router: PAT to a simulated ISP, DHCP pools for internal VLANs, extended ACLs blocking guest VLAN from internal subnets while allowing internet.</p>
-        <div class="realworld"><strong>Real-world case:</strong> This is, almost line for line, the config of every small/medium business internet edge in production today.</div>
-        <div class="meta"><span class="tag tool">Packet Tracer</span><span class="tag scenario">Internet edge build</span></div>
-      </div>
-
-      <div class="lab-card">
-        <h3><span class="lab-num">LAB 06</span> — HSRP: Kill a Router, Stay Online</h3>
-        <p>Two gateways running HSRP. Ping continuously from a client, power off the active router, measure the failover. Tune priority and preemption.</p>
-        <div class="realworld"><strong>Real-world case:</strong> A core router dies at 2 PM on a Tuesday. With FHRP done right, users never notice. That's the job.</div>
-        <div class="meta"><span class="tag tool">GNS3</span><span class="tag scenario">Redundancy / failover</span></div>
-      </div>
-
-      <div class="lab-card">
-        <h3><span class="lab-num">LAB 07</span> — Harden the Network</h3>
-        <p>SSH-only management, port security on access ports, DHCP snooping, dynamic ARP inspection. Then attack your own lab: plug in a rogue DHCP server and watch snooping block it.</p>
-        <div class="realworld"><strong>Real-world case:</strong> An intern's home router (plugged in for "more ports") starts handing out wrong IP addresses to the whole floor. DHCP snooping is the fix.</div>
-        <div class="meta"><span class="tag tool">Packet Tracer / GNS3</span><span class="tag scenario">Rogue device defense</span></div>
-      </div>
-
-      <div class="lab-card">
-        <h3><span class="lab-num">LAB 08</span> — First Automation: Python Meets the Network</h3>
-        <p>Use Python + Netmiko to SSH into your GNS3 routers: back up all configs, push a banner to 5 devices at once, and parse "show" output into JSON.</p>
-        <div class="realworld"><strong>Real-world case:</strong> "Change the SNMP community on 200 switches by Friday." Manually: a week. Scripted: 10 minutes. This is the skill that separates 2026 engineers.</div>
-        <div class="meta"><span class="tag tool">Python + Netmiko</span><span class="tag tool">GNS3 / DevNet Sandbox</span><span class="tag scenario">Bulk config change</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="container">
-    <h2><span class="hash">#</span> Tools &amp; Simulators for This Level</h2>
-    <div class="tools-grid">
-      <div class="tool-card">
-        <h3>Cisco Packet Tracer</h3>
-        <p>Covers ~90% of CCNA topics and includes wireless controller simulation. Start here.</p>
-        <span class="cost free">Free</span>
-      </div>
-      <div class="tool-card">
-        <h3>GNS3</h3>
-        <p>Graduate here for OSPF/HSRP/automation labs — real IOS behavior, real SSH for your Python scripts.</p>
-        <span class="cost free">Free</span>
-      </div>
-      <div class="tool-card">
-        <h3>Boson ExSim / NetSim</h3>
-        <p>The gold-standard practice exams — harder than the real thing. If you pass Boson, you pass the CCNA.</p>
-        <span class="cost paid">Paid</span>
-      </div>
-      <div class="tool-card">
-        <h3>Jeremy's IT Lab (YouTube)</h3>
-        <p>The best free complete CCNA course — full video series with free Packet Tracer labs for every lesson.</p>
-        <span class="cost free">Free</span>
-      </div>
-      <div class="tool-card">
-        <h3>Anki (flashcards)</h3>
-        <p>Spaced repetition for port numbers, AD values, STP states, OSPF timers. 15 min/day.</p>
-        <span class="cost free">Free</span>
-      </div>
-      <div class="tool-card">
-        <h3>subnettingpractice.com</h3>
-        <p>Daily subnetting drills until sub-15-second answers. The exam is time-pressured; this is how you bank time.</p>
-        <span class="cost free">Free</span>
-      </div>
-    </div>
-    <div class="callout warn"><strong>Reality check:</strong> plan 3–6 months at 1–2 hrs/day. The #1 reason people fail is skipping labs and only watching videos. Hands-on time should be ≥40% of total study time.</div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="container">
-    <h2><span class="hash">#</span> Growth Check — After This Level</h2>
-    <div class="sell-grid">
-      <div class="sell-card">
-        <h3>Skills I Now Own</h3>
-        <ul>
-          <li><strong>Design an IP addressing plan</strong> (VLSM) for a multi-site network and implement inter-VLAN routing across it.</li>
-          <li><strong>Deploy and troubleshoot OSPF</strong> — including diagnosing broken adjacencies under pressure.</li>
-          <li><strong>Build a complete internet edge</strong>: NAT, ACLs, DHCP, and HSRP redundancy with measured failover.</li>
-          <li><strong>Automate with Python + Netmiko</strong> — config backups and bulk changes across many devices.</li>
-        </ul>
-      </div>
-      <div class="sell-card">
-        <h3>Self-Check Before the Exam</h3>
-        <ul>
-          <li>Can I subnet any question in <strong>under 15 seconds</strong>?</li>
-          <li>Given an STP topology, can I predict the root bridge and blocked ports <strong>before</strong> checking?</li>
-          <li>Can I read any line of <code>show ip route</code> and explain every field?</li>
-          <li>If an OSPF adjacency is stuck, do I know the 6 mismatches to check, in order?</li>
-        </ul>
-      </div>
-      <div class="sell-card">
-        <h3>My Next Growth Step</h3>
-        <ul>
-          <li>Rebuild Labs 01–07 <strong>from blank configs</strong> without looking at notes — proof it's learned, not memorized.</li>
-          <li>Add Linux fundamentals and deepen Python — they multiply everything at CCNP level.</li>
-          <li>Start reading the ENCOR Official Cert Guide casually before formally beginning Level 3.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="container">
-  <div class="pager">
-    <a href="ccst.html"><small>← Previous</small>Level 1: CCST</a>
-    <a class="next" href="ccnp.html"><small>Next Level →</small>Level 3: CCNP</a>
-  </div>
-</div>
 
 <footer class="site-footer">
-  <div class="container"><p>Level 2 of 5 &middot; CCNA (200-301) &middot; Part of my Cisco certification journey</p></div>
+  <div class="container"><p>Level 2 of 5 &middot; CCNA 200-301 &middot; Learn, lab, break, fix and prove.</p></div>
 </footer>
-
 <script src="js/main.js"></script>
 <script type="module" src="js/animations.js"></script>
 </body>
