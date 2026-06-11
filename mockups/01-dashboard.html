@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup 1 — Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b1220; --bg-soft: #101a2e; --card: #16223a; --card-hover: #1b2a47;
+    --border: #24355a; --text: #e8eefb; --text-dim: #9fb0cc;
+    --accent: #1ba0d7; --green: #6cc04a; --warn: #f5a623; --danger: #e85d75;
+    --radius: 14px; --font: "Inter", system-ui, sans-serif; --display: "Space Grotesk", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1;
+    background-image: linear-gradient(rgba(27,160,215,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(27,160,215,0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
+  }
+
+  /* ── NAV ── */
+  nav { background: rgba(11,18,32,0.92); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; height: 60px; gap: 8px; }
+  .brand { font-family: var(--display); font-size: 1.2rem; font-weight: 700; color: var(--text); margin-right: auto; }
+  .brand span { color: var(--accent); }
+  .nav-btn { padding: 7px 16px; border-radius: 8px; font-size: 0.875rem; font-weight: 500; color: var(--text-dim); background: none; border: none; cursor: pointer; transition: all .2s; text-decoration: none; }
+  .nav-btn:hover, .nav-btn.active { background: rgba(27,160,215,0.12); color: var(--accent); }
+  .nav-avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #1464a0); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600; margin-left: 8px; }
+
+  /* ── LABEL ── */
+  .mockup-label { background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.3); color: var(--warn); text-align: center; padding: 8px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 1100px; margin: 0 auto; padding: 32px 24px 64px; }
+
+  /* ── WELCOME HERO ── */
+  .welcome { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; background: linear-gradient(135deg, rgba(27,160,215,0.08) 0%, rgba(16,26,46,0) 60%); border: 1px solid rgba(27,160,215,0.2); border-radius: var(--radius); padding: 28px 32px; margin-bottom: 28px; }
+  .welcome-sub { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 6px; }
+  .welcome h1 { font-family: var(--display); font-size: 1.7rem; font-weight: 700; margin-bottom: 8px; }
+  .level-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(27,160,215,0.15); border: 1px solid rgba(27,160,215,0.3); color: var(--accent); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 999px; margin-bottom: 16px; }
+  .level-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+  .progress-row { display: flex; align-items: center; gap: 12px; }
+  .progress-bar { flex: 1; height: 8px; background: rgba(255,255,255,0.08); border-radius: 99px; overflow: hidden; max-width: 260px; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--green)); border-radius: 99px; }
+  .progress-text { font-size: 0.85rem; color: var(--text-dim); }
+  .continue-btn { background: linear-gradient(135deg, var(--accent), #1464a0); color: #fff; border: none; border-radius: 10px; padding: 14px 28px; font-size: 0.95rem; font-weight: 600; cursor: pointer; white-space: nowrap; font-family: var(--display); letter-spacing: -0.01em; }
+
+  /* ── STATS ROW ── */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; }
+  .stat-num { font-family: var(--display); font-size: 2rem; font-weight: 700; margin-bottom: 2px; }
+  .stat-label { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+  .stat-num.blue { color: var(--accent); }
+  .stat-num.green { color: var(--green); }
+  .stat-num.warn { color: var(--warn); }
+  .stat-num.dim { color: var(--text-dim); }
+
+  /* ── TWO-COL ── */
+  .two-col { display: grid; grid-template-columns: 1fr 340px; gap: 24px; align-items: start; }
+
+  /* ── TODAY'S FOCUS ── */
+  .focus-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 24px; }
+  .focus-card h2 { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 16px; }
+  .topic-row { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .topic-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .topic-row:first-of-type { padding-top: 0; }
+  .step-badge { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
+  .step-done { background: rgba(108,192,74,0.15); color: var(--green); border: 1px solid rgba(108,192,74,0.3); }
+  .step-active { background: rgba(27,160,215,0.15); color: var(--accent); border: 1px solid rgba(27,160,215,0.3); }
+  .step-locked { background: rgba(255,255,255,0.05); color: var(--text-dim); border: 1px solid var(--border); }
+  .topic-info { flex: 1; }
+  .topic-title { font-weight: 600; font-size: 0.95rem; }
+  .topic-meta { font-size: 0.8rem; color: var(--text-dim); }
+  .topic-action { font-size: 0.8rem; font-weight: 600; }
+  .topic-action.blue { color: var(--accent); }
+  .topic-action.done { color: var(--green); }
+  .topic-action.gray { color: var(--text-dim); }
+
+  /* ── SUBJECT PROGRESS ── */
+  .subject-list { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .subject-list h2 { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 16px; }
+  .subject-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .subject-item:last-child { border-bottom: none; }
+  .subject-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .subject-name { font-size: 0.9rem; font-weight: 500; }
+  .subject-pct { font-size: 0.8rem; color: var(--text-dim); }
+  .mini-bar { height: 5px; background: rgba(255,255,255,0.07); border-radius: 99px; overflow: hidden; }
+  .mini-fill { height: 100%; border-radius: 99px; }
+  .fill-blue { background: var(--accent); }
+  .fill-green { background: var(--green); }
+  .fill-warn { background: var(--warn); }
+
+  /* ── SIDEBAR ── */
+  .sidebar { display: flex; flex-column: column; gap: 20px; flex-direction: column; }
+  .side-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .side-card h3 { font-family: var(--display); font-size: 0.85rem; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 14px; }
+  .streak-num { font-family: var(--display); font-size: 2.4rem; font-weight: 700; color: var(--warn); }
+  .streak-label { font-size: 0.8rem; color: var(--text-dim); }
+  .streak-dots { display: flex; gap: 6px; margin-top: 12px; }
+  .dot { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 600; }
+  .dot.on { background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.4); color: var(--warn); }
+  .dot.off { background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text-dim); }
+  .activity-item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.83rem; }
+  .activity-item:last-child { border-bottom: none; }
+  .activity-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+  .a-blue { background: var(--accent); }
+  .a-green { background: var(--green); }
+  .a-warn { background: var(--warn); }
+  .a-time { color: var(--text-dim); font-size: 0.75rem; }
+  .quick-links { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .qlink { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; text-align: center; font-size: 0.8rem; font-weight: 500; color: var(--text-dim); cursor: pointer; transition: all .2s; }
+  .qlink:hover { background: rgba(27,160,215,0.1); color: var(--accent); border-color: rgba(27,160,215,0.3); }
+  .qlink-icon { font-size: 1.1rem; display: block; margin-bottom: 2px; }
+</style>
+</head>
+<body>
+
+<div class="mockup-label">MOCKUP 1 of 4 — DASHBOARD</div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">CN<span>JOURNEY</span></div>
+    <a class="nav-btn active" href="#">Dashboard</a>
+    <a class="nav-btn" href="02-level-subjects.html">My Path</a>
+    <a class="nav-btn" href="#">Labs</a>
+    <a class="nav-btn" href="#">Review</a>
+    <div class="nav-avatar">AJ</div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- Welcome Hero -->
+  <div class="welcome">
+    <div>
+      <div class="welcome-sub">Good morning, Arvind 👋</div>
+      <div class="level-pill"><span class="level-dot"></span> Level 1 — CCST Networking</div>
+      <h1>Keep the momentum going</h1>
+      <div class="progress-row">
+        <div class="progress-bar"><div class="progress-fill" style="width:28%"></div></div>
+        <span class="progress-text">28% complete · 4 topics done</span>
+      </div>
+    </div>
+    <button class="continue-btn">Continue →<br><small style="font-weight:400;font-size:0.75rem;opacity:.8">Types of Networks</small></button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num blue">4</div>
+      <div class="stat-label">Topics Done</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num green">2</div>
+      <div class="stat-label">Labs Complete</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num warn">82%</div>
+      <div class="stat-label">Quiz Avg Score</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num dim">6</div>
+      <div class="stat-label">Day Streak</div>
+    </div>
+  </div>
+
+  <!-- Two-col layout -->
+  <div class="two-col">
+    <div>
+      <!-- Today's Focus -->
+      <div class="focus-card">
+        <h2>Today's Focus — Network Fundamentals</h2>
+
+        <div class="topic-row">
+          <div class="step-badge step-done">✓</div>
+          <div class="topic-info">
+            <div class="topic-title">What is a Network?</div>
+            <div class="topic-meta">Learn · Lab · Quiz — all 3 steps complete</div>
+          </div>
+          <div class="topic-action done">Done</div>
+        </div>
+
+        <div class="topic-row">
+          <div class="step-badge step-done">✓</div>
+          <div class="topic-info">
+            <div class="topic-title">Network Devices (Switches, Routers, Hubs)</div>
+            <div class="topic-meta">Learn · Lab · Quiz — all 3 steps complete</div>
+          </div>
+          <div class="topic-action done">Done</div>
+        </div>
+
+        <div class="topic-row" style="background:rgba(27,160,215,0.04);border-radius:10px;padding:14px;margin: 0 -14px;">
+          <div class="step-badge step-active">▶</div>
+          <div class="topic-info">
+            <div class="topic-title" style="color:var(--accent)">Types of Networks — LAN, WAN, MAN</div>
+            <div class="topic-meta">Step 1 of 3: Learning concepts now</div>
+          </div>
+          <div class="topic-action blue">Continue →</div>
+        </div>
+
+        <div class="topic-row">
+          <div class="step-badge step-locked">🔒</div>
+          <div class="topic-info">
+            <div class="topic-title" style="color:var(--text-dim)">Network Topologies</div>
+            <div class="topic-meta" style="color:var(--text-dim)">Finish Topic 3 to unlock</div>
+          </div>
+          <div class="topic-action gray">Locked</div>
+        </div>
+
+        <div class="topic-row">
+          <div class="step-badge step-locked">🔒</div>
+          <div class="topic-info">
+            <div class="topic-title" style="color:var(--text-dim)">OSI Model — 7 Layers</div>
+            <div class="topic-meta" style="color:var(--text-dim)">Locked</div>
+          </div>
+          <div class="topic-action gray">Locked</div>
+        </div>
+      </div>
+
+      <!-- Subject Progress -->
+      <div class="subject-list">
+        <h2>CCST Level 1 — Subject Progress</h2>
+        <div class="subject-item">
+          <div class="subject-row"><span class="subject-name">Network Fundamentals</span><span class="subject-pct">40% · 2/5 modules</span></div>
+          <div class="mini-bar"><div class="mini-fill fill-blue" style="width:40%"></div></div>
+        </div>
+        <div class="subject-item">
+          <div class="subject-row"><span class="subject-name">Network Access &amp; Media</span><span class="subject-pct">0% · Not started</span></div>
+          <div class="mini-bar"><div class="mini-fill fill-blue" style="width:0%"></div></div>
+        </div>
+        <div class="subject-item">
+          <div class="subject-row"><span class="subject-name">IP Addressing Basics</span><span class="subject-pct">0% · Locked</span></div>
+          <div class="mini-bar"><div class="mini-fill fill-green" style="width:0%"></div></div>
+        </div>
+        <div class="subject-item">
+          <div class="subject-row"><span class="subject-name">Security Fundamentals</span><span class="subject-pct">0% · Locked</span></div>
+          <div class="mini-bar"><div class="mini-fill fill-warn" style="width:0%"></div></div>
+        </div>
+        <div class="subject-item">
+          <div class="subject-row"><span class="subject-name">IT Support Essentials</span><span class="subject-pct">0% · Locked</span></div>
+          <div class="mini-bar"><div class="mini-fill fill-blue" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Streak -->
+      <div class="side-card">
+        <h3>Study Streak</h3>
+        <div class="streak-num">6</div>
+        <div class="streak-label">days in a row 🔥</div>
+        <div class="streak-dots">
+          <div class="dot off">M</div>
+          <div class="dot off">T</div>
+          <div class="dot on">W</div>
+          <div class="dot on">T</div>
+          <div class="dot on">F</div>
+          <div class="dot on">S</div>
+          <div class="dot on">S</div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="side-card">
+        <h3>Recent Activity</h3>
+        <div class="activity-item">
+          <div class="activity-dot a-green"></div>
+          <div><div>Completed Lab: Basic Switch Config</div><div class="a-time">Today, 10:32 AM</div></div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-dot a-blue"></div>
+          <div><div>Passed Quiz: Network Devices (90%)</div><div class="a-time">Today, 9:45 AM</div></div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-dot a-warn"></div>
+          <div><div>Mistake logged: Forgot implicit deny</div><div class="a-time">Yesterday</div></div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-dot a-blue"></div>
+          <div><div>Read: What is a Network?</div><div class="a-time">Yesterday</div></div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="side-card">
+        <h3>Quick Access</h3>
+        <div class="quick-links">
+          <div class="qlink"><span class="qlink-icon">🔬</span>Labs</div>
+          <div class="qlink"><span class="qlink-icon">❌</span>Mistakes</div>
+          <div class="qlink"><span class="qlink-icon">💻</span>Commands</div>
+          <div class="qlink"><span class="qlink-icon">🎤</span>Interview</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

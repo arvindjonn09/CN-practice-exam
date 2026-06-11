@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup 3 — Topic: Learn → Lab → Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b1220; --bg-soft: #101a2e; --card: #16223a; --border: #24355a;
+    --text: #e8eefb; --text-dim: #9fb0cc;
+    --accent: #1ba0d7; --green: #6cc04a; --warn: #f5a623; --danger: #e85d75;
+    --radius: 14px; --font: "Inter", system-ui, sans-serif; --display: "Space Grotesk", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
+  body::before {
+    content:""; position:fixed; inset:0; z-index:-1;
+    background-image: linear-gradient(rgba(27,160,215,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(27,160,215,0.04) 1px,transparent 1px);
+    background-size:44px 44px; mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 30%,transparent 75%);
+  }
+  nav { background: rgba(11,18,32,0.92); border-bottom:1px solid var(--border); backdrop-filter:blur(12px); position:sticky; top:0; z-index:100; }
+  .nav-inner { max-width:1100px; margin:0 auto; padding:0 24px; display:flex; align-items:center; height:60px; gap:8px; }
+  .brand { font-family:var(--display); font-size:1.2rem; font-weight:700; color:var(--text); margin-right:auto; }
+  .brand span { color:var(--accent); }
+  .nav-btn { padding:7px 16px; border-radius:8px; font-size:0.875rem; font-weight:500; color:var(--text-dim); background:none; border:none; cursor:pointer; }
+  .nav-btn.active { background:rgba(27,160,215,0.12); color:var(--accent); }
+  .nav-avatar { width:34px; height:34px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#1464a0); display:flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:600; margin-left:8px; }
+  .mockup-label { background:rgba(245,166,35,0.12); border:1px solid rgba(245,166,35,0.3); color:var(--warn); text-align:center; padding:8px; font-size:0.8rem; font-weight:600; letter-spacing:0.05em; }
+  .page { max-width:900px; margin:0 auto; padding:32px 24px 80px; }
+
+  /* ── BREADCRUMB ── */
+  .bc { display:flex; align-items:center; gap:8px; font-size:0.8rem; color:var(--text-dim); margin-bottom:20px; }
+  .bc-sep { color:var(--border); }
+  .bc-link { color:var(--accent); cursor:pointer; }
+
+  /* ── STEP PROGRESS BAR ── */
+  .step-bar { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:16px 24px; margin-bottom:28px; }
+  .step-bar-label { font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.07em; margin-bottom:12px; }
+  .steps { display:flex; align-items:center; gap:0; }
+  .step { display:flex; align-items:center; flex:1; }
+  .step-circle { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:700; flex-shrink:0; }
+  .s-done { background:var(--green); color:#fff; }
+  .s-active { background:var(--accent); color:#fff; box-shadow:0 0 16px rgba(27,160,215,0.4); }
+  .s-todo { background:rgba(255,255,255,0.07); color:var(--text-dim); border:2px solid var(--border); }
+  .step-label { margin-left:10px; }
+  .step-name { font-family:var(--display); font-size:0.9rem; font-weight:600; }
+  .step-name.done { color:var(--green); }
+  .step-name.active { color:var(--accent); }
+  .step-name.todo { color:var(--text-dim); }
+  .step-sub { font-size:0.72rem; color:var(--text-dim); }
+  .step-connector { flex:1; height:2px; background:var(--border); margin:0 12px; }
+  .step-connector.done { background:var(--green); }
+
+  /* ── TOPIC HEADER ── */
+  .topic-hdr { margin-bottom:28px; }
+  .topic-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(27,160,215,0.12); border:1px solid rgba(27,160,215,0.25); color:var(--accent); font-size:0.75rem; font-weight:600; padding:4px 12px; border-radius:999px; margin-bottom:10px; }
+  .topic-hdr h1 { font-family:var(--display); font-size:1.8rem; font-weight:700; margin-bottom:8px; }
+  .topic-meta { display:flex; gap:16px; font-size:0.82rem; color:var(--text-dim); }
+  .tm-item { display:flex; align-items:center; gap:5px; }
+
+  /* ── LEARN SECTION ── */
+  .learn-section { margin-bottom:28px; }
+  .section-title { font-family:var(--display); font-size:1.1rem; font-weight:700; margin-bottom:16px; color:var(--accent); display:flex; align-items:center; gap:8px; }
+  .section-title::after { content:""; flex:1; height:1px; background:rgba(27,160,215,0.2); }
+
+  .concept-intro { background:rgba(27,160,215,0.05); border:1px solid rgba(27,160,215,0.2); border-radius:var(--radius); padding:20px 24px; margin-bottom:20px; font-size:0.95rem; line-height:1.7; }
+  .concept-intro strong { color:var(--accent); }
+
+  .concept-cards { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:20px; }
+  .cc { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; }
+  .cc-icon { font-size:1.4rem; margin-bottom:8px; }
+  .cc-title { font-family:var(--display); font-size:0.9rem; font-weight:600; margin-bottom:6px; }
+  .cc-body { font-size:0.85rem; color:var(--text-dim); line-height:1.6; }
+  .cc-body strong { color:var(--text); }
+
+  .diagram-box { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin-bottom:20px; }
+  .diagram-box h3 { font-size:0.85rem; font-weight:600; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:14px; }
+  .diagram { font-family:monospace; font-size:0.82rem; color:var(--accent); background:rgba(0,0,0,0.2); border-radius:8px; padding:16px; white-space:pre; line-height:1.8; }
+
+  .key-points { background:rgba(108,192,74,0.05); border:1px solid rgba(108,192,74,0.2); border-radius:var(--radius); padding:16px 20px; margin-bottom:24px; }
+  .key-points h3 { font-size:0.82rem; font-weight:600; color:var(--green); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px; }
+  .key-list { list-style:none; padding:0; }
+  .key-list li { font-size:0.875rem; padding:4px 0; padding-left:18px; position:relative; color:var(--text-dim); }
+  .key-list li::before { content:"→"; position:absolute; left:0; color:var(--green); }
+  .key-list li strong { color:var(--text); }
+
+  /* ── ACTION FOOTER ── */
+  .action-footer { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px 24px; display:flex; align-items:center; gap:16px; }
+  .af-text { flex:1; }
+  .af-title { font-family:var(--display); font-weight:600; font-size:0.95rem; }
+  .af-sub { font-size:0.82rem; color:var(--text-dim); }
+  .af-btn-primary { background:linear-gradient(135deg,var(--accent),#1464a0); color:#fff; border:none; border-radius:10px; padding:12px 24px; font-size:0.9rem; font-weight:600; cursor:pointer; font-family:var(--display); white-space:nowrap; }
+  .af-btn-prev { background:rgba(255,255,255,0.06); color:var(--text-dim); border:1px solid var(--border); border-radius:10px; padding:12px 20px; font-size:0.9rem; font-weight:500; cursor:pointer; }
+
+  /* ── NAV MINI (prev/next topic) ── */
+  .topic-nav { display:flex; gap:12px; margin-bottom:28px; }
+  .tn-btn { flex:1; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 16px; display:flex; align-items:center; gap:10px; cursor:pointer; font-size:0.82rem; }
+  .tn-btn.next { justify-content:flex-end; text-align:right; }
+  .tn-dir { font-size:0.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.06em; display:block; }
+  .tn-name { font-weight:600; color:var(--text-dim); }
+</style>
+</head>
+<body>
+<div class="mockup-label">MOCKUP 3 of 4 — TOPIC PAGE: STEP 1 LEARN (30-min concept session)</div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">CN<span>JOURNEY</span></div>
+    <a class="nav-btn">Dashboard</a>
+    <a class="nav-btn active">My Path</a>
+    <a class="nav-btn">Labs</a>
+    <a class="nav-btn">Review</a>
+    <div class="nav-avatar">AJ</div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- Breadcrumb -->
+  <div class="bc">
+    <span class="bc-link">Level 1 — CCST</span><span class="bc-sep">›</span>
+    <span class="bc-link">Network Fundamentals</span><span class="bc-sep">›</span>
+    <span class="bc-link">Module 2: Types of Networks</span><span class="bc-sep">›</span>
+    <span>WAN — Wide Area Networks</span>
+  </div>
+
+  <!-- 3-Step Progress -->
+  <div class="step-bar">
+    <div class="step-bar-label">Topic Progress</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-circle s-done">✓</div>
+        <div class="step-label">
+          <div class="step-name done">Step 1: Learn</div>
+          <div class="step-sub">Concept explained</div>
+        </div>
+      </div>
+      <div class="step-connector done"></div>
+      <div class="step">
+        <div class="step-circle s-active">2</div>
+        <div class="step-label">
+          <div class="step-name active">Step 2: Lab</div>
+          <div class="step-sub">Hands-on practice — now</div>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-circle s-todo">3</div>
+        <div class="step-label">
+          <div class="step-name todo">Step 3: Quiz</div>
+          <div class="step-sub">Check understanding</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topic Header -->
+  <div class="topic-hdr">
+    <div class="topic-badge">📡 Module 2 · Topic 2 of 4</div>
+    <h1>WAN — Wide Area Networks</h1>
+    <div class="topic-meta">
+      <div class="tm-item">⏱ ~30 min to read</div>
+      <div class="tm-item">🔬 Lab included</div>
+      <div class="tm-item">❓ 5-question quiz</div>
+    </div>
+  </div>
+
+  <!-- STEP 1: LEARN CONTENT -->
+  <div class="learn-section">
+    <div class="section-title">Step 1 — Understand the Concept</div>
+
+    <div class="concept-intro">
+      A <strong>WAN (Wide Area Network)</strong> connects devices across large geographical areas — cities, countries, even continents. Unlike a LAN that you own and manage yourself, a WAN usually relies on <strong>service provider infrastructure</strong> (like ISP leased lines, fiber, 4G/5G, or satellite) to carry your traffic between sites.
+    </div>
+
+    <div class="concept-cards">
+      <div class="cc">
+        <div class="cc-icon">🏙️</div>
+        <div class="cc-title">What connects over a WAN?</div>
+        <div class="cc-body">Branch offices, data centers, remote workers, cloud services. Anything that needs to talk across <strong>geographic distance</strong>.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon">💸</div>
+        <div class="cc-title">Who owns the WAN?</div>
+        <div class="cc-body">You typically <strong>rent bandwidth</strong> from an ISP. Your router connects to their edge — you control your LAN, they control the WAN core.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon">📉</div>
+        <div class="cc-title">WAN vs LAN — key difference</div>
+        <div class="cc-body">LAN = <strong>fast, cheap, you own it</strong>. WAN = <strong>slower, expensive per Mbps, provider-managed</strong>. WANs have higher latency because of distance.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon">🔧</div>
+        <div class="cc-title">Common WAN technologies</div>
+        <div class="cc-body">Leased lines (T1/E1), MPLS, Metro Ethernet, DSL, Cable, <strong>SD-WAN</strong> (modern software-defined), 4G/5G LTE backup.</div>
+      </div>
+    </div>
+
+    <!-- Diagram -->
+    <div class="diagram-box">
+      <h3>Draw this — WAN topology</h3>
+      <div class="diagram">
+ HQ Office (LAN)                    Branch Office (LAN)
+┌─────────────────┐                 ┌─────────────────┐
+│  PC ─ Switch ─ Router ─────WAN────── Router ─ Switch ─ PC │
+│     192.168.1.x  │  (ISP leased)  │   192.168.2.x   │
+└─────────────────┘                 └─────────────────┘
+                         │
+                   Internet / ISP
+                    Cloud / Data Center
+      </div>
+    </div>
+
+    <!-- Key Points -->
+    <div class="key-points">
+      <h3>Remember these before the lab</h3>
+      <ul class="key-list">
+        <li>WANs use <strong>serial or Ethernet interfaces</strong> to connect to the provider</li>
+        <li>The router's <strong>WAN port</strong> faces the ISP; the LAN port faces your switch</li>
+        <li>WAN links have a <strong>DCE/DTE relationship</strong> — one end sets the clock rate</li>
+        <li><strong>Default gateway</strong> on every PC = the LAN-side IP of the router</li>
+        <li>Troubleshoot with: <strong>show ip interface brief, ping, traceroute</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Action footer — finished learning, go to lab -->
+  <div class="action-footer">
+    <div class="af-text">
+      <div class="af-title">Ready for the lab?</div>
+      <div class="af-sub">You'll configure a WAN link between two routers in Cisco Packet Tracer</div>
+    </div>
+    <button class="af-btn-prev">← Re-read</button>
+    <button class="af-btn-primary">Go to Lab → Step 2</button>
+  </div>
+
+  <!-- Note: this section shows the LAB step for reference -->
+  <br><br>
+  <div class="mockup-label" style="border-radius:8px;margin-bottom:16px;">⬇ BELOW: What Step 2 (Lab) looks like on the same page</div>
+
+  <!-- STEP 2: LAB (shown for mockup purposes) -->
+  <div class="step-bar">
+    <div class="step-bar-label">Topic Progress</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-circle s-done">✓</div>
+        <div class="step-label"><div class="step-name done">Step 1: Learn</div><div class="step-sub">Complete</div></div>
+      </div>
+      <div class="step-connector done"></div>
+      <div class="step">
+        <div class="step-circle s-active">2</div>
+        <div class="step-label"><div class="step-name active">Step 2: Lab</div><div class="step-sub">Hands-on now</div></div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-circle s-todo">3</div>
+        <div class="step-label"><div class="step-name todo">Step 3: Quiz</div><div class="step-sub">After lab</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="learn-section">
+    <div class="section-title">Step 2 — Hands-on Lab</div>
+
+    <div class="concept-intro" style="background:rgba(108,192,74,0.05);border-color:rgba(108,192,74,0.25);">
+      <strong style="color:var(--green)">Lab Goal:</strong> Connect two routers over a WAN serial link in Packet Tracer. Configure IP addresses, enable the interfaces, and verify connectivity with <code style="background:rgba(255,255,255,0.1);padding:1px 6px;border-radius:4px;font-size:0.88em">ping</code>.
+    </div>
+
+    <div class="concept-cards">
+      <div class="cc" style="border-color:rgba(27,160,215,0.2);">
+        <div class="cc-icon">🗺️</div>
+        <div class="cc-title">Topology to build</div>
+        <div class="cc-body">R1 (Serial0/0/0) ←—serial link—→ (Serial0/0/0) R2<br>R1 LAN: 192.168.1.1/24 · R2 LAN: 192.168.2.1/24<br>WAN link: 10.0.0.0/30</div>
+      </div>
+      <div class="cc" style="border-color:rgba(27,160,215,0.2);">
+        <div class="cc-icon">💻</div>
+        <div class="cc-title">Commands you'll use</div>
+        <div class="cc-body"><code style="font-size:0.82em;color:var(--accent)">interface serial 0/0/0<br>ip address 10.0.0.1 255.255.255.252<br>clock rate 64000<br>no shutdown</code></div>
+      </div>
+    </div>
+
+    <div class="diagram-box">
+      <h3>Step-by-step checklist</h3>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(108,192,74,0.08);border-radius:8px;border:1px solid rgba(108,192,74,0.2);">
+          <div style="width:22px;height:22px;background:var(--green);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:#fff;font-weight:700;flex-shrink:0;">✓</div>
+          <div style="font-size:0.875rem;color:var(--text-dim)">Open Packet Tracer and add 2 routers + 1 PC on each side</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(108,192,74,0.08);border-radius:8px;border:1px solid rgba(108,192,74,0.2);">
+          <div style="width:22px;height:22px;background:var(--green);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:#fff;font-weight:700;flex-shrink:0;">✓</div>
+          <div style="font-size:0.875rem;color:var(--text-dim)">Connect routers with a Serial DCE/DTE cable</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(27,160,215,0.06);border-radius:8px;border:1px solid rgba(27,160,215,0.25);">
+          <div style="width:22px;height:22px;background:var(--accent);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:#fff;font-weight:700;flex-shrink:0;">3</div>
+          <div style="font-size:0.875rem;"><strong>Configure R1 serial interface</strong> — assign IP, set clock rate, no shutdown</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--border);">
+          <div style="width:22px;height:22px;background:rgba(255,255,255,0.1);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--text-dim);flex-shrink:0;">4</div>
+          <div style="font-size:0.875rem;color:var(--text-dim)">Configure R2 serial interface — assign IP, no shutdown</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid var(--border);">
+          <div style="width:22px;height:22px;background:rgba(255,255,255,0.1);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--text-dim);flex-shrink:0;">5</div>
+          <div style="font-size:0.875rem;color:var(--text-dim)">Ping R2 from R1: <code>ping 10.0.0.2</code> — should get 5 replies</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-footer">
+      <div class="af-text">
+        <div class="af-title">Lab done? Take the quiz!</div>
+        <div class="af-sub">5 questions · ~5 minutes · You need 80% to unlock the next topic</div>
+      </div>
+      <button class="af-btn-prev">← Back to Concept</button>
+      <button class="af-btn-primary">Start Quiz → Step 3</button>
+    </div>
+  </div>
+
+  <!-- Prev/Next topic navigation -->
+  <br>
+  <div class="topic-nav">
+    <div class="tn-btn">
+      <span>←</span>
+      <div><span class="tn-dir">Previous topic</span><span class="tn-name">LAN — Local Area Networks</span></div>
+    </div>
+    <div class="tn-btn next">
+      <div><span class="tn-dir">Next topic (locked)</span><span class="tn-name">MAN &amp; PAN — Other Scopes</span></div>
+      <span>🔒</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
